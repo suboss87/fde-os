@@ -15,6 +15,20 @@ Forward Deployed Engineers embed directly with customers, bridging the gap betwe
 9. **Ship with Rigour** – pre-flight, canary, tested rollback.
 10. **Extract Patterns** – every engagement feeds back into the collective intelligence.
 
+## Before Your First Meeting
+
+The hour before you walk in (or log on) determines the quality of the next two weeks.
+
+**Industry cram:** Read one industry-specific ops doc — a hospital's patient guide, a bank's compliance brief, a government procurement summary. You need their vocabulary before they use it.
+
+**Org chart:** Who owns what? Who can say no? Who's the real decision-maker vs. the one on the invite? Find out before the meeting.
+
+**Tech stack recon:** Public job postings, GitHub org, Stack Overflow job tags. Know their stack before they tell you.
+
+**Tooling & access:** Confirm you have VPN, repo access, and a working dev environment *before* the meeting. "I'm still waiting for access" on day one burns trust immediately.
+
+**One hypothesis:** Walk in with one falsifiable belief about what the real problem is. You'll probably be wrong. That's the point — it forces you to listen for the correction.
+
 ## Further Reading
 - a16z: "Forward Deployed Engineer – The Hottest Job in Tech"
 - Boris Cherny on Lenny's Podcast (Claude Code creation)

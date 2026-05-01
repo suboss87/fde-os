@@ -20,5 +20,13 @@ Prevent building the wrong thing by validating direction with a cheap, throwaway
 5. **Iterate or Kill** – revise based on feedback, or abandon if assumption fails.
 6. **Only then formalise** – once direction is validated, hand off to `fde-brownfield` for safe implementation.
 
+## Kill Criteria
+Stop and discard the prototype immediately when:
+- The riskiest assumption is disproven by the demo.
+- The customer ignores the demo entirely — indifference is a signal.
+- Three iterations have passed without feedback converging.
+
+When killed: document what was learned, not what was built. Hand the learning to `fde-observe` before restarting.
+
 ## Iron Rule
 **Never spend more than a day on a prototype. Speed of learning > everything.**
