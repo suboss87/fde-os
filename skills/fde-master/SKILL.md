@@ -3,26 +3,26 @@ name: fde-master
 description: Master orchestrator for FDEOS. The single entry point for an FDE engagement. Use when starting any enterprise customer project, or when you want to run the full FDE lifecycle.
 ---
 
-# FDE Master – The Operating System
+# FDE Master - The Operating System
 
 ## Purpose
 Run a complete Forward Deployed Engineering engagement, from the first chaotic exploration to production landing and pattern extraction. Sequences all FDEOS skills adaptively, using field judgment about when to pause for human input.
 
 ## Iron Rules
-1. **NEVER skip exploration** – build something rough and unscalable before formal methodology.
-2. **Trust must be earned before calibration** – start with trust-building, not checklists.
-3. **Observe continuously** – latent demand can surface at any time.
-4. **Prototype before building** – show rough demos, iterate, then formalise.
-5. **Context is currency** – save state at every phase boundary.
-6. **Rollback before launch** – every ship phase requires verified rollback.
+1. **Never skip exploration.** Build something rough and unscalable before formal methodology.
+2. **Trust must be earned before calibration.** Start with trust-building, not checklists.
+3. **Observe continuously.** Latent demand can surface at any time.
+4. **Prototype before building.** Show rough demos, iterate, then formalise.
+5. **Context is currency.** Save state at every phase boundary.
+6. **Rollback before launch.** Every ship phase requires verified rollback.
 
 ## Orchestration Flow (adaptive)
 
 All 14 FDEOS skills are orchestrated here. Each phase names which skills activate.
 
-### Phase 0: TRUST & EXPLORE (parallel, continuous)
+### Phase 0: TRUST and EXPLORE (parallel, continuous)
 - Skills: `fde-trust` + `fde-explore`
-- Read their documentation before asking anything. Understand what data is sacred. Build a throwaway prototype to discover patterns — don't optimise, don't scale. Show it, get feedback, repeat or discard.
+- Read their documentation before asking anything. Understand what data is sacred. Build a throwaway prototype to discover patterns. Don't optimise, don't scale. Show it, get feedback, repeat or discard.
 
 ### Phase 1: CALIBRATE
 - Skill: `fde-calibrate`
@@ -30,7 +30,7 @@ All 14 FDEOS skills are orchestrated here. Each phase names which skills activat
 
 ### Phase 2: DISCOVER
 - Skill: `fde-discovery`
-- Map codebase, dependencies, hotspots. Produce Codebase Context Document. WAIT for human confirmation before proceeding to sensitive changes.
+- Map codebase, dependencies, hotspots. Produce Codebase Context Document. Wait for human confirmation before proceeding to sensitive changes.
 
 ### Continuous: OBSERVE
 - Skill: `fde-observe` (always active)
@@ -50,7 +50,7 @@ All 14 FDEOS skills are orchestrated here. Each phase names which skills activat
 
 ### During build: CHAOS mode
 - Skill: `fde-chaos`
-- If the map is wrong, APIs are missing, or production is on fire — switch to this skill. Debug with partial knowledge. Document assumptions. Find safe paths forward.
+- If the map is wrong, APIs are missing, or production is on fire, switch to this skill. Debug with partial knowledge. Document assumptions. Find safe paths forward.
 
 ### Phase 6: SHIP
 - Skill: `fde-ship`
@@ -60,16 +60,17 @@ All 14 FDEOS skills are orchestrated here. Each phase names which skills activat
 - Skill: `fde-retrospective`
 - Capture decisions, mistakes, lessons. Update Codebase Context. Extract reusable patterns for upstream product teams.
 
-### Throughout: CONTEXT & HARNESS
-- `fde-context` — manages token budget, compaction safety, and state versioning across all phases.
-- `fde-harness` — when a pattern repeats twice, encode it as a new skill for this customer's environment.
+### Throughout: CONTEXT and HARNESS
+- `fde-context` manages token budget, compaction safety, and state versioning across all phases.
+- `fde-harness` encodes a new skill when a pattern repeats twice in the customer's environment.
 
 ## Field Judgment Gates
 After most phases, present a concise summary:
-✅ Phase [N] complete. [One-line outcome]
-🛑 WAITING for human review (unless field judgment allows proceed). Reply "approved" or request changes.
+
+  Phase [N] complete. [One-line outcome]
+  Waiting for human review. Reply "approved" or request changes.
 
 Autonomous proceed is allowed when:
 - A production incident is active and a safe fix is clear.
-- A demo/prototype is being iterated with the customer present.
+- A demo or prototype is being iterated with the customer present.
 - The pattern has been confirmed in multiple previous engagements.

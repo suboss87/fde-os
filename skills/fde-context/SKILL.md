@@ -3,7 +3,7 @@ name: fde-context
 description: Treat context as an engineering surface. Active budgeting, proactive compaction saving, post-compaction verification. Cross-cutting; used by all other skills.
 ---
 
-# FDE Context – Context Engineering
+# FDE Context - Context Engineering
 
 ## Purpose
 Context is the single biggest quality lever for AI agents. Manage it like a precious resource.
