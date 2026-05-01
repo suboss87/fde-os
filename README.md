@@ -1,134 +1,101 @@
-# FDEOS - The Operating System for Forward Deployed Engineering
+# FDEOS
 
 ![demo](media/demo.gif)
 
-> **FDEOS turns any AI coding agent into a Forward Deployed Engineer, covering everything from the first customer conversation to a safe production landing.**
+> **Your AI coding agent already knows how to write code. FDEOS teaches it how to handle a real engagement — the kind where you don't know the codebase, the customer can't articulate the real problem, and you have to ship anyway.**
 
 ---
 
-## What is this?
+## The Problem
 
-FDEOS is a skill pack for AI coding agents. It encodes the complete engagement craft of a Forward Deployed Engineer: how to build trust, explore messily, find the real problem, prototype fast, work safely in brownfield codebases, ship with enterprise-grade rigour, and extract patterns for the next engagement. 14 skills. One operating system. Drop it in, and your agent knows how an FDE behaves.
+You're dropped into a customer project. The codebase is old, undocumented, and partially broken. The stakeholder says "fix the payment module," but you sense that's not the real issue. You don't know the codebase, who to trust, or where the skeletons are buried.
+
+Without FDEOS, you learn the hard way — weeks of trial and error, wrong assumptions, and fingers crossed on deploy day.
+
+---
+
+## How it works
+
+It starts from the moment you fire up your coding agent. Your agent doesn't let you jump into code. Instead, it guides you through the same discipline a veteran Forward Deployed Engineer uses:
+
+1. **Trust first** — identify sacred data, acknowledge fears, earn permission before touching systems
+2. **Observe before building** — look for shadow spreadsheets and manual workarounds; that's the real spec
+3. **Prototype to validate** — build a throwaway in hours, show it, get feedback, iterate
+4. **Ship safely** — characterisation tests, Strangler Fig for legacy, canary deploy, tested rollback
+5. **Extract the pattern** — after shipping, encode what you learned so the next engagement starts smarter
+
+Your agent becomes a coach — asking the right questions before every decision, catching risks you'd miss. You make the calls. FDEOS makes sure you don't miss a step.
+
+---
+
+## Who this is for
+
+- **Engineers dropped into messy enterprise projects** — "fix this legacy system" with no docs and no context
+- **Independent consultants and one-person agencies** — run engagements end-to-end without a team behind you
+- **Technical founders** — ship into regulated, brownfield, or high-stakes environments without a dedicated ops team
+- **Anyone leading an AI or software transformation** — the playbook scales from a $10K gig to a $50M programme
 
 ---
 
 ## See it in action
 
-> **Meridian Bank. Legacy payments monorepo. 2.1M lines. Payments failing silently 2% of the time.**
+```
+$ claude
+> @fde-master "I'm starting at Meridian Bank. Payments are failing. First meeting in an hour."
 
-The customer opens with: *"We need you to fix the payment processor."*
+# FDEOS: Before you write any code, ask what workaround they've been using.
+# Look for a manual spreadsheet or a nightly script. That's the real spec.
 
-`@fde-observe` intercepts before any code is written:
+> They've been updating a reconciliation spreadsheet every night for two years.
 
-> **Agent:** Before I look at the code, what did you *see* happen? Not the error, the behaviour.
->
-> **Customer:** Transactions just... don't appear. No error. The user retries. Sometimes it goes through.
->
-> **Agent:** How long has this been tracked?
->
-> **Customer:** *(pulls up a spreadsheet)* We've been logging it here. Since March.
->
-> **Agent:** That spreadsheet is the real spec. Can I have a copy?
+# FDEOS: The real need is automated reconciliation, not a timeout fix.
+# Build a throwaway that mimics that spreadsheet and show it today.
+# fde-trust: The spreadsheet contains transaction data — treat it as sensitive.
+```
 
-`@fde-trust` activates:
-
-> **Agent:** Before I touch anything, is this spreadsheet considered sensitive? Who else has seen it?
-
-Three minutes in. No code written. The shadow spreadsheet nobody mentioned in the brief is now the primary artefact. That's FDEOS.
+No code written. The real problem surfaced. The spreadsheet nobody mentioned in the brief is now the primary artefact.
 
 ---
 
 ## Quick Start
 
-Installation differs by platform. Claude Code and Cursor have built-in plugin marketplaces. All other platforms use a single command.
-
-### Claude Code (recommended)
 ```bash
+# Claude Code (recommended)
 /plugin marketplace add suboss87/fde-marketplace
 /plugin install fde-os@suboss87/fde-marketplace
-```
 
-### Cursor
-```bash
+# Cursor
 /add-plugin fde-os
-```
 
-### Any agent (one command)
-```bash
+# Any agent
 npx skills add suboss87/fde-os
 ```
 
-### Codex
-Tell Codex: `Fetch and follow instructions from https://raw.githubusercontent.com/suboss87/fde-os/main/.codex/INSTALL.md`
-
-### OpenCode
-Tell OpenCode: `Fetch and follow instructions from https://raw.githubusercontent.com/suboss87/fde-os/main/.opencode/INSTALL.md`
-
-### GitHub Copilot CLI
-```bash
-copilot plugin marketplace add suboss87/fde-marketplace
-copilot plugin install fde-os@suboss87/fde-marketplace
-```
-
-### Gemini CLI
-```bash
-gemini extensions install https://github.com/suboss87/fde-os
-```
-
-### Manual
-```bash
-git clone https://github.com/suboss87/fde-os.git
-cp -r fde-os/skills/ .claude/skills/
-cp fde-os/CLAUDE.md.template ./CLAUDE.md
-```
+Full instructions for Codex, OpenCode, Copilot CLI, Gemini CLI, and manual install: [docs/install.md](docs/install.md)
 
 ---
 
 ## Skills
 
-| Skill | What it does |
-|-------|-------------|
-| fde-trust | Earn permission to work: sacred data, fears, stakeholder alignment |
-| fde-explore | Chaotic, unscalable first-contact exploration. Do things that don't scale. |
-| fde-calibrate | Environment assessment covering compliance, risk, off-limits modules, and the 6-month horizon |
-| fde-discovery | Codebase cartography: dependencies, hotspots, data flow, test landscape |
-| fde-observe | Continuous latent-demand detection. Find the real need, not just the ask. |
-| fde-prototype | Rapid demo-driven iteration. Build a throwaway to validate direction. |
-| fde-bridge | Business-to-technical translation. Every change tied to a customer outcome. |
-| fde-chaos | Operate with partial knowledge: undocumented APIs, production fires |
-| fde-brownfield | Safe legacy implementation: characterisation tests, Strangler Fig pattern |
-| fde-ship | Production deployment: pre-flight checklist, canary, verified rollback |
-| fde-retrospective | Capture lessons, update codebase context, extract upstream patterns |
-| fde-harness | Create new skills and subagents for the customer's specific environment |
-| fde-context | Context budgeting, compaction safety, state versioning |
-| fde-master | Orchestrator. One skill to run the full engagement (entry point). |
+FDEOS is 14 skills that fire at the right moment. You don't need to learn them all. Start with `@fde-master` — it sequences the rest.
 
----
+| When you're... | Use |
+|----------------|-----|
+| Starting any engagement | `@fde-master` |
+| Meeting a customer for the first time | `@fde-trust` |
+| Figuring out what they actually need | `@fde-observe` |
+| Exploring a messy problem safely | `@fde-explore` |
+| Validating a direction before building | `@fde-prototype` |
+| Mapping an unfamiliar codebase | `@fde-discovery` |
+| Working in fragile legacy code | `@fde-brownfield` |
+| Handling production fires or unknown APIs | `@fde-chaos` |
+| Shipping to production with a rollback | `@fde-ship` |
+| Closing out and capturing lessons | `@fde-retrospective` |
 
-## Enterprise patterns
-
-Ready-to-use patterns for regulated industries. Drop them into `.claude/skills/` alongside FDEOS.
-
-| Pattern | Adds |
-|---------|------|
-| healthcare-fde | HIPAA: PHI handling, audit trails, encryption |
-| fintech-fde | PCI-DSS: transaction integrity, fraud detection, idempotency |
-| gov-fde | FedRAMP: security boundaries, ATO awareness, data sovereignty |
-
----
-
-## Why this exists
-
-Most AI coding skills focus on how to write code. FDEOS focuses on how to behave when you don't yet know what to build, when you're dropped into a legacy monorepo with partial information, nervous stakeholders, and a mandate to deliver. That's the everyday reality of Forward Deployed Engineering. This skill pack makes that reality something any AI agent can handle, and any engineer can lead.
-
----
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+All 14 skills with full descriptions and enterprise domain patterns (healthcare, fintech, government): [docs/skills-reference.md](docs/skills-reference.md)
 
 ---
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+MIT

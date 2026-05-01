@@ -1,60 +1,51 @@
 # scripts/demo.tape
-# FDEOS - Multi-stage engagement demo
+# FDEOS - Single engagement exchange demo
 # Generate with: vhs scripts/demo.tape
 
 Output media/demo.gif
 
 Set FontSize 16
 Set Width 1100
-Set Height 700
+Set Height 600
 Set Theme "Dracula"
-Set TypingSpeed 18ms
+Set TypingSpeed 22ms
 
-# Entry point 1: Pre-engagement
-Type "$ fdeos"
+Type "$ claude"
 Enter
-Sleep 500ms
-Type "> @fde-calibrate 'Sales handoff: Global Insurance wants to modernize claims. 48 hours before first meeting.'"
+Sleep 800ms
+
+Type "> @fde-master \"I'm starting at Meridian Bank. Payments are failing. First meeting in an hour.\""
 Enter
-Sleep 1.5s
-Type "# FDEOS (fde-calibrate): Cram Solvency II and IFRS 17."
+Sleep 2s
+
+Type "# FDEOS: Before you write any code, ask what workaround they've been using."
 Enter
-Type "# Map their org chart. Confirm repo access and staging credentials before you walk in."
+Type "# Look for a manual spreadsheet or a nightly script. That's the real spec."
 Enter
-Type "# Walk in with one hypothesis: 'The real problem is the actuarial model,"
+Sleep 2.5s
+
+Type "> They've been updating a reconciliation spreadsheet every night for two years."
 Enter
-Type "#   manually maintained for 9 years — not the legacy code.'"
+Sleep 2s
+
+Type "# FDEOS: The real need is automated reconciliation, not a timeout fix."
+Enter
+Type "# Build a throwaway that mimics that spreadsheet and show it today."
+Enter
+Type "# fde-trust: The spreadsheet contains transaction data — treat it as sensitive."
 Enter
 Sleep 3s
 
-# Entry point 2: Mid-engagement chaos
-Type "> @fde-chaos 'Payment module failing in production. No staging env for the message queue.'"
+Type "# No code written. The real problem surfaced."
 Enter
-Sleep 1.5s
-Type "# FDEOS (fde-chaos): Acknowledge the unknown. Assume maximum blast radius."
-Enter
-Type "# Treat that undocumented queue as critical. Minimum safe change: test with a mock."
-Enter
-Type "# Document findings in chaos-log.md before proceeding."
+Type "# The spreadsheet nobody mentioned is now the primary artefact."
 Enter
 Sleep 3s
 
-# Entry point 3: Post-engagement pattern extraction
-Type "> @fde-retrospective 'Claims automation engagement done. What do we capture for the next team?'"
-Enter
-Sleep 1.5s
-Type "# FDEOS (fde-retrospective): Log decisions, mistakes, and surprises."
-Enter
-Type "# Update codebase context. Extract pattern: 'regulated-migration-guard'."
-Enter
-Type "# Encode via fde-harness for future jurisdiction rollouts."
-Enter
-Sleep 3s
-
-# Brand end card
 Type "clear"
 Enter
 Sleep 400ms
+
 Type "echo ''"
 Enter
 Type "echo 'FDEOS - The Operating System for Forward Deployed Engineering'"
@@ -63,4 +54,4 @@ Type "echo '14 skills. Any stage. Any scale. Any AI agent.'"
 Enter
 Type "echo 'github.com/suboss87/fde-os'"
 Enter
-Sleep 5s
+Sleep 4s
