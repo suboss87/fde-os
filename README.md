@@ -12,6 +12,32 @@ FDEOS is a skill pack for AI coding agents. It encodes the complete engagement c
 
 ---
 
+## See it in action
+
+> **Meridian Bank. Legacy payments monorepo. 2.1M lines. Payments failing silently 2% of the time.**
+
+The customer opens with: *"We need you to fix the payment processor."*
+
+`@fde-observe` intercepts before any code is written:
+
+> **Agent:** Before I look at the code — what did you *see* happen? Not the error, the behaviour.
+>
+> **Customer:** Transactions just… don't appear. No error. The user retries. Sometimes it goes through.
+>
+> **Agent:** How long has this been tracked?
+>
+> **Customer:** *(pulls up a spreadsheet)* We've been logging it here. Since March.
+>
+> **Agent:** That spreadsheet is the real spec. Can I have a copy?
+
+`@fde-trust` activates:
+
+> **Agent:** Before I touch anything — is this spreadsheet considered sensitive? Who else has seen it?
+
+Three minutes in. No code written. The shadow spreadsheet nobody mentioned in the brief is now the primary artefact. That's FDEOS.
+
+---
+
 ## Quick Start
 
 Installation differs by platform. Claude Code and Cursor have built‑in plugin marketplaces. All other platforms use a single command.

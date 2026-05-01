@@ -18,45 +18,51 @@ Run a complete Forward Deployed Engineering engagement, from the first chaotic e
 
 ## Orchestration Flow (adaptive)
 
+All 14 FDEOS skills are orchestrated here. Each phase names which skills activate.
+
 ### Phase 0: TRUST & EXPLORE (parallel, continuous)
-- Load `fde-trust` and `fde-explore` concurrently.
-- Start with trust signals: read their documentation, understand what data is sacred, demonstrate competence through questions, not code.
-- Build a throwaway prototype to learn patterns. Don't optimise. Don't scale. Show it. Get feedback. Throw it away if necessary. Repeat.
+- Skills: `fde-trust` + `fde-explore`
+- Read their documentation before asking anything. Understand what data is sacred. Build a throwaway prototype to discover patterns — don't optimise, don't scale. Show it, get feedback, repeat or discard.
 
 ### Phase 1: CALIBRATE
-- Once initial trust exists, load `fde-calibrate`.
-- Assess environment, compliance, risk, off-limits, 6-month horizon, key stakeholders.
-- Produce calibration profile. Present for human review.
+- Skill: `fde-calibrate`
+- Assess environment, compliance, risk, off-limits modules, 6-month horizon, key stakeholders. Produce calibration profile. Present for human review.
 
 ### Phase 2: DISCOVER
-- Load `fde-discovery`. Map codebase, dependencies, hotspots. Produce Codebase Context Document.
-- WAIT for human confirmation before proceeding to sensitive changes.
+- Skill: `fde-discovery`
+- Map codebase, dependencies, hotspots. Produce Codebase Context Document. WAIT for human confirmation before proceeding to sensitive changes.
 
-### At any point: OBSERVE
-- `fde-observe` is always on. When a user request arrives, first ask: "What did you see happen?" Distinguish observation from solution.
+### Continuous: OBSERVE
+- Skill: `fde-observe` (always active)
+- Every user request is an observation opportunity. Ask "What did you see happen?" before proposing solutions. Distinguish latent demand from stated requests.
 
 ### Phase 3: PROTOTYPE
-- Before any formal build, load `fde-prototype`.
-- Build a minimal working demo, show it, collect feedback, iterate. Only after human sign-off move to build.
+- Skill: `fde-prototype`
+- Build a minimal working demo, show it, collect feedback, iterate. Kill criteria: assumption disproven, customer indifferent, or 3 iterations without convergence. Hand off to `fde-brownfield` only after sign-off.
 
 ### Phase 4: BRIDGE
-- Load `fde-bridge`. Translate technical options to business impact. Include trust and ethical implications.
+- Skill: `fde-bridge`
+- Translate technical options to business impact. Handle mid-engagement scope requests here. Every decision tied to a customer outcome. Include trust and ethical implications.
 
 ### Phase 5: BUILD (Brownfield safe)
-- Load `fde-brownfield`. Characterisation tests, impact analysis, Strangler Fig. Strict safety.
+- Skill: `fde-brownfield`
+- Characterisation tests, impact analysis, Strangler Fig pattern. Strict safety. First, do no harm.
 
 ### During build: CHAOS mode
-- If the map is wrong, APIs are missing, or production is on fire, load `fde-chaos`. Debug with partial knowledge. Document assumptions.
+- Skill: `fde-chaos`
+- If the map is wrong, APIs are missing, or production is on fire — switch to this skill. Debug with partial knowledge. Document assumptions. Find safe paths forward.
 
 ### Phase 6: SHIP
-- Load `fde-ship`. Pre-flight checklist, canary, verified rollback, smoke tests.
+- Skill: `fde-ship`
+- Pre-flight checklist, canary deployment, verified rollback, post-deploy smoke tests.
 
 ### Phase 7: RETROSPECT
-- Load `fde-retrospective`. Capture decisions, mistakes, lessons. Update Codebase Context. Extract reusable patterns for upstream product teams.
+- Skill: `fde-retrospective`
+- Capture decisions, mistakes, lessons. Update Codebase Context. Extract reusable patterns for upstream product teams.
 
-### Throughout: HARNESS & CONTEXT
-- `fde-context` manages token budget and compaction.
-- `fde-harness` encodes new skills when a pattern repeats.
+### Throughout: CONTEXT & HARNESS
+- `fde-context` — manages token budget, compaction safety, and state versioning across all phases.
+- `fde-harness` — when a pattern repeats twice, encode it as a new skill for this customer's environment.
 
 ## Field Judgment Gates
 After most phases, present a concise summary:

@@ -1,3 +1,3 @@
 {
-  "plugin": ["fde-os@git+https://github.com/FDEOS/fde-os.git"]
+  "plugin": ["fde-os@git+https://github.com/suboss87/fde-os.git"]
 }

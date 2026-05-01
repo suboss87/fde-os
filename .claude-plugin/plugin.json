@@ -6,8 +6,8 @@
     "name": "FDEOS",
     "url": "https://github.com/FDEOS"
   },
-  "homepage": "https://github.com/FDEOS/fde-os",
-  "repository": "https://github.com/FDEOS/fde-os",
+  "homepage": "https://github.com/suboss87/fde-os",
+  "repository": "https://github.com/suboss87/fde-os",
   "license": "MIT",
   "keywords": ["fde", "forward-deployed-engineer", "enterprise", "skills", "methodology", "brownfield", "context-engineering", "chaos-engineering", "prototyping"],
   "hooks": "./hooks/hooks.json"
