@@ -1,148 +1,95 @@
 # scripts/demo.tape
+# FDEOS – Real engagement demo
 # Generate with: vhs scripts/demo.tape
 
 Output media/demo.gif
 
-Set FontSize 13
+Set FontSize 16
 Set Width 1200
-Set Height 680
+Set Height 800
 Set Theme "Dracula"
-Set TypingSpeed 18ms
+Set TypingSpeed 20ms
 
-Type "# Meridian Bank — legacy payments monorepo — payments failing silently 2%"
-Enter
-Sleep 600ms
-
-Type "@fde-master"
+# Scene 1: The problem lands
+Type "ssh meridian-prod-jump"
 Enter
 Sleep 1s
+Type "cd /opt/legacy-monorepo"
+Enter
+Sleep 500ms
+Type "# VP Engineering: 'Payments failing ~2%. Fix the timeout bug in PaymentProcessor.'"
+Enter
+Sleep 2s
 
-Type "echo ''"
+# Scene 2: Invoke FDEOS
+Type "claude"
 Enter
-Type "echo '🤝 fde-trust activated'"
+Sleep 1s
+Type "@fde-master 'Fix payment failures at Meridian Bank'"
 Enter
-Type "echo '   Reading ops runbook... sacred data identified: transaction_id, account_ref'"
-Enter
-Type "echo '   Asking: What is your biggest fear about this engagement?'"
-Enter
-Type "echo '   Customer: We cannot afford another silent failure. March cost us \$18K.'"
-Enter
-Type "echo '   Trust status: ESTABLISHING — no sensitive data in context yet'"
-Enter
-Sleep 900ms
+Sleep 2s
 
-Type "echo ''"
+# Scene 3: Agent responds – Trust & Observe
+Type "# FDEOS: Let's start with trust. I've read the PCI-DSS summary you provided."
 Enter
-Type "echo '🧪 fde-explore activated (parallel)'"
+Sleep 1.5s
+Type "# fde-observe: Don't accept the timeout request yet. Ask what workaround they're using."
 Enter
-Type "echo '   Building throwaway integration: PaymentProcessor → Stripe webhook'"
-Enter
-Type "echo '   Finding: retry logic missing on 503 responses — not in any doc'"
-Enter
-Type "echo '   Hypothesis formed. Prototype ready in 40 min.'"
-Enter
-Sleep 900ms
+Sleep 1.5s
 
-Type "echo ''"
+# Scene 4: Human asks the question
+Type "# You: 'What's the workaround right now?'"
 Enter
-Type "echo '🎯 fde-calibrate activated'"
+Sleep 1s
+Type "# VP: 'We have a manual reconciliation spreadsheet. Two years now.'"
 Enter
-Type "echo '   Environment: PCI-DSS Level 1 | Risk: HIGH'"
-Enter
-Type "echo '   Off-limits: auth module, encryption keys'"
-Enter
-Type "echo '   6-month horizon: migrate to new gateway — do NOT hardcode Stripe'"
-Enter
-Sleep 800ms
+Sleep 2s
 
-Type "echo ''"
+# Scene 5: Explore & Prototype
+Type "# FDEOS: The real need is automated reconciliation. Build a throwaway first."
 Enter
-Type "echo '🗺️  fde-discovery activated'"
+Sleep 1.5s
+Type "# fde-explore: No tests. Replicate the spreadsheet logic. Show it this afternoon."
 Enter
-Type "echo '   Modules: 47 | Hotspot: PaymentProcessor.java (1,247 changes/yr)'"
+Sleep 2s
+Type "# (3 hours later...)"
 Enter
-Type "echo '   Data flow mapped. Race condition window: 80–120ms on retry'"
+Sleep 1s
+Type "# Prototype demoed. Ops: 'This is what we needed. But make it real-time.'"
 Enter
-Type "echo '   Codebase Context Document written → .fde/context.md'"
-Enter
-Sleep 800ms
+Sleep 2s
 
-Type "echo ''"
+# Scene 6: Calibrate & Discover
+Type "# fde-calibrate: PCI-DSS Level 1 | off-limits: auth module | 6-month: 10x volume"
 Enter
-Type "echo '🔍 fde-observe (continuous)'"
+Sleep 2s
+Type "# fde-discovery: PaymentProcessor.java — 4,200 lines, hotspot, 12% test coverage"
 Enter
-Type "echo '   Customer mentioned a spreadsheet. Asking...'"
-Enter
-Type "echo '   Found: shadow ledger tracking 847 silent failures since March'"
-Enter
-Type "echo '   Latent demand: real-time failure dashboard, not just a bug fix'"
-Enter
-Sleep 800ms
+Sleep 2s
 
-Type "echo ''"
+# Scene 7: Safe build & Ship
+Type "# fde-brownfield: Characterisation tests written. Strangler Fig wrapping old code."
 Enter
-Type "echo '⚡ fde-prototype activated'"
+Sleep 2s
+Type "# fde-ship: Canary 5%... error rate stable... expanding to 100%. Rollback ready. ✅"
 Enter
-Type "echo '   Demo: idempotent retry with 3-attempt backoff'"
-Enter
-Type "echo '   Feedback: add alerting when retry threshold hit'"
-Enter
-Type "echo '   Iteration 2: alert added → customer sign-off received'"
-Enter
-Sleep 800ms
+Sleep 2s
 
-Type "echo ''"
+# Scene 8: Retrospective
+Type "# fde-retrospective: Pattern extracted → new 'reconciliation-guard' skill for the org."
 Enter
-Type "echo '🌉 fde-bridge activated'"
-Enter
-Type "echo '   Business impact: \$18K/month recovered | 0.02% → 0.001% failure rate'"
-Enter
-Type "echo '   Stakeholder summary: 3 sentences ready for Monday standup'"
-Enter
-Sleep 700ms
+Sleep 2s
 
+# Scene 9: End card
+Type "clear"
+Enter
+Sleep 500ms
 Type "echo ''"
-Enter
-Type "echo '🏗️  fde-brownfield activated'"
-Enter
-Type "echo '   Characterisation tests written for PaymentProcessor (23 cases)'"
-Enter
-Type "echo '   Root cause confirmed: race condition on concurrent retry'"
-Enter
-Type "echo '   Fix: idempotency key + distributed lock. Strangler Fig applied.'"
-Enter
-Sleep 800ms
-
-Type "echo ''"
-Enter
-Type "echo '✈️  fde-ship activated'"
-Enter
-Type "echo '   Pre-flight: ✅ tests green | ✅ rollback verified | ✅ canary ready'"
-Enter
-Type "echo '   Canary 5% → 15 min stable → 50% → stable → 100%'"
-Enter
-Type "echo '   Post-deploy smoke: all payment paths confirmed ✅'"
-Enter
-Sleep 900ms
-
-Type "echo ''"
-Enter
-Type "echo '📝 fde-retrospective activated'"
-Enter
-Type "echo '   Pattern extracted: idempotency-guard for all payment entry points'"
-Enter
-Type "echo '   fde-harness: encoding pattern as fintech-retry-guard skill'"
-Enter
-Type "echo '   Context saved → .fde/context.md updated for next session'"
-Enter
-Sleep 1200ms
-
-Type "echo ''"
-Enter
-Type "echo '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'"
 Enter
 Type "echo 'FDEOS — The Operating System for Forward Deployed Engineering'"
 Enter
-Type "echo '14 skills · one complete engagement · github.com/suboss87/fde-os'"
+Type "echo '14 skills. Every phase. Any AI agent.'"
 Enter
-Sleep 2500ms
+Type "echo 'github.com/suboss87/fde-os'"
+Enter
+Sleep 4s
