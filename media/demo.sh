@@ -4,14 +4,24 @@ PROMPT='\033[2;37m>\033[0m'
 AI='\033[1;36m'
 DIM='\033[2;37m'
 RESET='\033[0m'
-BOLD='\033[1m'
 
 stream() {
   local text="$1"
-  local delay="${2:-0.03}"
+  local delay="${2:-0.025}"
+  printf "${AI}"
   for ((i=0; i<${#text}; i++)); do
-    printf "${AI}%s${RESET}" "${text:$i:1}"
+    printf "%s" "${text:$i:1}"
     sleep "$delay"
+  done
+  printf "${RESET}"
+  echo
+}
+
+typeuser() {
+  local text="$1"
+  for ((i=0; i<${#text}; i++)); do
+    printf "%s" "${text:$i:1}"
+    sleep 0.022
   done
   echo
 }
@@ -21,44 +31,39 @@ echo -e "${DIM}Claude Code  v1.x${RESET}"
 echo ""
 sleep 0.8
 
-# User input
+# Turn 1 — crisis lands
 printf "${PROMPT} "
-sleep 0.4
-text="@fde I'm taking over a project at a logistics startup. Orders aren't syncing with the warehouse. First standup in 20 minutes."
-for ((i=0; i<${#text}; i++)); do
-  printf "%s" "${text:$i:1}"
-  sleep 0.025
-done
-echo ""
-sleep 1.2
+sleep 0.3
+typeuser "@fde Checkout is throwing 500s. Revenue stopped 15 minutes ago. I just got paged."
+sleep 1.0
 
-# AI response
 echo ""
-stream "What workaround is the team using right now?" 0.025
-sleep 0.2
-stream "When sync fails, where do the orders actually go?" 0.025
+stream "What changed in the last 2 hours — deploy, config, or infrastructure?" 0.025
 echo ""
-sleep 2.0
+sleep 2.2
 
-# User follow-up
+# Turn 2 — user gives context
 printf "${PROMPT} "
-sleep 0.4
-text="There's a shared Google Sheet. Ops copies failed orders in manually a few times a day."
-for ((i=0; i<${#text}; i++)); do
-  printf "%s" "${text:$i:1}"
-  sleep 0.025
-done
-echo ""
-sleep 1.2
+sleep 0.3
+typeuser "Config update went out 90 minutes ago. Nothing else touched."
+sleep 1.0
 
-# AI insight
 echo ""
-stream "That sheet is the real spec." 0.03
+stream "Roll back the config now. Don't diagnose yet." 0.028
+sleep 0.25
+stream "Stabilise production first. Understand why second." 0.028
+echo ""
+sleep 2.5
+
+# Turn 3 — stable, now go deeper
+printf "${PROMPT} "
 sleep 0.3
-stream "The sync bug is a symptom. Manual recovery is the actual workflow." 0.025
-sleep 0.3
-stream "Before standup: get edit access to that sheet." 0.025
-sleep 0.2
-stream "You're not fixing an API. You're automating what they already do." 0.025
+typeuser "Rolled back. Orders are coming through."
+sleep 1.0
+
+echo ""
+stream "Good. Now find out what that config was trying to fix." 0.025
+sleep 0.25
+stream "That's the real problem. The outage was just the symptom." 0.025
 echo ""
 sleep 3.0

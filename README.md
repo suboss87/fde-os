@@ -25,9 +25,11 @@ npx skills add suboss87/fde-os
 
 <br>
 
-*"Before you write any code, ask what workaround they've been using. That's the real spec."*
+*"Don't write a line of code until you know what a bad outcome looks like for the person paying."*
 
-*"No code written. Real problem found in 3 minutes."*
+*"Stabilise first. Understand second. Fix third. In that order, every time."*
+
+*"The handoff is part of the job. If the team can't sustain it, you didn't finish."*
 
 <br>
 
@@ -37,9 +39,11 @@ npx skills add suboss87/fde-os
 
 ---
 
-You're dropped into a customer project. The codebase is undocumented. The stakeholder says "fix the payment module" but that's not the real problem. You don't know who to trust, where the bodies are buried, or what done looks like.
+A real engagement isn't just a coding problem.
 
-FDEOS gives your agent the judgment to handle that.
+It's the first 48 hours where you don't know who to trust or what success actually means. It's building safely inside a codebase you've never seen, where the wrong move breaks production. It's a crisis at 2am where the pressure is to act fast but the right move is to stop and ask one question first. It's a handoff where the team has to sustain everything you built after you're gone.
+
+FDEOS gives your agent the judgment to handle all of it — from landing to close.
 
 ---
 
