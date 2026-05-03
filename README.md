@@ -1,12 +1,39 @@
+<div align="center">
+
 # FDEOS
 
-Your AI coding agent knows how to write code. FDEOS teaches it how to run an engagement.
+**Your AI coding agent knows how to write code. FDEOS teaches it how to run an engagement.**
 
-<p align="center">
-  <img src="media/demo.gif" alt="FDEOS in action" width="800" />
-</p>
+**Works with Claude Code, Cursor, Windsurf, Cline, and any AI agent.**
 
-No code written. Real problem found in 3 minutes.
+[![GitHub stars](https://img.shields.io/github/stars/suboss87/fde-os?style=for-the-badge&logo=github&color=181717)](https://github.com/suboss87/fde-os/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-10-orange?style=for-the-badge)](docs/skills-reference.md)
+[![Works with Claude Code](https://img.shields.io/badge/Claude%20Code-ready-blueviolet?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai/code)
+
+<br>
+
+```bash
+npx skills add suboss87/fde-os
+```
+
+**Works at any stage — new engagement, mid-project, or crisis.**
+
+<br>
+
+![FDEOS in action](media/demo.gif)
+
+<br>
+
+*"Before you write any code, ask what workaround they've been using. That's the real spec."*
+
+*"No code written. Real problem found in 3 minutes."*
+
+<br>
+
+[How it works](#how-it-works) · [Skills](#skills) · [Install](docs/install.md) · [Enterprise](#for-regulated-industries)
+
+</div>
 
 ---
 
