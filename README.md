@@ -2,6 +2,12 @@
 
 Your AI coding agent knows how to write code. FDEOS teaches it how to run an engagement.
 
+<p align="center">
+  <img src="media/demo.gif" alt="FDEOS in action" width="800" />
+</p>
+
+No code written. Real problem found in 3 minutes.
+
 ---
 
 You're dropped into a customer project. The codebase is undocumented. The stakeholder says "fix the payment module" but that's not the real problem. You don't know who to trust, where the bodies are buried, or what done looks like.
@@ -17,25 +23,6 @@ Invoke `@fde`. Tell it what's happening. It asks one question if it needs clarit
 You don't pick a skill. You don't read a playbook. You describe your situation and get told what to do next.
 
 Everything gets written to `.fde/` — trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another FDE picks it up and is operational in minutes.
-
----
-
-## In practice
-
-```
-> @fde "I'm starting at Meridian Bank. Payments are failing. First meeting in an hour."
-
-Before you write any code, ask what workaround they've been using.
-Look for a manual spreadsheet or a nightly script. That's the real spec.
-
-> They've been updating a reconciliation spreadsheet every night for two years.
-
-The real need is automated reconciliation, not a timeout fix.
-Build a throwaway that mimics the spreadsheet and show it today.
-Note: the spreadsheet contains transaction data — treat it as sensitive.
-```
-
-No code written. Real problem found in 3 minutes.
 
 ---
 
