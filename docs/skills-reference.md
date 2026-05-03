@@ -1,35 +1,55 @@
 # FDEOS Skills Reference
 
-Full reference for all 14 skills and enterprise domain patterns.
-
-Start with `@fde-master` — it orchestrates all other skills automatically.
+All 10 skills. You don't need to invoke these directly — `@fde` routes to the right one based on your situation.
 
 ---
 
-## Core Skills
+## Skills
 
 | Skill | What it does |
 |-------|-------------|
-| `fde-master` | Orchestrator. One skill to run the full engagement (entry point). |
-| `fde-trust` | Earn permission to work: sacred data, fears, stakeholder alignment |
-| `fde-explore` | Chaotic, unscalable first-contact exploration. Do things that don't scale. |
-| `fde-calibrate` | Environment assessment covering compliance, risk, off-limits modules, and the 6-month horizon |
-| `fde-discovery` | Codebase cartography: dependencies, hotspots, data flow, test landscape |
-| `fde-observe` | Continuous latent-demand detection. Find the real need, not just the ask. |
-| `fde-prototype` | Rapid demo-driven iteration. Build a throwaway to validate direction. |
-| `fde-bridge` | Business-to-technical translation. Every change tied to a customer outcome. |
-| `fde-chaos` | Operate with partial knowledge: undocumented APIs, production fires |
-| `fde-brownfield` | Safe legacy implementation: characterisation tests, Strangler Fig pattern |
-| `fde-ship` | Production deployment: pre-flight checklist, canary, verified rollback |
-| `fde-retrospective` | Capture lessons, update codebase context, extract upstream patterns |
-| `fde-harness` | Create new skills and subagents for the customer's specific environment |
-| `fde-context` | Context budgeting, compaction safety, state versioning |
+| `@fde` | Entry point. Tell your story, get direction. Reads `.fde/` context automatically. |
+| `@fde-land` | First 48 hours. Builds trust, reads the environment, maps stakeholders, defines success. |
+| `@fde-audit` | Mid-engagement takeover. Separates what's real from what's assumed. |
+| `@fde-discover` | Finds the real problem. Maps the codebase. Looks for shadow processes and workarounds. |
+| `@fde-sketch` | Builds a throwaway to validate direction. Pitches the outcome in business terms. |
+| `@fde-build` | Safe implementation. Characterisation tests, Strangler Fig, blast radius analysis. |
+| `@fde-rescue` | Production crisis. Stabilise first, understand second, fix third. |
+| `@fde-ship` | Deploy safely. Pre-flight checklist, canary, verified rollback. |
+| `@fde-close` | End of engagement. Retrospective, pattern extraction, customer handoff. |
+| `@fde-dashboard` | Generates a static HTML dashboard from all `.fde/` data across projects. |
 
 ---
 
-## Enterprise Domain Patterns
+## The .fde/ directory
 
-Drop these into `.claude/skills/` alongside FDEOS for regulated industries.
+Every skill reads from and writes to `.fde/` in the project root. This is the engagement brain.
+
+```
+.fde/
+  context.md         — current engagement state (auto-updated)
+  brief.md           — what we were told
+  success.md         — agreed definition of done
+  trust-profile.md   — sacred data, fears, AI policy, approval chain
+  stakeholders.md    — who matters, who's resistant, who's the champion
+  reality.md         — what the real problem actually is
+  terrain.md         — codebase map, hotspots, data flow, test gaps
+  audit.md           — mid-engagement state (if joining in progress)
+  prototype-log.md   — what was built, shown, and learned
+  business-case.md   — customer problem, success metrics, trade-offs
+  decisions.md       — every significant choice and why
+  risks.md           — live risk register
+  delivery.md        — what shipped and running value log
+  chaos-log.md       — incident records
+  handoff.md         — operational knowledge for the team taking over
+  patterns.md        — reusable patterns extracted
+```
+
+`.fde/` must be in `.gitignore`. It contains sensitive customer information.
+
+---
+
+## Enterprise patterns
 
 | Pattern | Adds |
 |---------|------|
@@ -39,28 +59,14 @@ Drop these into `.claude/skills/` alongside FDEOS for regulated industries.
 
 ---
 
-## The Full FDE Lifecycle
+## Three engagement speeds
 
-FDEOS follows this flow by default. `@fde-master` runs it adaptively — phases can be shortened, reordered, or skipped based on field judgment.
+`@fde` adapts to how long you have:
 
-```
-Trust + Explore (parallel)
-        |
-    Calibrate
-        |
-    Discover
-        |
-    Observe (continuous throughout)
-        |
-    Prototype
-        |
-    Bridge
-        |
-    Build (brownfield safe)   <-- Chaos mode if needed
-        |
-     Ship
-        |
-  Retrospective + Harness
-```
+- **Sprint** (1-2 days): land, discover, sketch, ship. Move fast, minimal ceremony.
+- **Standard** (1-4 weeks): full sequence at a measured pace.
+- **Programme** (months): full sequence with stakeholder management, pattern extraction, formal handoff.
 
-For the full methodology behind these phases, see [FDE-METHODOLOGY.md](../FDE-METHODOLOGY.md).
+---
+
+See [FDE-METHODOLOGY.md](../FDE-METHODOLOGY.md) for the principles behind each skill.

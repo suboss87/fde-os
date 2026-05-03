@@ -1,15 +1,23 @@
 #!/bin/bash
 # SessionStart hook for FDEOS
-# Injects fde-master skill content as additional context at session start
+# Loads @fde entry point and .fde/context.md at session start
+
 SKILL_DIR="$(dirname "$0")/../skills"
-BOOTSTRAP="$SKILL_DIR/fde-master/SKILL.md"
+BOOTSTRAP="$SKILL_DIR/fde/SKILL.md"
+CONTEXT_FILE=".fde/context.md"
+
+CONTENT=""
+
+if [ -f "$BOOTSTRAP" ]; then
+    CONTENT="$CONTENT$(cat $BOOTSTRAP)\n\n"
+fi
+
+if [ -f "$CONTEXT_FILE" ]; then
+    CONTENT="$CONTENT---\nEngagement context loaded from .fde/context.md:\n$(cat $CONTEXT_FILE)\n"
+fi
 
 if [ -n "$COPILOT_CLI" ]; then
-    CONTENT=$(cat "$BOOTSTRAP" | jq -Rs .)
-    echo "{\"additionalContext\": $CONTENT}"
-elif [ -n "$CURSOR" ]; then
-    cat "$BOOTSTRAP"
+    echo "{\"additionalContext\": $(echo -e "$CONTENT" | jq -Rs .)}"
 else
-    # Default Claude Code format
-    cat "$BOOTSTRAP"
+    echo -e "$CONTENT"
 fi

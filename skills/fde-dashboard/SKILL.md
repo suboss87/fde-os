@@ -1,0 +1,55 @@
+---
+name: fde-dashboard
+description: Generate a clean HTML dashboard from all .fde/ data. Shows every active engagement, its status, progress, and what comes next.
+---
+
+# @fde-dashboard
+
+## Purpose
+An FDE works across multiple engagements simultaneously. This skill reads all `.fde/` directories it can find and generates a single clean HTML file — a reflection board showing the full picture across every project.
+
+## What it does
+
+Scan for all `.fde/` directories in the current workspace and any paths the FDE specifies. Read each one. Pull the story from the files. Generate `fde-dashboard.html` in the current directory.
+
+Open in a browser. That's it.
+
+## What each engagement card shows
+
+- Engagement name and customer
+- Current phase and week
+- The real problem (from `reality.md`) vs the original brief (from `brief.md`)
+- Definition of success (from `success.md`)
+- Top active risk (from `risks.md`)
+- Last significant action and next step (from `decisions.md` and `delivery.md`)
+- Value delivered so far (from `delivery.md` value log)
+
+## The full reflection view
+
+Scroll down past the summary cards to see the full journey for each engagement:
+- Every key decision made
+- Every risk caught
+- Every pattern extracted
+- The complete arc from brief to current state
+
+This is the reflection board. Not a task manager. A mirror of the work.
+
+## The output
+
+A single static HTML file. No server. No login. No dependencies. Clean, minimal design. Works offline.
+
+The FDE opens it, sees everything across all their projects in one view, and knows exactly where they are and what matters next.
+
+## If .fde/ data is sparse
+
+Some engagements will have more context than others. Generate what exists. Don't pad gaps. An empty field is honest — it tells the FDE what they haven't captured yet.
+
+## Writes to
+
+**`fde-dashboard.html`** — generated in the root of the current directory.
+
+## Principles
+- Read what's there. Don't invent what's not.
+- One file, opens in a browser, works offline. No complexity.
+- The dashboard reflects reality. If the data is thin, the dashboard is thin. That's useful information.
+- Minimal design. The data is the content.

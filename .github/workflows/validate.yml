@@ -50,5 +50,5 @@ jobs:
         run: |
           for file in skills/*/SKILL.md; do
             grep -q "^## Purpose" "$file" || echo "WARN: $file missing ## Purpose"
-            grep -q "Iron Rule" "$file" || echo "WARN: $file missing Iron Rule"
+            grep -q "^## Principles" "$file" || echo "WARN: $file missing ## Principles"
           done
