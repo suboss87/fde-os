@@ -1,33 +1,28 @@
 # FDEOS
 
-![demo](media/demo.gif)
-
-> **Your AI coding agent already knows how to write code. FDEOS teaches it how to handle a real engagement — the kind where you don't know the codebase, the customer can't articulate the real problem, and you have to ship anyway.**
+Your AI coding agent knows how to write code. FDEOS teaches it how to run an engagement.
 
 ---
 
-## The Problem
+You're dropped into a customer project. The codebase is undocumented. The stakeholder says "fix the payment module" but that's not the real problem. You don't know who to trust, where the bodies are buried, or what done looks like.
 
-You're dropped into a customer project. The codebase is old, undocumented, and partially broken. The stakeholder says "fix the payment module," but you sense that's not the real issue. You don't know the codebase, who to trust, or where the skeletons are buried.
-
-Without FDEOS, you figure it out alone. Weeks of trial and error. Wrong assumptions. Fingers crossed on deploy day.
+FDEOS gives your agent the judgment to handle that.
 
 ---
 
 ## How it works
 
-Invoke `@fde`. Tell it what's happening. It asks one question if it needs clarity, then gives direction like a 30-year veteran who has seen this exact situation before.
+Invoke `@fde`. Tell it what's happening. It asks one question if it needs clarity, then tells you what to do — like a 30-year veteran sitting next to you who's seen this exact situation before.
 
-You don't pick a skill. You don't read a methodology. You just describe your situation and get told what to do next.
+You don't pick a skill. You don't read a playbook. You describe your situation and get told what to do next.
 
-Everything gets written to a `.fde/` directory — trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another FDE picks it up and is operational in minutes.
+Everything gets written to `.fde/` — trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another FDE picks it up and is operational in minutes.
 
 ---
 
-## See it in action
+## In practice
 
 ```
-$ claude
 > @fde "I'm starting at Meridian Bank. Payments are failing. First meeting in an hour."
 
 Before you write any code, ask what workaround they've been using.
@@ -40,66 +35,49 @@ Build a throwaway that mimics the spreadsheet and show it today.
 Note: the spreadsheet contains transaction data — treat it as sensitive.
 ```
 
-No code written. The real problem surfaced in 3 minutes.
+No code written. Real problem found in 3 minutes.
 
 ---
 
-## Quick Start
+## Install
 
 ```bash
 # Claude Code
-/plugin marketplace add suboss87/fde-marketplace
-/plugin install fde-os@suboss87/fde-marketplace
-
-# Cursor
-/add-plugin fde-os
-
-# Any agent
 npx skills add suboss87/fde-os
+
+# Cursor / Windsurf / any agent
+/add-plugin fde-os
 ```
 
-All platforms: [docs/install.md](docs/install.md)
+Full install guide: [docs/install.md](docs/install.md)
 
 ---
 
 ## Skills
 
-You don't need to know these. `@fde` routes to the right one based on what you tell it.
+You don't pick these. `@fde` routes to the right one based on what you tell it.
 
-| Skill | When it activates |
-|-------|------------------|
-| `@fde` | Any moment. Tell your story. |
-| `@fde-land` | New engagement. First 48 hours. |
-| `@fde-audit` | Taking over mid-engagement or brownfield parachute. |
-| `@fde-discover` | Finding the real problem and mapping the terrain. |
-| `@fde-sketch` | Validate direction before committing to a build. |
-| `@fde-build` | Safe implementation in any codebase, legacy or new. |
-| `@fde-rescue` | Production fire. Something's broken and it can't wait. |
-| `@fde-ship` | Deploy safely with canary and tested rollback. |
-| `@fde-close` | Wrap up, encode what was learned, hand off cleanly. |
-| `@fde-dashboard` | Generate a status view across all your active engagements. |
-
-Full reference: [docs/skills-reference.md](docs/skills-reference.md)
+| Skill | What it does |
+|-------|-------------|
+| `@fde` | Entry point. Tell your story. |
+| `@fde-land` | First 48 hours. Builds trust, maps stakeholders, defines success. |
+| `@fde-audit` | Taking over mid-engagement. Separates what's real from what's assumed. |
+| `@fde-discover` | Finds the real problem. Maps the codebase. Surfaces shadow processes. |
+| `@fde-sketch` | Builds a throwaway to validate direction. Pitches it in business terms. |
+| `@fde-build` | Safe implementation. Characterisation tests, Strangler Fig, blast radius. |
+| `@fde-rescue` | Production fire. Stabilise first, understand second, fix third. |
+| `@fde-ship` | Deploy safely. Pre-flight checklist, canary, verified rollback. |
+| `@fde-close` | Wrap up. Retrospective, pattern extraction, clean handoff. |
+| `@fde-dashboard` | Generates a status view across all active engagements. |
 
 ---
 
-## Who this is for
+## For regulated industries
 
-- **Engineers dropped into messy enterprise projects** — "fix this legacy system" with no docs and no context
-- **Independent consultants and agencies** — run engagements end-to-end without a team behind you
-- **Technical founders** — ship into regulated, brownfield, or high-stakes environments
-- **Anyone leading an AI or software transformation** — from a $10K gig to a $50M programme
+Drop these alongside FDEOS in `.claude/skills/`:
 
-Works for any industry. Any size of engagement. Any stage — start, middle, or crisis.
-
----
-
-## Enterprise patterns
-
-Drop these into `.claude/skills/` alongside FDEOS for regulated industries.
-
-| Pattern | Adds |
-|---------|------|
+| Pattern | What it adds |
+|---------|-------------|
 | `healthcare-fde` | HIPAA: PHI handling, audit trails, encryption |
 | `fintech-fde` | PCI-DSS: transaction integrity, fraud detection, idempotency |
 | `gov-fde` | FedRAMP: security boundaries, ATO awareness, data sovereignty |
@@ -108,9 +86,7 @@ Drop these into `.claude/skills/` alongside FDEOS for regulated industries.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
+[CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License
 
