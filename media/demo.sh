@@ -44,25 +44,28 @@ typeuser "@fde Day one at RetailBank. Payments are failing. CTO meeting in 30 mi
 sleep 1.0
 
 echo ""
-stream "Before that meeting, find someone in ops." 0.028
+stream "Don't prepare anything. Use the meeting." 0.028
 sleep 0.3
-stream "Ask them: when a payment fails, what do you actually do right now?" 0.024
+stream "Open with: 'Before I look at any code, walk me through" 0.024
+stream " what happens when a payment fails today.'" 0.024
+sleep 0.3
+stream "Let them talk. The real problem will surface in that answer." 0.024
 echo ""
-sleep 3.2
+sleep 3.5
 
 # --- Skill 2: DISCOVER ---
 label "[ @fde-discover ]"
 printf "${PROMPT} "
 sleep 0.3
-typeuser "They copy failed transactions into a spreadsheet and reprocess manually every night."
+typeuser "They said ops reprocesses failed payments manually every night from a spreadsheet."
 sleep 1.0
 
 echo ""
-stream "That spreadsheet is your real brief." 0.03
+stream "That spreadsheet is the real brief." 0.03
 sleep 0.3
-stream "Nobody hired you to fix the API. They need that manual process automated." 0.024
+stream "Ask to see it before the meeting ends." 0.024
 sleep 0.3
-stream "Get a copy before the meeting. That is what you are actually building." 0.024
+stream "What you build should automate that sheet, not fix the API." 0.024
 echo ""
 sleep 3.2
 
@@ -70,13 +73,13 @@ sleep 3.2
 label "[ @fde-build ]"
 printf "${PROMPT} "
 sleep 0.3
-typeuser "CTO approved the plan. Ready to build. Codebase is 8 years old."
+typeuser "CTO approved. Starting on the build. Payment module is 8 years old."
 sleep 1.0
 
 echo ""
-stream "Before any code: write characterisation tests on the retry logic." 0.028
+stream "Before any code: write characterisation tests on the payment module." 0.028
 sleep 0.3
-stream "Not to check if it is correct. To find out what it actually does." 0.024
+stream "Not to check correctness. To find out what it actually does." 0.024
 sleep 0.3
 stream "Eight-year-old code does things nobody remembers. Tests will show you." 0.024
 echo ""
