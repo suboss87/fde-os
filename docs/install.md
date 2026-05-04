@@ -2,61 +2,39 @@
 
 ## Claude Code
 
-The only install method that works today is manual. Two commands, then you're running.
+```bash
+npx fdeos@latest
+```
+
+The installer copies all skills and hooks to `~/.claude/skills/` automatically.
+
+Then add CLAUDE.md to your project:
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/suboss87/fde-os.git
-
-# 2. Copy skills to your Claude Code global skills directory
-mkdir -p ~/.claude/skills
-cp -r fde-os/skills/* ~/.claude/skills/
+cp ~/.claude/FDEOS-CLAUDE.md.template ./CLAUDE.md
 ```
 
-Then in your project, copy the CLAUDE.md template:
-
-```bash
-cp fde-os/CLAUDE.md.template /path/to/your-project/CLAUDE.md
-```
-
-Open Claude Code in your project directory and type:
-
-```
-@fde
-```
-
-Tell it what's happening. That's it.
+Open Claude Code in your project and type `@fde` to start.
 
 ---
 
 ## Cursor / Windsurf / other agents
 
-Same process, copy the skills directory to wherever your agent loads skills from. Check your agent's documentation for the skills directory path.
-
-For any agent that reads a CLAUDE.md or system prompt file, copy `CLAUDE.md.template` to that location.
-
----
-
-## Enterprise overlays (healthcare, fintech, government)
-
-The enterprise overlays are included in the skills directory. They activate automatically when `@fde` detects the relevant context, no separate install needed.
-
-If you want to load them permanently for a specific engagement:
-
 ```bash
-# Example: healthcare engagement
-cp fde-os/skills/healthcare-fde/SKILL.md /path/to/your-project/.claude/skills/
+npx fdeos@latest
 ```
+
+After running the installer, copy the skills to your agent's skills directory and `FDEOS-CLAUDE.md.template` to your project's system prompt file. Check your agent's documentation for the skills directory path.
 
 ---
 
 ## Keeping FDEOS updated
 
 ```bash
-cd fde-os
-git pull
-cp -r skills/* ~/.claude/skills/
+npx fdeos@latest
 ```
+
+Same command installs and updates.
 
 ---
 
@@ -80,6 +58,21 @@ cp -r skills/* ~/.claude/skills/
   healthcare-fde/   HIPAA overlay
   fintech-fde/      PCI-DSS overlay
   gov-fde/          FedRAMP overlay
+
+~/.claude/hooks/
+  session-start     loads @fde and engagement context on every session
+  pre-compact       preserves key state before context window resets
 ```
 
-Your project's `CLAUDE.md` tells Claude Code to load these skills at the start of every session.
+Your project's `CLAUDE.md` tells Claude Code to use these skills at the start of every session.
+
+---
+
+## Manual install (no npm)
+
+```bash
+git clone https://github.com/suboss87/fde-os.git
+mkdir -p ~/.claude/skills
+cp -r fde-os/skills/* ~/.claude/skills/
+cp fde-os/CLAUDE.md.template ./CLAUDE.md
+```

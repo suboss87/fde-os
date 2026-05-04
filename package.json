@@ -1,0 +1,34 @@
+{
+  "name": "fdeos",
+  "version": "1.0.0",
+  "description": "The engagement operating system for Forward Deployed Engineers. Skills plugin for Claude Code and other AI agents.",
+  "bin": {
+    "fdeos": "./bin/install.js"
+  },
+  "scripts": {
+    "postinstall": "node bin/install.js"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "hooks/",
+    "CLAUDE.md.template"
+  ],
+  "keywords": [
+    "claude-code",
+    "ai-agent",
+    "skills",
+    "plugin",
+    "fde",
+    "forward-deployed",
+    "engineering"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suboss87/fde-os.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

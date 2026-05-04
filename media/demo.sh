@@ -31,39 +31,32 @@ echo -e "${DIM}Claude Code  v1.x${RESET}"
 echo ""
 sleep 0.8
 
-# Turn 1 — crisis lands
+# FDE just landed — universal scenario every FDE knows
 printf "${PROMPT} "
 sleep 0.3
-typeuser "@fde Checkout is throwing 500s. Revenue stopped 15 minutes ago. I just got paged."
+typeuser "@fde Just landed at a healthcare startup. They want to rewrite the patient portal. No handover docs. Team seems nervous."
 sleep 1.0
 
 echo ""
-stream "What changed in the last 2 hours — deploy, config, or infrastructure?" 0.025
-echo ""
-sleep 2.2
-
-# Turn 2 — user gives context
-printf "${PROMPT} "
-sleep 0.3
-typeuser "Config update went out 90 minutes ago. Nothing else touched."
-sleep 1.0
-
-echo ""
-stream "Roll back the config now. Don't diagnose yet." 0.028
-sleep 0.25
-stream "Stabilise production first. Understand why second." 0.028
+stream "Before anything else, one question:" 0.028
+sleep 0.2
+stream "What would a failed engagement look like for the person who hired you?" 0.025
 echo ""
 sleep 2.5
 
-# Turn 3 — stable, now go deeper
+# FDE answers — the hidden compliance context surfaces
 printf "${PROMPT} "
 sleep 0.3
-typeuser "Rolled back. Orders are coming through."
+typeuser "The CTO. He's worried about data compliance. They had an audit last year."
 sleep 1.0
 
 echo ""
-stream "Good. Now find out what that config was trying to fix." 0.025
-sleep 0.25
-stream "That's the real problem. The outage was just the symptom." 0.025
+stream "That changes the brief." 0.03
+sleep 0.3
+stream "This is not a rewrite project. It is a compliance project with a portal on top." 0.025
+sleep 0.3
+stream "Before any code: find out what the audit found and whether it was remediated." 0.025
+sleep 0.2
+stream "That is your real brief." 0.03
 echo ""
-sleep 3.0
+sleep 3.5

@@ -16,7 +16,7 @@ FDEOS gives your AI agent the judgment to operate in that environment.
 <br>
 
 ```bash
-git clone https://github.com/suboss87/fde-os && mkdir -p ~/.claude/skills && cp -r fde-os/skills/* ~/.claude/skills/
+npx fdeos@latest
 ```
 
 Works with Claude Code, Cursor, Windsurf, Cline, and any AI agent.
@@ -72,20 +72,20 @@ At any point: `@fde-rescue` for production fires. `@fde-debug` for systematic de
 ## Install
 
 ```bash
-# Clone and install skills globally
-git clone https://github.com/suboss87/fde-os
-mkdir -p ~/.claude/skills
-cp -r fde-os/skills/* ~/.claude/skills/
+npx fdeos@latest
+```
 
-# Add CLAUDE.md to your project
-cp fde-os/CLAUDE.md.template /path/to/your-project/CLAUDE.md
+The installer copies all skills and hooks to `~/.claude/skills/` automatically.
+
+Then add CLAUDE.md to your project:
+
+```bash
+cp ~/.claude/FDEOS-CLAUDE.md.template ./CLAUDE.md
 ```
 
 Open Claude Code in your project and type `@fde` to start.
 
-For Cursor, Windsurf, or other agents: copy the `skills/` directory to your agent's skills folder and `CLAUDE.md.template` to your project's system prompt file.
-
-Full install guide: [docs/install.md](docs/install.md)
+For Cursor, Windsurf, or other agents: see [docs/install.md](docs/install.md).
 
 ---
 
