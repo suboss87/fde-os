@@ -1,0 +1,39 @@
+#!/bin/bash
+# PreCompact hook for FDEOS
+# Before the context window resets, extract the essential state so nothing
+# critical is lost. Writes a compressed summary back to .fde/context.md.
+
+CONTEXT_FILE=".fde/context.md"
+DECISIONS_FILE=".fde/decisions.md"
+RISKS_FILE=".fde/risks.md"
+
+if [ ! -d ".fde" ]; then
+  exit 0
+fi
+
+TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+# Extract last 3 decisions if decisions.md exists
+LAST_DECISIONS=""
+if [ -f "$DECISIONS_FILE" ]; then
+  LAST_DECISIONS=$(tail -30 "$DECISIONS_FILE" 2>/dev/null)
+fi
+
+# Extract open risks if risks.md exists
+OPEN_RISKS=""
+if [ -f "$RISKS_FILE" ]; then
+  OPEN_RISKS=$(grep -i "open\|active\|unresolved" "$RISKS_FILE" 2>/dev/null | head -10)
+fi
+
+# Append compact state marker to context.md
+cat >> "$CONTEXT_FILE" << EOF
+
+---
+[Context preserved at $TIMESTAMP before compaction]
+Recent decisions:
+$LAST_DECISIONS
+
+Open risks carried forward:
+$OPEN_RISKS
+---
+EOF
