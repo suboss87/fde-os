@@ -2,7 +2,9 @@
 
 # FDEOS
 
-**Your AI coding agent knows how to write code. FDEOS teaches it how to run an engagement.**
+**The engagement operating system for Forward Deployed Engineers.**
+
+A Forward Deployed Engineer is the person sent into a customer's environment to solve what their team couldn't. You don't know the codebase. You don't know who to trust. You have to ship anyway.
 
 **Works with Claude Code, Cursor, Windsurf, Cline, and any AI agent.**
 
@@ -15,11 +17,11 @@
 
 ```bash
 git clone https://github.com/suboss87/fde-os.git
-cp -r fde-os/skills/* ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -r fde-os/skills/* ~/.claude/skills/
 cp fde-os/CLAUDE.md.template your-project/CLAUDE.md
 ```
 
-**Works at any stage — new engagement, mid-project, or crisis.**
+Open Claude Code in your project and type `@fde` to start.
 
 <br>
 
@@ -35,7 +37,7 @@ cp fde-os/CLAUDE.md.template your-project/CLAUDE.md
 
 <br>
 
-[How it works](#how-it-works) · [Skills](#skills) · [Enterprise](#for-regulated-industries) · [Install](docs/install.md)
+[How it works](#how-it-works) · [Skills](#skills) · [Enterprise](#for-regulated-industries) · [Full install guide](docs/install.md)
 
 </div>
 
@@ -45,7 +47,7 @@ A real engagement isn't just a coding problem.
 
 It's the first 48 hours where you don't know who to trust or what success actually means. It's building safely inside a codebase you've never seen, where the wrong move breaks production. It's a crisis at 2am where the pressure is to act fast but the right move is to stop and ask one question first. It's a code review that checks blast radius and rollback path, not just style. It's a handoff where the team has to sustain everything you built after you're gone.
 
-FDEOS gives your agent the judgment to handle all of it — from landing to close.
+FDEOS gives your AI agent the judgment to handle all of it — from landing to close.
 
 ---
 
@@ -55,9 +57,7 @@ Invoke `@fde`. Tell it what's happening. It asks one question if it needs clarit
 
 You don't pick a skill. You don't read a playbook. You describe your situation and get told what to do next.
 
-Everything gets written to `.fde/` — trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another FDE picks it up and is operational in minutes.
-
-Token efficiency is built in. Each skill loads only what it needs from `.fde/`. Sensitive data is tagged `<private>` and never enters AI context. The context window stays clean across a long engagement.
+Everything gets written to `.fde/` in your project — trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another FDE picks it up and is operational in minutes.
 
 ---
 
@@ -83,7 +83,7 @@ You don't pick these. `@fde` routes to the right one based on what you tell it.
 
 | Skill | What it does |
 |-------|-------------|
-| `@fde-plan` | Break work into atomic tasks before building. Sequence by risk, not by preference. |
+| `@fde-plan` | Break work into atomic tasks before building. Sequence by risk, not preference. |
 | `@fde-review` | Two-stage code review — did we build what we agreed, then is it safe to ship. |
 | `@fde-debug` | Systematic debugging. Reproduce first, isolate second, fix third. Never guess. |
 
@@ -97,7 +97,7 @@ You don't pick these. `@fde` routes to the right one based on what you tell it.
 
 ## For regulated industries
 
-Drop these alongside FDEOS skills. They activate automatically when `@fde` detects the engagement context.
+These overlays activate automatically when `@fde` detects the engagement context. Included in the install.
 
 | Overlay | What it adds |
 |---------|-------------|
