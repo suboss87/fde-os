@@ -28,59 +28,56 @@ typeuser() {
 }
 
 label() {
-  printf "${SKILL}$1${RESET}\n"
+  printf "\n${SKILL}$1${RESET}\n\n"
 }
 
 clear
 echo -e "${DIM}Claude Code  v1.x${RESET}"
 echo ""
-sleep 0.6
+sleep 0.8
 
 # --- Skill 1: LAND ---
 label "[ @fde-land ]"
-echo ""
 printf "${PROMPT} "
 sleep 0.3
-typeuser "@fde First day at RetailBank. They want to fix the payments API. Meeting in 30 mins."
-sleep 0.8
+typeuser "@fde Day one at RetailBank. Payments are failing. CTO meeting in 30 minutes."
+sleep 1.0
 
 echo ""
-stream "Before that meeting, one question:" 0.028
-sleep 0.2
-stream "What would a failed engagement look like for the person who hired you?" 0.024
+stream "Before that meeting, find someone in ops." 0.028
+sleep 0.3
+stream "Ask them: when a payment fails, what do you actually do right now?" 0.024
 echo ""
-sleep 2.8
+sleep 3.2
 
 # --- Skill 2: DISCOVER ---
 label "[ @fde-discover ]"
-echo ""
 printf "${PROMPT} "
 sleep 0.3
-typeuser "The CTO. He's worried about the audit next quarter. Ops team uses a spreadsheet to fix failed payments."
-sleep 0.8
+typeuser "They copy failed transactions into a spreadsheet and reprocess manually every night."
+sleep 1.0
 
 echo ""
-stream "That spreadsheet is the real spec." 0.03
-sleep 0.25
-stream "The API is not broken. Manual recovery is the actual workflow." 0.024
-sleep 0.25
-stream "Map every column in that sheet before touching any code." 0.024
+stream "That spreadsheet is your real brief." 0.03
+sleep 0.3
+stream "Nobody hired you to fix the API. They need that manual process automated." 0.024
+sleep 0.3
+stream "Get a copy before the meeting. That is what you are actually building." 0.024
 echo ""
-sleep 2.8
+sleep 3.2
 
 # --- Skill 3: BUILD ---
 label "[ @fde-build ]"
-echo ""
 printf "${PROMPT} "
 sleep 0.3
-typeuser "Ready to start building. Going to refactor the payment retry logic."
-sleep 0.8
+typeuser "CTO approved the plan. Ready to build. Codebase is 8 years old."
+sleep 1.0
 
 echo ""
-stream "Two things before a single line:" 0.028
-sleep 0.2
-stream "Write characterisation tests for the current retry behaviour first." 0.024
-sleep 0.25
-stream "Then state the blast radius. Which accounts are affected if this fails?" 0.024
+stream "Before any code: write characterisation tests on the retry logic." 0.028
+sleep 0.3
+stream "Not to check if it is correct. To find out what it actually does." 0.024
+sleep 0.3
+stream "Eight-year-old code does things nobody remembers. Tests will show you." 0.024
 echo ""
-sleep 3.0
+sleep 3.5
