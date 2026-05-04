@@ -1,6 +1,6 @@
 # CLAUDE.md - FDEOS Active
 
-You are a co-pilot for a Forward Deployed Engineer. When invoked, you behave like a 30-year veteran sitting next to them — asking the right questions, giving clear direction, and guiding them toward the outcome without overwhelming them.
+You are a co-pilot for a Forward Deployed Engineer. When invoked, you behave like a 30-year veteran sitting next to them, asking the right questions, giving clear direction, and guiding them toward the outcome without overwhelming them.
 
 ## How to engage
 
@@ -14,7 +14,7 @@ Load `.fde/context.md` on every session start. Load other `.fde/` files only whe
 
 ## Entry point
 
-`@fde` — the FDE tells you what's happening. You route to the right skill.
+`@fde`: the FDE tells you what's happening. You route to the right skill.
 
 ## Engagement phase skills
 
@@ -51,7 +51,7 @@ Activate alongside phase skills when the engagement context matches.
 
 ## Context persistence
 
-Every skill reads from and writes to `.fde/` in the project root. This directory holds the engagement brain — trust profile, real problem, terrain map, decisions, risks, delivery record.
+Every skill reads from and writes to `.fde/` in the project root. This directory holds the engagement brain, trust profile, real problem, terrain map, decisions, risks, delivery record.
 
 `.fde/` is local only. It must be in `.gitignore`. It contains sensitive information about the customer.
 
@@ -61,22 +61,22 @@ Sensitive data is tagged `<private>` in `.fde/` files. Never include `<private>`
 
 ```
 .fde/
-  context.md         — compact engagement state, always loaded first
-  brief.md           — what they said the problem is
-  success.md         — agreed definition of done and how it's measured
-  trust-profile.md   — sacred data (<private> tagged), AI policy, approval chain
-  stakeholders.md    — who matters, who's resistant, who's your champion
-  reality.md         — what the real problem actually is
-  terrain.md         — codebase map, hotspots, data flow, test gaps
-  audit.md           — mid-engagement state assessment
-  prototype-log.md   — what was built, shown, and learned
-  business-case.md   — customer problem, cost of inaction, success metrics
-  decisions.md       — every significant choice and why
-  risks.md           — live risk register
-  delivery.md        — what shipped and running value log
-  chaos-log.md       — incident records with root cause
-  handoff.md         — operational knowledge for the team taking over
-  patterns.md        — reusable patterns extracted from this engagement
+  context.md         compact engagement state, always loaded first
+  brief.md           what they said the problem is
+  success.md         agreed definition of done and how it's measured
+  trust-profile.md   sacred data (<private> tagged), AI policy, approval chain
+  stakeholders.md    who matters, who's resistant, who's your champion
+  reality.md         what the real problem actually is
+  terrain.md         codebase map, hotspots, data flow, test gaps
+  audit.md           mid-engagement state assessment
+  prototype-log.md   what was built, shown, and learned
+  business-case.md   customer problem, cost of inaction, success metrics
+  decisions.md       every significant choice and why
+  risks.md           live risk register
+  delivery.md        what shipped and running value log
+  chaos-log.md       incident records with root cause
+  handoff.md         operational knowledge for the team taking over
+  patterns.md        reusable patterns extracted from this engagement
 ```
 
 ## Voice

@@ -12,7 +12,7 @@ Something is broken and it can't wait. This skill operates in crisis mode: minim
 
 > "What changed in the last 2 hours?"
 
-That single question narrows the blast radius faster than any diagnostic. Something changed — a deploy, a config update, a data migration, a scheduled job. Find it.
+That single question narrows the blast radius faster than any diagnostic. Something changed, a deploy, a config update, a data migration, a scheduled job. Find it.
 
 ## The rescue sequence
 
@@ -26,7 +26,7 @@ List explicitly what you don't know. "We don't know if the queue is corrupted, w
 Every undocumented subsystem is critical until proven otherwise. Treat the unknown dependency as load-bearing.
 
 **4. Minimum safe change.**
-Find the smallest possible intervention. Often it's a read-only query first — observe before acting. Don't fix two things at once.
+Find the smallest possible intervention. Often it's a read-only query first, observe before acting. Don't fix two things at once.
 
 **5. Hypothesis-driven debugging.**
 "If the problem is X, then doing Y should produce Z." Test one hypothesis at a time. Document each one.
@@ -51,7 +51,7 @@ Then decide: does this change the calibration? Does `reality.md` need updating? 
 
 ## Writes to `.fde/`
 
-**`chaos-log.md`** — what happened, what changed, hypotheses tested, what fixed it, what was learned. Written immediately after resolution while memory is fresh.
+**`chaos-log.md`**: what happened, what changed, hypotheses tested, what fixed it, what was learned. Written immediately after resolution while memory is fresh.
 
 Update `risks.md` with any new risks the crisis revealed.
 

@@ -31,7 +31,7 @@ Tell it what's happening. That's it.
 
 ## Cursor / Windsurf / other agents
 
-Same process — copy the skills directory to wherever your agent loads skills from. Check your agent's documentation for the skills directory path.
+Same process, copy the skills directory to wherever your agent loads skills from. Check your agent's documentation for the skills directory path.
 
 For any agent that reads a CLAUDE.md or system prompt file, copy `CLAUDE.md.template` to that location.
 
@@ -39,7 +39,7 @@ For any agent that reads a CLAUDE.md or system prompt file, copy `CLAUDE.md.temp
 
 ## Enterprise overlays (healthcare, fintech, government)
 
-The enterprise overlays are included in the skills directory. They activate automatically when `@fde` detects the relevant context — no separate install needed.
+The enterprise overlays are included in the skills directory. They activate automatically when `@fde` detects the relevant context, no separate install needed.
 
 If you want to load them permanently for a specific engagement:
 
@@ -64,22 +64,22 @@ cp -r skills/* ~/.claude/skills/
 
 ```
 ~/.claude/skills/
-  fde/              — entry point, routes to everything
-  fde-land/         — first 48 hours
-  fde-audit/        — mid-engagement takeover
-  fde-discover/     — find the real problem
-  fde-sketch/       — prototype and pitch
-  fde-build/        — safe implementation
-  fde-rescue/       — production crisis
-  fde-ship/         — deploy safely
-  fde-close/        — wrap up and hand off
-  fde-plan/         — task breakdown
-  fde-review/       — code review
-  fde-debug/        — systematic debugging
-  fde-dashboard/    — status across engagements
-  healthcare-fde/   — HIPAA overlay
-  fintech-fde/      — PCI-DSS overlay
-  gov-fde/          — FedRAMP overlay
+  fde/              entry point, routes to everything
+  fde-land/         first 48 hours
+  fde-audit/        mid-engagement takeover
+  fde-discover/     find the real problem
+  fde-sketch/       prototype and pitch
+  fde-build/        safe implementation
+  fde-rescue/       production crisis
+  fde-ship/         deploy safely
+  fde-close/        wrap up and hand off
+  fde-plan/         task breakdown
+  fde-review/       code review
+  fde-debug/        systematic debugging
+  fde-dashboard/    status across engagements
+  healthcare-fde/   HIPAA overlay
+  fintech-fde/      PCI-DSS overlay
+  gov-fde/          FedRAMP overlay
 ```
 
 Your project's `CLAUDE.md` tells Claude Code to load these skills at the start of every session.

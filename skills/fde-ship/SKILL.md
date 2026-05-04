@@ -10,7 +10,7 @@ Shipping is the moment everything either lands or blows up. This skill makes sur
 
 ## Opening
 
-> "Is the rollback tested and confirmed? Not planned — tested."
+> "Is the rollback tested and confirmed? Not planned, tested."
 
 If the answer is no, that's the first thing to fix.
 
@@ -26,7 +26,7 @@ Work through this before any deployment:
 - The team knows a deploy is happening.
 - Not a Friday unless it's a genuine emergency with someone on call.
 
-Don't proceed until every item is confirmed. Not assumed — confirmed.
+Don't proceed until every item is confirmed. Not assumed, confirmed.
 
 ## Deployment sequence
 
@@ -44,7 +44,7 @@ Update delivery.md with what shipped, when, what it delivers, and how to roll ba
 
 ## Writes to .fde/
 
-delivery.md — deployment record and running value log updated with this deployment's contribution.
+delivery.md, deployment record and running value log updated with this deployment's contribution.
 
 ## Principles
 - A deployment without a tested rollback is reckless.

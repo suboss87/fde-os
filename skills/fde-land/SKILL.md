@@ -10,7 +10,7 @@ The first 48 hours decide the engagement. This skill makes sure the FDE walks in
 
 ## Opening question
 
-> "Before we look at anything technical — what would a bad outcome look like for you personally on this one?"
+> "Before we look at anything technical, what would a bad outcome look like for you personally on this one?"
 
 Wait for the full answer. This question unlocks more than any technical audit. People tell you their real fears when you ask about failure, not success.
 
@@ -22,7 +22,7 @@ Wait for the full answer. This question unlocks more than any technical audit. P
 
 **Political signals:** names that come up more than once, anyone described as "difficult" or "protective," any mention of past failed attempts.
 
-**AI policy:** ask directly before any code is generated — "Does your organisation have a policy on AI-generated code?" Especially in regulated environments.
+**AI policy:** ask directly before any code is generated, "Does your organisation have a policy on AI-generated code?" Especially in regulated environments.
 
 ## Second question (only if needed)
 
@@ -45,13 +45,13 @@ If remote: note that trust-building takes longer. Suggest a short video call bef
 
 ## Writes to `.fde/`
 
-**`brief.md`** — what they said the problem is, who sent you, what the timeline is.
+**`brief.md`**: what they said the problem is, who sent you, what the timeline is.
 
-**`success.md`** — what done looks like, how it gets measured, who signs off. Agreed with the customer, not assumed.
+**`success.md`**: what done looks like, how it gets measured, who signs off. Agreed with the customer, not assumed.
 
-**`trust-profile.md`** — sacred data identified, fears heard, AI policy confirmed, approval chain mapped.
+**`trust-profile.md`**: sacred data identified, fears heard, AI policy confirmed, approval chain mapped.
 
-**`stakeholders.md`** — who matters, who's resistant, who's your champion, who has veto power.
+**`stakeholders.md`**: who matters, who's resistant, who's your champion, who has veto power.
 
 ## Principles
 - Never start technical work before `success.md` exists.

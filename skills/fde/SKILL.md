@@ -6,7 +6,7 @@ description: Entry point for FDEOS. Invoke at any moment in any engagement. Tell
 # @fde
 
 ## Purpose
-The single entry point for everything. An FDE invokes this at the start of an engagement, mid-project, in a crisis, or mid-build when they need a second opinion. It reads existing context, listens to what's happening, and routes to the right skill — without the engineer having to know which skill that is.
+The single entry point for everything. An FDE invokes this at the start of an engagement, mid-project, in a crisis, or mid-build when they need a second opinion. It reads existing context, listens to what's happening, and routes to the right skill, without the engineer having to know which skill that is.
 
 ## Token efficiency
 Load only `context.md` on entry. Load other `.fde/` files only when routing to a skill that needs them. Never load the full directory upfront.
@@ -23,7 +23,7 @@ If nothing exists yet:
 
 One question. Wait. Listen to the full answer before doing anything.
 
-## Routing — engagement phase
+## Routing: engagement phase
 
 **Route to `@fde-land`** when you hear: starting fresh, new customer, first meeting, just got the brief, haven't started yet.
 
@@ -41,7 +41,7 @@ One question. Wait. Listen to the full answer before doing anything.
 
 **Route to `@fde-close`** when you hear: wrapping up, engagement ending, handing off, writing up what we learned.
 
-## Routing — execution quality
+## Routing: execution quality
 
 **Route to `@fde-plan`** when you hear: need to break this down, what order should we do this, how do we sequence the build, planning the tasks.
 
@@ -49,11 +49,11 @@ One question. Wait. Listen to the full answer before doing anything.
 
 **Route to `@fde-debug`** when you hear: something's broken, can't figure out why, bug I can't reproduce, this shouldn't be happening.
 
-## Routing — visibility
+## Routing: visibility
 
 **Route to `@fde-dashboard`** when you hear: show me all my projects, status overview, where am I across everything.
 
-## Enterprise overlays — activate alongside core skills
+## Enterprise overlays: activate alongside core skills
 
 **Activate `healthcare-fde`** when the engagement involves patient data, clinical systems, PHI, HIPAA, EHR, or anything described as "health information."
 
@@ -61,7 +61,7 @@ One question. Wait. Listen to the full answer before doing anything.
 
 **Activate `gov-fde`** when the engagement involves a government agency, federal data, FedRAMP, ATO, CUI, or classified environments.
 
-Enterprise overlays load alongside the phase skill — they don't replace it. A government engagement in rescue mode activates both `@fde-rescue` and `gov-fde`.
+Enterprise overlays load alongside the phase skill, they don't replace it. A government engagement in rescue mode activates both `@fde-rescue` and `gov-fde`.
 
 ## If it's not clear, ask one question
 
@@ -80,9 +80,9 @@ If the FDE says "how are we doing," "check in," or "are we on track":
 
 Four lines. Red, amber, or green for each. No ceremony.
 
-## Three speeds — ask once on a new engagement
+## Three speeds: ask once on a new engagement
 
-> "How long do you have for this — a couple of days, a few weeks, or longer?"
+> "How long do you have for this, a couple of days, a few weeks, or longer?"
 
 - **Sprint** (1-2 days): land fast, find the real problem, build a throwaway, ship something visible. Skip ceremony. Every action must create forward momentum.
 - **Standard** (1-4 weeks): full sequence at a measured pace. One stakeholder check-in per phase. Document decisions as you go.
@@ -95,5 +95,5 @@ Speed changes the depth of each skill, not which skills are used.
 - Read `context.md` before speaking. Context is already there.
 - One question maximum before acting.
 - Route based on what you hear, not what you assume.
-- Enterprise overlays activate on signal — don't wait to be told.
+- Enterprise overlays activate on signal: don't wait to be told.
 - Token efficiency: load `.fde/` files on demand, not upfront.

@@ -6,7 +6,7 @@ description: Generate a clean HTML dashboard from all .fde/ data. Shows every ac
 # @fde-dashboard
 
 ## Purpose
-An FDE works across multiple engagements simultaneously. This skill reads all `.fde/` directories it can find and generates a single clean HTML file — a reflection board showing the full picture across every project.
+An FDE works across multiple engagements simultaneously. This skill reads all `.fde/` directories it can find and generates a single clean HTML file, a reflection board showing the full picture across every project.
 
 ## What it does
 
@@ -42,11 +42,11 @@ The FDE opens it, sees everything across all their projects in one view, and kno
 
 ## If .fde/ data is sparse
 
-Some engagements will have more context than others. Generate what exists. Don't pad gaps. An empty field is honest — it tells the FDE what they haven't captured yet.
+Some engagements will have more context than others. Generate what exists. Don't pad gaps. An empty field is honest, it tells the FDE what they haven't captured yet.
 
 ## Writes to
 
-**`fde-dashboard.html`** — generated in the root of the current directory.
+**`fde-dashboard.html`**: generated in the root of the current directory.
 
 ## Principles
 - Read what's there. Don't invent what's not.

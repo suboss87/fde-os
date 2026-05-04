@@ -1,6 +1,6 @@
 # FDEOS Skills Reference
 
-13 skills across three groups. You don't invoke these directly — `@fde` routes to the right one based on your situation.
+13 skills across three groups. You don't invoke these directly, `@fde` routes to the right one based on your situation.
 
 ---
 
@@ -40,7 +40,7 @@
 
 ## Enterprise overlays
 
-These activate alongside phase skills when the engagement context matches. They don't replace phase skills — they layer on top.
+These activate alongside phase skills when the engagement context matches. They don't replace phase skills, they layer on top.
 
 | Overlay | Adds |
 |---------|------|
@@ -56,22 +56,22 @@ Every skill reads from and writes to `.fde/` in the project root. This is the en
 
 ```
 .fde/
-  context.md         — compact engagement state (always loaded first)
-  brief.md           — what we were told
-  success.md         — agreed definition of done
-  trust-profile.md   — sacred data (<private> tagged), AI policy, approval chain
-  stakeholders.md    — who matters, who's resistant, who's the champion
-  reality.md         — what the real problem actually is
-  terrain.md         — codebase map, hotspots, data flow, test gaps
-  audit.md           — mid-engagement state (if joining in progress)
-  prototype-log.md   — what was built, shown, and learned
-  business-case.md   — customer problem, success metrics, trade-offs
-  decisions.md       — every significant choice and why
-  risks.md           — live risk register
-  delivery.md        — what shipped and running value log
-  chaos-log.md       — incident records with root cause
-  handoff.md         — operational knowledge for the team taking over
-  patterns.md        — reusable patterns extracted
+  context.md         compact engagement state (always loaded first)
+  brief.md           what we were told
+  success.md         agreed definition of done
+  trust-profile.md   sacred data (<private> tagged), AI policy, approval chain
+  stakeholders.md    who matters, who's resistant, who's the champion
+  reality.md         what the real problem actually is
+  terrain.md         codebase map, hotspots, data flow, test gaps
+  audit.md           mid-engagement state (if joining in progress)
+  prototype-log.md   what was built, shown, and learned
+  business-case.md   customer problem, success metrics, trade-offs
+  decisions.md       every significant choice and why
+  risks.md           live risk register
+  delivery.md        what shipped and running value log
+  chaos-log.md       incident records with root cause
+  handoff.md         operational knowledge for the team taking over
+  patterns.md        reusable patterns extracted
 ```
 
 `.fde/` must be in `.gitignore`. It contains sensitive customer information.
@@ -82,7 +82,7 @@ Sensitive data is tagged `<private>` inside `.fde/` files. This content never en
 
 ## Token efficiency
 
-Skills load `.fde/` files on demand — only what each skill needs. `context.md` is always loaded. Everything else loads only when a specific skill requires it. The context window stays clean across a long engagement.
+Skills load `.fde/` files on demand, only what each skill needs. `context.md` is always loaded. Everything else loads only when a specific skill requires it. The context window stays clean across a long engagement.
 
 ---
 

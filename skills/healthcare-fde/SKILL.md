@@ -14,17 +14,17 @@ Load this alongside the core FDEOS skills for any engagement involving patient d
 - Patient records, EHR, EMR, clinical data
 - HIPAA, HITECH, HL7, FHIR
 - Healthcare provider, hospital, clinic, payer, pharma
-- "We handle patient data" — even informally
+- "We handle patient data": even informally
 
-## PHI — the first conversation
+## PHI: the first conversation
 
 Before any technical work, establish what PHI is in scope. Ask:
 
-> "Walk me through what patient data this system touches — what it stores, what it transmits, and who has access."
+> "Walk me through what patient data this system touches, what it stores, what it transmits, and who has access."
 
 PHI includes more than names and records. IP addresses, device identifiers, geographic data below state level, and dates (other than year) can all constitute PHI in context. When in doubt, treat it as PHI.
 
-Tag everything identified as PHI in `trust-profile.md` under `<private>` markers. This data must never enter AI context in plaintext — not in prompts, not in test fixtures, not in log files used during development.
+Tag everything identified as PHI in `trust-profile.md` under `<private>` markers. This data must never enter AI context in plaintext, not in prompts, not in test fixtures, not in log files used during development.
 
 ## AI code policy in healthcare
 
@@ -34,13 +34,13 @@ Many healthcare organisations prohibit AI tools from processing PHI or generatin
 
 If the answer is unclear, treat it as prohibited until confirmed otherwise. The cost of asking is zero. The cost of getting it wrong is catastrophic.
 
-## Audit trails — non-negotiable
+## Audit trails: non-negotiable
 
-Every action on PHI must be logged: who accessed it, what they did, when, from where. This is not a feature — it's a compliance requirement under HIPAA's Security Rule.
+Every action on PHI must be logged: who accessed it, what they did, when, from where. This is not a feature, it's a compliance requirement under HIPAA's Security Rule.
 
 When reviewing or building code that touches PHI, verify:
 - Access is logged with user identity, timestamp, and action
-- Logs are immutable — they cannot be modified or deleted by application code
+- Logs are immutable: they cannot be modified or deleted by application code
 - Audit logs are stored separately from application logs
 - Retention meets minimum requirements (6 years under HIPAA)
 
@@ -48,7 +48,7 @@ If the system lacks audit logging and you're asked to build a feature that touch
 
 ## Break-glass access
 
-Clinical systems need emergency override mechanisms — a clinician must be able to access a patient record even if normal authentication fails. This is called "break-glass."
+Clinical systems need emergency override mechanisms, a clinician must be able to access a patient record even if normal authentication fails. This is called "break-glass."
 
 Every break-glass event must generate an alert and be reviewed. When you encounter break-glass patterns:
 - Verify the override is logged with full context (who, why, when)
@@ -59,11 +59,11 @@ Every break-glass event must generate an alert and be reviewed. When you encount
 
 The principle: collect and store the minimum PHI necessary for the stated purpose. When building or reviewing features, ask: does this need to store the full record, or would an anonymised aggregate answer the same question?
 
-If a feature can work with de-identified data, it should. De-identification under HIPAA Safe Harbor requires removing 18 specific identifiers — it's not "remove the name."
+If a feature can work with de-identified data, it should. De-identification under HIPAA Safe Harbor requires removing 18 specific identifiers, it's not "remove the name."
 
 ## Consent and purpose limitation
 
-Patient data collected for one purpose cannot be used for another without consent. If the engagement involves analytics, ML training, or any secondary use of patient data, verify that consent covers it. This applies to AI model training — a model trained on patient records without explicit consent is an immediate legal exposure.
+Patient data collected for one purpose cannot be used for another without consent. If the engagement involves analytics, ML training, or any secondary use of patient data, verify that consent covers it. This applies to AI model training, a model trained on patient records without explicit consent is an immediate legal exposure.
 
 ## Encryption requirements
 
@@ -75,8 +75,8 @@ At rest and in transit, minimum:
 Check `trust-profile.md` for any organisation-specific requirements that exceed the minimums.
 
 ## Writes to .fde/
-**`trust-profile.md`** — PHI scope, AI policy confirmation, consent coverage, BAA status.
-**`risks.md`** — any compliance gaps identified, with severity and remediation path.
+**`trust-profile.md`**: PHI scope, AI policy confirmation, consent coverage, BAA status.
+**`risks.md`**: any compliance gaps identified, with severity and remediation path.
 
 ## Principles
 - PHI never enters AI context in plaintext. Tag it `<private>` and handle it outside the model.

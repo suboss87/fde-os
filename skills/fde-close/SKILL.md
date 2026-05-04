@@ -26,12 +26,12 @@ Key questions to work through:
 - What risk almost became a real problem?
 
 **2. The pattern.**
-If something happened in this engagement that will happen again — a compliance approach, a migration pattern, a stakeholder dynamic — encode it. Write it as a skill or a note others can use.
+If something happened in this engagement that will happen again, a compliance approach, a migration pattern, a stakeholder dynamic, encode it. Write it as a skill or a note others can use.
 
 "If you do it twice, encode it."
 
 **3. The handoff document.**
-Written for the person who takes over. Not technical documentation — operational knowledge. The 3 things that will break and how to fix them. The person who holds the tribal knowledge. The monitoring alerts and what they mean. The deployment process in plain language.
+Written for the person who takes over. Not technical documentation, operational knowledge. The 3 things that will break and how to fix them. The person who holds the tribal knowledge. The monitoring alerts and what they mean. The deployment process in plain language.
 
 ## What to tell the FDE
 
@@ -43,11 +43,11 @@ A direct assessment:
 
 ## Writes to `.fde/`
 
-**`retrospectives/[date]-[engagement].md`** — decisions, mistakes, surprises, lessons.
+**`retrospectives/[date]-[engagement].md`**: decisions, mistakes, surprises, lessons.
 
-**`patterns.md`** — reusable patterns extracted from this engagement.
+**`patterns.md`**: reusable patterns extracted from this engagement.
 
-**`handoff.md`** — operational knowledge for whoever maintains this: what breaks, who knows what, how to deploy, how to roll back.
+**`handoff.md`**: operational knowledge for whoever maintains this: what breaks, who knows what, how to deploy, how to roll back.
 
 ## Principles
 - The engagement isn't done until the customer can operate without you.

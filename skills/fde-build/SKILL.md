@@ -12,7 +12,7 @@ Build the real thing. Safely. Whether the codebase is 3 weeks old or 15 years ol
 
 No question needed here usually. The FDE knows they're building. Start with a confirmation:
 
-> "Before we write anything — do we have `terrain.md`? And do we know what the blast radius of this change is?"
+> "Before we write anything, do we have `terrain.md`? And do we know what the blast radius of this change is?"
 
 If terrain.md doesn't exist, run `@fde-discover` first.
 
@@ -24,7 +24,7 @@ If terrain.md doesn't exist, run `@fde-discover` first.
 3. Confirm the rollback path exists before writing a single line.
 
 **For legacy code specifically:**
-Write characterisation tests before modifying anything. These tests lock in the current behaviour — not the intended behaviour, the actual behaviour. They're your safety net.
+Write characterisation tests before modifying anything. These tests lock in the current behaviour, not the intended behaviour, the actual behaviour. They're your safety net.
 
 Then wrap with Strangler Fig: build the new interface around the old code. Deprecate gradually. Never rewrite in place.
 
@@ -35,7 +35,7 @@ Check the AI code policy first (it's in `trust-profile.md`). Some modules in fin
 
 When "also can you add..." arrives mid-build:
 
-Don't say yes immediately. Say: "That's worth adding — let me place it."
+Don't say yes immediately. Say: "That's worth adding, let me place it."
 
 Then: is this the current phase, a future phase, or a separate engagement? What does adding it now cost in time? Log it in `decisions.md`. Every addition is a decision, not a default yes.
 
@@ -46,15 +46,15 @@ After each significant change:
 - Note any new risks discovered
 - Confirm the change is reversible
 
-Weekly: update the value log in `delivery.md`. What has this built week delivered in real terms — time saved, failures prevented, revenue protected.
+Weekly: update the value log in `delivery.md`. What has this built week delivered in real terms, time saved, failures prevented, revenue protected.
 
 ## Writes to `.fde/`
 
-**`decisions.md`** — every significant technical choice: what was decided, alternatives considered, reason.
+**`decisions.md`**: every significant technical choice: what was decided, alternatives considered, reason.
 
-**`risks.md`** — live risk register, updated as new risks surface.
+**`risks.md`**: live risk register, updated as new risks surface.
 
-**`delivery.md`** — running value log: what shipped, what it delivered, how to roll back.
+**`delivery.md`**: running value log: what shipped, what it delivered, how to roll back.
 
 ## Principles
 - Characterisation tests before modification. Every single time.

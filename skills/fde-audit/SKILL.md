@@ -6,7 +6,7 @@ description: Taking over a mid-engagement project. Reads what exists, separates 
 # @fde-audit
 
 ## Purpose
-You're not starting fresh. Someone else was here before you — or the team has been building something for weeks. Before touching anything, you need to know what's real, what's assumed, and what's load-bearing.
+You're not starting fresh. Someone else was here before you, or the team has been building something for weeks. Before touching anything, you need to know what's real, what's assumed, and what's load-bearing.
 
 ## Opening
 
@@ -34,7 +34,7 @@ The answer to this question is usually the most important thing in the whole sys
 
 ## What to produce
 
-A clear audit that tells any FDE — including one who just arrived — exactly where things stand:
+A clear audit that tells any FDE, including one who just arrived, exactly where things stand:
 
 - What exists and what actually works
 - What was assumed vs what is confirmed
@@ -46,7 +46,7 @@ Keep it honest. Don't soften the picture.
 
 ## Writes to `.fde/`
 
-**`audit.md`** — the full picture: what's real, what's assumed, what's load-bearing, top risk, first 3 actions.
+**`audit.md`**: the full picture: what's real, what's assumed, what's load-bearing, top risk, first 3 actions.
 
 Update `context.md` with the current engagement state so all future skills start informed.
 

@@ -18,14 +18,14 @@ If that assumption is wrong, everything built on top of it is wasted. Test the r
 
 Build the minimum thing that tests the assumption. No error handling. No tests. No polish. Just enough to show to a human and get a real reaction.
 
-Show it the same day if possible. Rough is fine — rough is honest. A polished prototype tricks people into thinking it's further along than it is.
+Show it the same day if possible. Rough is fine, rough is honest. A polished prototype tricks people into thinking it's further along than it is.
 
 **Kill it immediately if:**
 - The assumption is disproven by the demo.
 - The customer ignores it. Indifference is a signal, not neutrality.
 - You've iterated 3 times and feedback isn't converging.
 
-When you kill it — write down what you learned, not what you built. That learning is the asset.
+When you kill it, write down what you learned, not what you built. That learning is the asset.
 
 ## Pitching the outcome
 
@@ -47,9 +47,9 @@ Tell the FDE:
 
 ## Writes to `.fde/`
 
-**`prototype-log.md`** — what was built, what was shown, what the reaction was, what was learned.
+**`prototype-log.md`**: what was built, what was shown, what the reaction was, what was learned.
 
-**`business-case.md`** — customer problem, cost of inaction, success metrics, trade-offs, 3-sentence stakeholder summary.
+**`business-case.md`**: customer problem, cost of inaction, success metrics, trade-offs, 3-sentence stakeholder summary.
 
 ## Principles
 - Speed of learning beats code quality. Always.

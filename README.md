@@ -1,72 +1,97 @@
+<div align="center">
+
 # FDEOS
 
-FDEOS is a skills plugin for AI coding agents that teaches them how to run a forward deployed engineering engagement — not just write code.
+**The engagement operating system for Forward Deployed Engineers.**
 
-A Forward Deployed Engineer is the person sent into a customer's environment to solve what their team couldn't. You inherit an undocumented codebase, stakeholders who can't agree on what done looks like, and a deadline that doesn't move. FDEOS gives your AI agent the judgment to operate in that environment.
+A Forward Deployed Engineer is the person sent into a customer's environment to solve what their team could not. You inherit an undocumented codebase, stakeholders who cannot agree on what done looks like, and a deadline that does not move.
 
----
+FDEOS gives your AI agent the judgment to operate in that environment.
 
-## Install
+[![GitHub Stars](https://img.shields.io/github/stars/suboss87/fde-os?style=for-the-badge&logo=github&color=181717)](https://github.com/suboss87/fde-os)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-13-orange?style=for-the-badge)](docs/skills-reference.md)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-blueviolet?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai/code)
 
-### Claude Code
-
-```bash
-git clone https://github.com/suboss87/fde-os.git
-mkdir -p ~/.claude/skills
-cp -r fde-os/skills/* ~/.claude/skills/
-```
-
-Copy the CLAUDE.md template into your project:
+<br>
 
 ```bash
-cp fde-os/CLAUDE.md.template /path/to/your-project/CLAUDE.md
+git clone https://github.com/suboss87/fde-os && mkdir -p ~/.claude/skills && cp -r fde-os/skills/* ~/.claude/skills/
 ```
 
-Open Claude Code in your project and type:
+Works with Claude Code, Cursor, Windsurf, Cline, and any AI agent.
 
-```
-@fde
-```
+<br>
 
-Tell it what's happening. That's the entire interface.
+![FDEOS in action](media/demo.gif)
 
-### Cursor / Windsurf / other agents
+<br>
 
-Same process — copy the `skills/` directory to wherever your agent loads skills from. Copy `CLAUDE.md.template` to your project's system prompt file.
+*"Don't write a line of code until you know what a bad outcome looks like for the person paying."*
+
+*"Stabilise first. Understand second. Fix third. In that order, every time."*
+
+*"The handoff is part of the job. If the team cannot sustain it, you did not finish."*
+
+<br>
+
+[How it works](#how-it-works) · [Skills](#skills) · [Enterprise](#for-regulated-industries) · [Full install guide](docs/install.md)
+
+</div>
 
 ---
 
 ## How it works
 
-You invoke `@fde` and describe your situation in plain language. FDEOS routes silently to the right skill. You never pick a skill yourself.
+Invoke `@fde` and describe your situation in plain language. FDEOS routes silently to the right skill. You never pick a skill yourself.
 
-It opens with one question — or none if the situation is clear — then gives you specific, actionable direction. Like a 30-year veteran sitting next to you who has seen this exact situation before.
+It opens with one question, or none if the situation is clear, then gives you specific actionable direction. Like a 30-year veteran sitting next to you who has seen this exact situation before.
 
-Everything gets written to `.fde/` in your project — trust profile, real problem, codebase map, decisions, risks, delivery record. When a session ends, context survives. Another FDE can pick it up and be operational in minutes.
+Everything gets written to `.fde/` in your project: trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another FDE picks it up and is operational in minutes.
 
-**A typical engagement looks like this:**
+A typical engagement looks like this:
 
-1. **Land** — `@fde "I'm starting at Acme Corp. Payments are broken. First meeting in an hour."` FDEOS asks the one question that matters before you write any code.
+1. **Land.** `@fde "Starting at Acme Corp. Payments broken. First meeting in an hour."` FDEOS asks the one question that matters before you write any code.
 
-2. **Discover** — As you learn more, `@fde` surfaces the real problem. The stated problem is rarely the real one.
+2. **Discover.** As you learn more, `@fde` surfaces the real problem. The stated problem is rarely the real one.
 
-3. **Plan** — Before building, `@fde-plan` breaks work into atomic tasks sequenced by risk. Adds stakeholder check-ins every few tasks.
+3. **Plan.** `@fde-plan` breaks work into atomic tasks sequenced by risk. Adds stakeholder check-ins every few tasks so trust does not decay.
 
-4. **Build** — `@fde-build` enforces characterisation tests before touching legacy code, blast radius analysis before every change, and a confirmed rollback path before every deploy.
+4. **Build.** `@fde-build` enforces characterisation tests before touching legacy code, blast radius analysis before every change, and a confirmed rollback path before every deploy.
 
-5. **Review** — `@fde-review` checks two things in order: did you build what was agreed, then is it safe to ship.
+5. **Review.** `@fde-review` checks two things in order: did you build what was agreed, then is it safe to ship.
 
-6. **Ship** — `@fde-ship` runs a pre-flight checklist, deploys to canary first, and verifies rollback before going full traffic.
+6. **Ship.** `@fde-ship` runs a pre-flight checklist, deploys to canary, and verifies rollback before going to full traffic.
 
-7. **Close** — `@fde-close` captures what was learned, extracts reusable patterns, and produces a handoff document the team can actually use.
+7. **Close.** `@fde-close` captures what was learned, extracts reusable patterns, and produces a handoff document the team can actually use.
 
-At any point: `@fde-rescue` for production fires, `@fde-debug` for systematic debugging.
+At any point: `@fde-rescue` for production fires. `@fde-debug` for systematic debugging.
+
+---
+
+## Install
+
+```bash
+# Clone and install skills globally
+git clone https://github.com/suboss87/fde-os
+mkdir -p ~/.claude/skills
+cp -r fde-os/skills/* ~/.claude/skills/
+
+# Add CLAUDE.md to your project
+cp fde-os/CLAUDE.md.template /path/to/your-project/CLAUDE.md
+```
+
+Open Claude Code in your project and type `@fde` to start.
+
+For Cursor, Windsurf, or other agents: copy the `skills/` directory to your agent's skills folder and `CLAUDE.md.template` to your project's system prompt file.
+
+Full install guide: [docs/install.md](docs/install.md)
 
 ---
 
 ## Skills
 
-You don't invoke these directly. `@fde` routes to the right one based on what you tell it.
+You do not pick these. `@fde` routes to the right one based on what you tell it.
 
 **Engagement phase**
 
@@ -74,7 +99,7 @@ You don't invoke these directly. `@fde` routes to the right one based on what yo
 |-------|-------------|
 | `@fde` | Entry point. Tell your story. |
 | `@fde-land` | First 48 hours. Builds trust, maps stakeholders, defines success before any work starts. |
-| `@fde-audit` | Taking over mid-engagement. Separates what's real from what's assumed. |
+| `@fde-audit` | Taking over mid-engagement. Separates what is real from what is assumed. |
 | `@fde-discover` | Finds the real problem. Maps the codebase. Surfaces shadow processes and workarounds. |
 | `@fde-sketch` | Builds a throwaway to validate direction. Pitches the outcome in business terms. |
 | `@fde-build` | Safe implementation. Characterisation tests, Strangler Fig, blast radius analysis. |
@@ -87,7 +112,7 @@ You don't invoke these directly. `@fde` routes to the right one based on what yo
 | Skill | What it does |
 |-------|-------------|
 | `@fde-plan` | Break work into atomic tasks before building. Sequence by risk, not preference. |
-| `@fde-review` | Two-stage code review — did we build what we agreed, then is it safe to ship. |
+| `@fde-review` | Two-stage code review: did we build what we agreed, then is it safe to ship. |
 | `@fde-debug` | Systematic debugging. Reproduce first, isolate second, fix third. Never guess. |
 
 **Visibility**
@@ -100,7 +125,7 @@ You don't invoke these directly. `@fde` routes to the right one based on what yo
 
 ## For regulated industries
 
-Three overlays are included in the install. They activate automatically when `@fde` detects the engagement context — you don't invoke them directly.
+Three overlays are included in the install. They activate automatically when `@fde` detects the engagement context.
 
 | Overlay | What it adds |
 |---------|-------------|
@@ -116,19 +141,19 @@ Every skill reads from and writes to `.fde/` in your project root. This is the e
 
 ```
 .fde/
-  context.md       — current state, loaded at every session start
-  brief.md         — what they said the problem is
-  success.md       — agreed definition of done
-  trust-profile.md — sacred data, AI policy, approval chain
-  stakeholders.md  — who matters, who's resistant, who's your champion
-  reality.md       — what the real problem actually is
-  terrain.md       — codebase map, hotspots, data flow, test gaps
-  decisions.md     — every significant choice and why
-  risks.md         — live risk register
-  delivery.md      — what shipped and running value log
-  chaos-log.md     — incident records with root cause
-  handoff.md       — operational knowledge for the team taking over
-  patterns.md      — reusable patterns extracted
+  context.md        current state, loaded at every session start
+  brief.md          what they said the problem is
+  success.md        agreed definition of done
+  trust-profile.md  sacred data, AI policy, approval chain
+  stakeholders.md   who matters, who is resistant, who is your champion
+  reality.md        what the real problem actually is
+  terrain.md        codebase map, hotspots, data flow, test gaps
+  decisions.md      every significant choice and why
+  risks.md          live risk register
+  delivery.md       what shipped and running value log
+  chaos-log.md      incident records with root cause
+  handoff.md        operational knowledge for the team taking over
+  patterns.md       reusable patterns extracted
 ```
 
 Add `.fde/` to your `.gitignore`. It contains sensitive customer information.
@@ -137,10 +162,10 @@ Add `.fde/` to your `.gitignore`. It contains sensitive customer information.
 
 ## Philosophy
 
-- **The stated problem is a hypothesis.** Treat it as one until discovery confirms it.
-- **Sacred data never enters AI context.** Identify it on day one. Tag it. Protect it.
-- **Stabilise before you diagnose.** Under pressure, the instinct to fix fast causes the second incident.
-- **The handoff is part of the job.** If the team can't sustain what you built, you didn't finish.
+- The stated problem is a hypothesis. Treat it as one until discovery confirms it.
+- Sacred data never enters AI context. Identify it on day one, tag it, protect it.
+- Stabilise before you diagnose. Under pressure, the instinct to fix fast causes the second incident.
+- The handoff is part of the job. If the team cannot sustain what you built, you did not finish.
 
 ---
 

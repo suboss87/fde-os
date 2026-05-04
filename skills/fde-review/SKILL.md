@@ -1,6 +1,6 @@
 ---
 name: fde-review
-description: Code review through the FDE lens. Two stages — does it do what we agreed, then is it safe to live with. Not just code quality. Deployment risk, rollback path, AI policy compliance.
+description: Code review through the FDE lens. Two stages, does it do what we agreed, then is it safe to live with. Not just code quality. Deployment risk, rollback path, AI policy compliance.
 ---
 
 # @fde-review
@@ -9,15 +9,15 @@ description: Code review through the FDE lens. Two stages — does it do what we
 Code review on an engagement is not the same as code review at a product company. You're often in a codebase you don't own, deploying to systems you can't fully see, with a customer who can't afford a bad release. This skill reviews through that lens.
 
 ## Reads from .fde/
-- `context.md` — always
-- `decisions.md` — what was agreed and why
-- `trust-profile.md` — AI code policy, sacred data, what must never change
-- `terrain.md` — blast radius context, fragile zones
+- `context.md`: always
+- `decisions.md`: what was agreed and why
+- `trust-profile.md`: AI code policy, sacred data, what must never change
+- `terrain.md`: blast radius context, fragile zones
 
-## Two stages — always in this order
+## Two stages: always in this order
 
 ### Stage 1: Did we build what we agreed?
-Check the change against `decisions.md`. Not against what seems right — against what was explicitly decided.
+Check the change against `decisions.md`. Not against what seems right, against what was explicitly decided.
 
 - Does this match the agreed scope?
 - Are any sacred systems from `trust-profile.md` touched?
@@ -27,17 +27,17 @@ Check the change against `decisions.md`. Not against what seems right — agains
 If Stage 1 fails, stop. Don't proceed to quality review on code that doesn't match the agreement.
 
 ### Stage 2: Is it safe to live with?
-Five dimensions. Be specific — not "this could be better" but "line 47 will fail under concurrent writes because there's no lock."
+Five dimensions. Be specific, not "this could be better" but "line 47 will fail under concurrent writes because there's no lock."
 
-**Correctness** — Does it do what it says? Edge cases handled? Error paths traced?
+**Correctness**: Does it do what it says? Edge cases handled? Error paths traced?
 
-**Blast radius** — What breaks if this fails at 2am? Which systems downstream are affected? Is the failure mode loud (errors surface immediately) or silent (data corruption over time)?
+**Blast radius**: What breaks if this fails at 2am? Which systems downstream are affected? Is the failure mode loud (errors surface immediately) or silent (data corruption over time)?
 
-**Security** — Input validation at boundaries. No secrets in logs. No new attack surface. Check `trust-profile.md` for what's classified as sensitive in this environment.
+**Security**: Input validation at boundaries. No secrets in logs. No new attack surface. Check `trust-profile.md` for what's classified as sensitive in this environment.
 
-**Rollback** — Can this be reverted in under 5 minutes? Is the rollback documented? If the answer is "we'd have to do a data migration to roll back," that's a blocker.
+**Rollback**: Can this be reverted in under 5 minutes? Is the rollback documented? If the answer is "we'd have to do a data migration to roll back," that's a blocker.
 
-**AI policy** — Check `trust-profile.md`. Some modules in this environment may require human review of AI-generated code, or prohibit it in certain areas. If this change touches those areas, flag it before it ships.
+**AI policy**: Check `trust-profile.md`. Some modules in this environment may require human review of AI-generated code, or prohibit it in certain areas. If this change touches those areas, flag it before it ships.
 
 ## What to produce
 
@@ -48,7 +48,7 @@ A clear verdict for each stage:
 
 No padding. If it's fine, say it's fine. If something needs fixing, say exactly what and why, not just that it could be improved.
 
-Log the review outcome in `decisions.md` — what was reviewed, what was flagged, what was resolved.
+Log the review outcome in `decisions.md`: what was reviewed, what was flagged, what was resolved.
 
 ## Principles
 - Stage 1 before Stage 2. Always. Wrong scope reviewed well is still wrong scope.
