@@ -28,6 +28,9 @@ Write characterisation tests before modifying anything. These tests lock in the 
 
 Then wrap with Strangler Fig: build the new interface around the old code. Deprecate gradually. Never rewrite in place.
 
+**For AI components specifically:**
+Build the fallback path first, before the AI path. What happens when the model is slow, unavailable, or returns garbage? If you cannot answer that, you are not ready to build the AI feature. Add observability before deployment: log inputs, outputs, and confidence scores. AI failures are silent without this. Before sending any data to an external model provider, confirm the data processing agreement covers this data. Do not assume it does.
+
 **For any regulated environment:**
 Check the AI code policy first (it's in `trust-profile.md`). Some modules in financial, healthcare, and government systems require human review of AI-generated code, or prohibit it entirely in certain areas.
 

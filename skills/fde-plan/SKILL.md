@@ -35,6 +35,9 @@ Each task delivers something visible and testable, not "build the database layer
 **Step 4: Size tasks to 30-90 minutes**
 Anything longer is two tasks. Anything shorter is probably setup, not a task. This keeps each task small enough for a fresh context window and verifiable in one sitting.
 
+**For AI components, name the evaluation tasks explicitly:**
+"Model output validated on 50 real examples from production data" is a task. "Fallback path tested under model unavailability" is a task. "Observability confirmed: inputs and outputs logging to [destination]" is a task. These are not afterthoughts. They are pre-conditions for shipping and must appear in the plan before building starts.
+
 **Step 5: Add the human touchpoints**
 After every 2-3 technical tasks, add: "Show progress to [stakeholder from stakeholders.md]." These are not optional. They maintain trust and catch direction changes before you've built the wrong thing for a week.
 

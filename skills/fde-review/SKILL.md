@@ -39,6 +39,8 @@ Five dimensions. Be specific, not "this could be better" but "line 47 will fail 
 
 **AI policy**: Check `trust-profile.md`. Some modules in this environment may require human review of AI-generated code, or prohibit it in certain areas. If this change touches those areas, flag it before it ships.
 
+**AI components**: If this change includes AI-generated output in a user-facing or decision-making path, check: does it have a fallback when the model fails? Are inputs and outputs logged? Are outputs bounded so a model hallucination cannot cause a downstream catastrophe? In regulated environments, can a human explain why the AI made a specific decision? Explainability is a compliance requirement in fintech and healthcare, not a preference.
+
 ## What to produce
 
 A clear verdict for each stage:

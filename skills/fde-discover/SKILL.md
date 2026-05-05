@@ -20,7 +20,11 @@ This is the most powerful question in the FDE toolkit. Shadow spreadsheets, nigh
 
 **The hesitation:** when someone says "well, there's also this thing we do...", that's where the real problem is.
 
+**Shadow AI:** if the workaround involves someone using ChatGPT, Copilot, or similar tools to process data, write queries, or fill gaps in the system, that is a signal. It tells you where the system fails to meet real needs and where AI could be applied systematically. Note it in `reality.md`.
+
 **Codebase signals:** highest churn files, most TODOs, modules everyone avoids, test coverage below 20%.
+
+**AI components already in the codebase:** model calls, prompt templates, embedding pipelines, or feature flags around AI features. These do not behave like regular code. Map them as hotspots regardless of test coverage.
 
 **The honest answer:** ask "what does your team actually think of this system?" The informal answer is more useful than the official one.
 
@@ -30,8 +34,9 @@ Run a methodical codebase scan:
 1. Language, framework, build system.
 2. Module map, what does what.
 3. Hotspots, highest churn, most complex, least tested. Mark these "handle with care."
-4. Data flow, where data comes in, how it moves, where it goes.
-5. Test landscape, what's covered, what's not, what's a lie.
+4. AI components: model calls, prompt files, vector stores, inference pipelines. Flag every one.
+5. Data flow, where data comes in, how it moves, where it goes.
+6. Test landscape, what's covered, what's not, what's a lie.
 
 Never load the full codebase into context. Scan at the module level, go deep only on hotspots.
 
@@ -40,6 +45,7 @@ Never load the full codebase into context. Scan at the module level, go deep onl
 Tell the FDE:
 - What the real problem appears to be, with evidence
 - Where the shadow process is and what it tells you
+- Whether AI is part of the real solution, or whether the problem is solvable without it
 - The 3 highest-risk areas of the codebase
 - What to not touch without characterisation tests first
 

@@ -24,6 +24,7 @@ Key questions to work through:
 - Were there trust moments that mattered?
 - What did we learn about the codebase that wasn't in `terrain.md`?
 - What risk almost became a real problem?
+- If AI components were built or integrated: did they behave as expected in production? What failure modes appeared that the prototype did not reveal? Is the team equipped to maintain them?
 
 **2. The pattern.**
 If something happened in this engagement that will happen again, a compliance approach, a migration pattern, a stakeholder dynamic, encode it. Write it as a skill or a note others can use.
@@ -32,6 +33,8 @@ If something happened in this engagement that will happen again, a compliance ap
 
 **3. The handoff document.**
 Written for the person who takes over. Not technical documentation, operational knowledge. The 3 things that will break and how to fix them. The person who holds the tribal knowledge. The monitoring alerts and what they mean. The deployment process in plain language.
+
+If AI components were built: include the model version in use, what "normal" output looks like so the team can recognise drift, what the fallback behaviour is, who owns retraining if the model degrades, and how to disable the AI path without taking down the whole feature. Without this, the team will turn it off the first time it misbehaves, and it will stay off.
 
 ## What to tell the FDE
 

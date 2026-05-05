@@ -20,10 +20,17 @@ Build the minimum thing that tests the assumption. No error handling. No tests. 
 
 Show it the same day if possible. Rough is fine, rough is honest. A polished prototype tricks people into thinking it's further along than it is.
 
+**If the direction involves AI, test these assumptions first:**
+- Is the data available, clean, and in sufficient volume? A prototype on synthetic data does not tell you how the model will behave in production.
+- Does the environment allow external model calls? Regulated industries often cannot send data to third-party APIs.
+- Is the latency acceptable? AI inference is slower than a database query. Test this against real user expectations, not ideal conditions.
+- Is AI actually the right tool? Some problems look like AI problems but are really data quality problems or process problems. Validate this before building anything.
+
 **Kill it immediately if:**
 - The assumption is disproven by the demo.
 - The customer ignores it. Indifference is a signal, not neutrality.
 - You've iterated 3 times and feedback isn't converging.
+- The AI approach works technically but the customer cannot explain or trust the output. Unexplainable AI in a high-stakes context is not a working solution.
 
 When you kill it, write down what you learned, not what you built. That learning is the asset.
 

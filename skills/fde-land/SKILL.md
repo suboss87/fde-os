@@ -22,7 +22,9 @@ Wait for the full answer. This question unlocks more than any technical audit. P
 
 **Political signals:** names that come up more than once, anyone described as "difficult" or "protective," any mention of past failed attempts.
 
-**AI policy:** ask directly before any code is generated, "Does your organisation have a policy on AI-generated code?" Especially in regulated environments.
+**AI posture:** what AI tools are already in use, sanctioned or shadow. Is there an existing AI initiative, mandate, or budget? Is leadership excited about AI or resistant to it? This shapes what you can propose and how. Map this before any technical work begins.
+
+**AI policy:** ask directly before any code is generated, "Does your organisation have a policy on AI-generated code?" Especially in regulated environments. Then ask the harder question: "Are there decisions in this system that AI should not be making?" The answer is not always obvious to the customer until someone asks.
 
 ## Second question (only if needed)
 
@@ -37,6 +39,7 @@ Give the FDE a clear picture of:
 - What data is sacred and must never enter AI context
 - Who the real stakeholders are and where the resistance is
 - What the environment looks like (compliance, risk, access)
+- What the AI posture is: tools in use, appetite, any existing mandate
 - One falsifiable hypothesis about the real problem
 
 Keep it to one page. Specific and plain.
@@ -49,7 +52,7 @@ If remote: note that trust-building takes longer. Suggest a short video call bef
 
 **`success.md`**: what done looks like, how it gets measured, who signs off. Agreed with the customer, not assumed.
 
-**`trust-profile.md`**: sacred data identified, fears heard, AI policy confirmed, approval chain mapped.
+**`trust-profile.md`**: sacred data identified, fears heard, AI policy confirmed, AI posture mapped, approval chain recorded.
 
 **`stakeholders.md`**: who matters, who's resistant, who's your champion, who has veto power.
 
