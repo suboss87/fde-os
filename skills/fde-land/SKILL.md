@@ -5,80 +5,79 @@ description: First 48 hours. Build trust, map stakeholders, define success befor
 
 # @fde-land
 
-## Purpose
-The first 48 hours decide the engagement. This skill starts before you arrive, ensuring you walk in with the right questions, identify what is really at stake, and create a shared definition of success before touching anything technical.
+## Token efficiency
+Load `context.md` if it exists. Nothing else until you know what kind of engagement this is.
 
 ## Before day one
 
-Read the brief carefully. Note what is missing, not just what is there. A brief that is vague about timeline is a signal. A brief that names no internal champion is a signal. A brief that says "simple cleanup" for a system that has been running for 8 years is a signal.
+Read the brief carefully. What is not in it matters as much as what is.
 
-Before you show up:
-- Confirm you have access to what you need: repo, staging environment, relevant documentation. Waiting for access on day two is a trust tax.
-- Check whether there have been prior attempts to fix this. If yes, find out why they failed before assuming you know the approach.
-- Identify whether this engagement sits inside a larger programme with other vendors or internal teams. That context changes everything about how you land.
+A brief that does not name a decision-maker means you will spend two weeks building for someone who cannot say yes. A brief that says "straightforward cleanup" on a system that has been running for eight years means the previous attempt to clean it up is still visible in the git history as a revert. A brief with a very tight timeline means someone already promised the outcome before they hired you.
 
-**Red flags before day one:**
-- No clear success definition in the brief
-- Timeline that leaves no room for discovery
-- Mention of a previous consultant who "didn't work out"
-- Multiple stakeholders listed with no named decision-maker
+Name these in `brief.md` before your first conversation. They are not problems yet. They are the questions you are walking in to answer.
 
-Name these in `brief.md`. They are not blockers, they are starting hypotheses.
+**Check before you arrive:**
+- Do you have access to what you need -- repo, environment, relevant docs? Waiting for access on day two signals to the team that you do not plan ahead.
+- Has someone tried to fix this before? Find out why it failed before you assume your approach is different.
+- Are other vendors or teams in scope? If yes, you are not the only one in the room, even if you are the only one in the meeting.
 
 ## Opening question
 
-> "Before we look at anything technical, what would a bad outcome look like for you personally on this one?"
+> "Before we look at anything technical -- what would a bad outcome look like for you personally on this one?"
 
-Wait for the full answer. This question unlocks more than any technical audit. People tell you their real fears when you ask about failure, not success.
+Wait for the full answer. Do not fill the silence. People tell you their real fears when you ask about failure, not success. The official answer is what they want. The pause after it is what they are afraid of.
 
-## What to listen for
+If their answer to "bad outcome" does not match the brief, the brief is wrong. Note it immediately.
 
-**Sacred data:** anything they hesitate before mentioning. Payment data, patient records, personal information, anything "sensitive." Mark it immediately.
+## What to actually listen for
 
-**The real problem signal:** if their answer to "bad outcome" doesn't match the brief you were given, the brief is wrong. Note it.
+**The real decision-maker:** whoever is mentioned most often by others, especially if you have not met them yet. That is who your work will be judged by.
 
-**Political signals:** names that come up more than once, anyone described as "difficult" or "protective," any mention of past failed attempts.
+**The previous attempt:** "we tried something similar last year" is the most important sentence in the first meeting. Ask what happened. Ask who was involved. The person who worked on it is either still there and protective, or left because of it.
 
-**Internal team dynamics:** is there an internal team who tried to fix this and was passed over? If so, that team may be resistant, protective of their territory, or quietly hoping you fail. Treat them as partners, not obstacles. Find out what they know before assuming they do not.
+**The internal team who was passed over:** if an internal team tried to fix this and a consultant was brought in anyway, that team knows exactly what is wrong. They also resent you being there. Find them before the first standup. Ask what they tried. Use their language in every meeting. If you make them look right, they will protect you. If you ignore them, they will wait for you to make a mistake.
 
-**Multi-vendor and multi-team environments:** if other vendors, agencies, or internal teams are in scope, map the dependencies and the politics separately. Who owns what? Who is responsible if your change breaks their surface? Who needs to approve work that crosses a boundary? These are load-bearing questions. An FDE who does not know who else is in the room will break trust without meaning to.
+**The sacred thing nobody mentioned:** payment data, patient records, the one database nobody is supposed to touch, the integration with the system the CEO built in 2011. Ask directly: "Is there anything in this environment that I should treat as untouchable?" The hesitation before the answer is the answer.
 
-**AI posture:** what AI tools are already in use, sanctioned or shadow. Is there an existing AI initiative, mandate, or budget? Is leadership excited about AI or resistant to it? This shapes what you can propose and how. Map this before any technical work begins.
+**Multi-vendor and multi-team environments:** who owns what boundary? Who do you need sign-off from before your change crosses into their surface? An FDE who moves fast without knowing this will break something that belongs to someone else, and the blame will be yours regardless of the cause.
 
-**AI policy:** ask directly before any code is generated, "Does your organisation have a policy on AI-generated code?" Especially in regulated environments. Then ask the harder question: "Are there decisions in this system that AI should not be making?" The answer is not always obvious to the customer until someone asks.
+**AI posture:** what tools are already in use, sanctioned or shadow? Is there an existing AI initiative this could conflict with or complement? A CTO who is excited about AI and a compliance team who is not are both real -- map both before you propose anything.
+
+**AI policy:** ask directly before any code is generated -- "Does your organisation have a policy on AI-generated code?" Then ask the harder question: "Are there decisions in this system where you would not be comfortable with AI involvement?" The answer is not always obvious to the customer until someone asks.
 
 ## Second question (only if needed)
 
-> "Who on the team is going to push back on this, and why?"
+> "Who on this team is going to push back on what we're doing, and what are they protecting?"
 
-This tells you more about the engagement than the org chart does.
+This tells you more about the engagement than the org chart. Resistance usually protects something real -- a previous decision, an implicit commitment, a relationship. Find out what it is before you run into it.
 
 ## What to produce
 
-Give the FDE a clear picture of:
-- What success looks like and who defines it
+Give the FDE a specific picture of:
+- What success looks like and who actually signs off on it (not just who says they do)
+- What is explicitly out of scope -- the boundary matters as much as the goal
 - What data is sacred and must never enter AI context
-- Who the real stakeholders are and where the resistance is
-- What the environment looks like (compliance, risk, access)
-- What the AI posture is: tools in use, appetite, any existing mandate
-- One falsifiable hypothesis about the real problem
+- Who the real stakeholders are, who has veto power, and where the resistance is
+- What the AI posture is: tools in use, existing mandates, policy constraints
+- One falsifiable hypothesis about the real problem underneath the brief
 
-Keep it to one page. Specific and plain.
+One page. Specific and plain. If you cannot make it one page, you do not understand it yet.
 
-If remote: note that trust-building takes longer. Suggest a short video call before anything asynchronous. Reading the room over Slack isn't the same.
+If remote: trust-building takes 40% longer. Schedule a short video call before anything asynchronous. Reading the room over Slack is not the same as reading the room.
 
 ## Writes to `.fde/`
 
-**`brief.md`**: what they said the problem is, who sent you, what the timeline is.
+**`brief.md`**: what they said the problem is, who sent you, what the timeline is, what is missing from the brief.
 
-**`success.md`**: what done looks like, how it gets measured, who signs off. Agreed with the customer, not assumed. Include what is explicitly out of scope -- the boundary matters as much as the goal. If scope is not defined, every new request becomes an implicit commitment.
+**`success.md`**: what done looks like, how it gets measured, who signs off. Agreed with the customer, not assumed. Includes what is explicitly out of scope.
 
 **`trust-profile.md`**: sacred data identified, fears heard, AI policy confirmed, AI posture mapped, approval chain recorded.
 
-**`stakeholders.md`**: who matters, who's resistant, who's your champion, who has veto power.
+**`stakeholders.md`**: who matters, who is resistant, who is your champion, who has veto power, who was passed over.
 
 ## Principles
 - Never start technical work before `success.md` exists.
 - Sacred data never enters AI context. Ever.
 - The brief is a hypothesis. Treat it as one until `@fde-discover` confirms it.
-- If the customer can't define success, that is the first problem to solve.
+- The internal team who was passed over is not your obstacle. They are your best source of truth.
+- If the customer cannot define success, that is the first problem to solve.

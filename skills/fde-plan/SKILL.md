@@ -6,14 +6,12 @@ description: Break work into atomic tasks. Sequence by risk. Add stakeholder tou
 # @fde-plan
 
 ## Purpose
-An FDE plan is not a sprint backlog. It accounts for the human side, when to show progress, who needs to see what and when, where the trust checkpoints are, alongside the technical tasks. A plan that's technically correct but ignores the politics of the engagement will fail.
+An FDE plan is not a sprint backlog. The technical sequence is the easy part. The hard part is knowing when to stop and show someone progress, who needs to see what before they will approve the next phase, and where the trust is thin enough that silence for two weeks will be read as failure.
 
-## Reads from .fde/
-- `context.md`: always
-- `reality.md`: the real problem, so the plan solves the right thing
-- `success.md`: definition of done, so tasks terminate at the right place
-- `terrain.md`: codebase map and fragile zones, to sequence safely
-- `stakeholders.md`: who needs visibility and when
+A technically correct plan that ignores engagement politics will fail on schedule.
+
+## Token efficiency
+Load `reality.md`, `success.md`, `terrain.md`, `stakeholders.md` only. Not the full `.fde/` directory. Load `decisions.md` only if re-planning an existing phase.
 
 ## Opening
 
@@ -41,7 +39,7 @@ Anything longer is two tasks. Anything shorter is probably setup, not a task. Th
 "Model output validated on 50 real examples from production data" is a task. "Fallback path tested under model unavailability" is a task. "Observability confirmed: inputs and outputs logging to [destination]" is a task. These are not afterthoughts. They are pre-conditions for shipping and must appear in the plan before building starts.
 
 **Step 5: Add the human touchpoints**
-After every 2-3 technical tasks, add: "Show progress to [stakeholder from stakeholders.md]." These are not optional. They maintain trust and catch direction changes before you've built the wrong thing for a week.
+After every 2-3 technical tasks, add: "Show progress to [stakeholder from stakeholders.md]." These are not optional. They are not ceremony. An FDE who goes quiet for two weeks while building is not being efficient -- they are letting the customer fill that silence with doubt. A stakeholder who sees consistent small wins stays bought in. A stakeholder who goes three weeks without visible progress starts asking questions that derail the build.
 
 ## Task format
 
