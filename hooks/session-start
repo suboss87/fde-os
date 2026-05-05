@@ -1,23 +1,34 @@
 #!/bin/bash
 # SessionStart hook for FDEOS
-# Loads @fde entry point and .fde/context.md at session start
+# Only activates in projects that are FDEOS engagements.
+# A project is an FDEOS engagement if it has a CLAUDE.md referencing FDEOS,
+# or already has a .fde/ directory.
 
 SKILL_DIR="$(dirname "$0")/../skills"
 BOOTSTRAP="$SKILL_DIR/fde/SKILL.md"
 CONTEXT_FILE=".fde/context.md"
 
+# Guard: only activate in FDEOS projects
+IS_FDE_PROJECT=0
+if [ -d ".fde" ]; then
+  IS_FDE_PROJECT=1
+fi
+if [ -f "CLAUDE.md" ] && grep -q "fde\|FDEOS" "CLAUDE.md" 2>/dev/null; then
+  IS_FDE_PROJECT=1
+fi
+
+if [ "$IS_FDE_PROJECT" -eq 0 ]; then
+  exit 0
+fi
+
 CONTENT=""
 
 if [ -f "$BOOTSTRAP" ]; then
-    CONTENT="$CONTENT$(cat $BOOTSTRAP)\n\n"
+  CONTENT="$CONTENT$(cat "$BOOTSTRAP")\n\n"
 fi
 
 if [ -f "$CONTEXT_FILE" ]; then
-    CONTENT="$CONTENT---\nEngagement context loaded from .fde/context.md:\n$(cat $CONTEXT_FILE)\n"
+  CONTENT="$CONTENT---\nEngagement context loaded from .fde/context.md:\n$(cat "$CONTEXT_FILE")\n"
 fi
 
-if [ -n "$COPILOT_CLI" ]; then
-    echo "{\"additionalContext\": $(echo -e "$CONTENT" | jq -Rs .)}"
-else
-    echo -e "$CONTENT"
-fi
+echo -e "$CONTENT"

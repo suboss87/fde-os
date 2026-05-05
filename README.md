@@ -77,11 +77,14 @@ npx fdeos@latest
 
 The installer copies all skills and hooks to `~/.claude/skills/` automatically.
 
-Then add CLAUDE.md to your project:
+Then in your project:
 
 ```bash
 cp ~/.claude/FDEOS-CLAUDE.md.template ./CLAUDE.md
+echo ".fde/" >> .gitignore
 ```
+
+The `.fde/` directory holds your engagement brain: trust profiles, stakeholder maps, real problem, decisions. It contains sensitive customer information and must stay local.
 
 Open Claude Code in your project and type `@fde` to start.
 
