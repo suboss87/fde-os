@@ -16,7 +16,8 @@ FDEOS gives your AI agent the judgment to operate in that environment. How to la
 <br>
 
 ```
-/plugin install fdeos@claude-plugins-official
+/plugin marketplace add github:suboss87/fde-os
+/plugin install fdeos@fdeos
 ```
 
 Also works with Cursor, Windsurf, Cline via `npx fdeos@latest`
@@ -74,7 +75,8 @@ At any point: `@fde-rescue` for production fires. `@fde-debug` for systematic de
 **Claude Code**
 
 ```
-/plugin install fdeos@claude-plugins-official
+/plugin marketplace add github:suboss87/fde-os
+/plugin install fdeos@fdeos
 ```
 
 Then in your project:

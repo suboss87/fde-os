@@ -3,8 +3,13 @@
     "SessionStart": [
       {
         "matcher": "",
-        "run": "./hooks/session-start",
-        "hooks": ["session-start"]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'${CLAUDE_PLUGIN_ROOT}/hooks/session-start'",
+            "async": false
+          }
+        ]
       }
     ]
   }

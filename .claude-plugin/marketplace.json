@@ -1,0 +1,20 @@
+{
+  "name": "fdeos",
+  "owner": {
+    "name": "Subash Natarajan",
+    "url": "https://github.com/suboss87"
+  },
+  "metadata": {
+    "description": "The AI plugin for engineers who get embedded in client environments to fix what their team could not."
+  },
+  "plugins": [
+    {
+      "name": "fdeos",
+      "source": {
+        "source": "github",
+        "repo": "suboss87/fde-os"
+      },
+      "description": "13 skills covering the full FDE engagement lifecycle: land, discover, plan, build, review, ship, and close. Enterprise overlays for healthcare, fintech, and government."
+    }
+  ]
+}

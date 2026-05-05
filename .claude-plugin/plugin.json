@@ -1,14 +1,22 @@
 {
-  "name": "fde-os",
-  "description": "FDEOS – The Operating System for Forward Deployed Engineering. 14 skills covering the complete FDE engagement lifecycle: explore, trust, calibrate, discover, observe, prototype, bridge, chaos, brownfield, ship, retrospective, harness, context, and master orchestration. Works in Claude Code, Cursor, Codex, OpenCode, Gemini CLI, and Copilot CLI.",
+  "name": "fdeos",
+  "description": "The AI plugin for engineers who get embedded in client environments. 13 skills covering the full engagement lifecycle: land, discover, build, ship, and hand off.",
   "version": "1.0.0",
   "author": {
-    "name": "FDEOS",
-    "url": "https://github.com/FDEOS"
+    "name": "Subash Natarajan",
+    "url": "https://github.com/suboss87"
   },
   "homepage": "https://github.com/suboss87/fde-os",
   "repository": "https://github.com/suboss87/fde-os",
   "license": "MIT",
-  "keywords": ["fde", "forward-deployed-engineer", "enterprise", "skills", "methodology", "brownfield", "context-engineering", "chaos-engineering", "prototyping"],
-  "hooks": "./hooks/hooks.json"
+  "keywords": [
+    "fde",
+    "forward-deployed",
+    "consulting",
+    "legacy-code",
+    "client-engagement",
+    "brownfield",
+    "enterprise",
+    "skills"
+  ]
 }
