@@ -41,12 +41,24 @@ Anything longer is two tasks. Anything shorter is probably setup, not a task. Th
 **Step 5: Add the human touchpoints**
 After every 2-3 technical tasks, add: "Show progress to [stakeholder from stakeholders.md]." These are not optional. They are not ceremony. An FDE who goes quiet for two weeks while building is not being efficient -- they are letting the customer fill that silence with doubt. A stakeholder who sees consistent small wins stays bought in. A stakeholder who goes three weeks without visible progress starts asking questions that derail the build.
 
+## The acceptance criteria gate
+
+No task moves to implementation without written acceptance criteria. Not "build the auth module" -- "a user can log in with valid credentials and receives a session token; a user with invalid credentials receives a 401 and no token is issued; a user with an expired token is redirected to login."
+
+If you cannot write the acceptance criteria, the task is not ready. This is not a process requirement. It is a signal about your own understanding. Vague acceptance criteria means you do not know what done looks like. That ambiguity will surface during build as scope creep, as disagreements about whether something is finished, as rework.
+
+The discipline: write the acceptance criteria before writing any code. If writing them reveals you do not know the answer to a question, that question goes to the customer before the task starts -- not during.
+
+**Happy path and unhappy path -- both required:**
+Every task needs both. Happy path: what happens when everything works. Unhappy path: what happens when it does not. An acceptance criterion that only covers the happy path is half a criterion. The failure modes are what you are actually shipping.
+
 ## Task format
 
 Each task:
 ```
 Task [N]: [One-line description of the outcome, not the activity]
 Delivers: [What someone can see or test when this is done]
+Accepts: [Happy path criteria] / [Unhappy path criteria]
 Touches: [Files or systems affected, blast radius declared upfront]
 Risk: [What could go wrong, and the fallback]
 Verify: [Specific check that confirms it's done]

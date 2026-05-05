@@ -55,6 +55,28 @@ A direct assessment:
 
 **`handoff.md`**: operational knowledge for whoever maintains this: what breaks, who knows what, how to deploy, how to roll back.
 
+## Operating model -- for transformation engagements
+
+A single build engagement ends when the code is in production and the team can maintain it. A transformation engagement ends when the organisation can make decisions about what to build next without you.
+
+These are different handoffs. The first is operational. The second is institutional.
+
+For transformation engagements, the close must answer four questions that do not exist in a single-build engagement:
+
+**Who owns AI governance after you leave?**
+Not "who owns the codebase" -- who makes the decision about whether a model is performing acceptably? Who decides when to retrain? Who has the authority to pull an AI feature out of production if it starts producing harmful outputs? If nobody owns this, the AI will be left running in a degraded state until a failure becomes a crisis.
+
+**What is the retraining trigger?**
+Define it explicitly before you leave. Not "when performance drops" -- that is not a trigger, it is a feeling. The trigger is: "When precision on the validation set drops below 0.82 for three consecutive weeks, the model owner initiates retraining." Write the number. Write the condition. Write the owner. Without this, nobody will retrain until it breaks.
+
+**What does the operating model look like at scale?**
+Pilot had three use cases and one team. Scale has twenty use cases and five teams. Who coordinates? Who sets the standards? Who arbitrates when two teams want to use AI differently? The FDE who builds a great pilot and leaves without an operating model hands the customer a success that will fragment in six months.
+
+**What is the decision authority for new use cases?**
+After you leave, who can approve a new AI use case? What is the intake process? What risk assessment is required? Without this, every new use case either gets blocked by excessive governance or gets built without any -- and both outcomes produce failures.
+
+Write the answers to these four questions in `handoff.md` before the engagement closes.
+
 ## Principles
 - The engagement isn't done until the customer can operate without you.
 - The retrospective is an investment in the next engagement, not a post-mortem.

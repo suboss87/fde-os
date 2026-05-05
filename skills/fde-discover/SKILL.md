@@ -41,6 +41,32 @@ Scan methodically. Do not load the full codebase into context.
 5. Data flow -- where data comes in, how it moves, where it goes, where it stops.
 6. Test landscape -- what is covered, what is not, what is a lie (tests that pass but do not actually verify the behaviour they claim to test).
 
+## When scope is a transformation, not a single problem
+
+A startup bug fix and a bank AI transformation both need discovery. The difference is the unit of analysis.
+
+For a single problem: map the codebase, find the real requirement, confirm or disprove the brief.
+
+For a programme-scale transformation: the terrain is the organisation's capability landscape, not just one codebase.
+
+**Use case scoring -- do this before prototyping anything:**
+
+When multiple use cases are on the table (which is always true in a transformation), score each one across three dimensions:
+
+| Dimension | Question | Score 1-5 |
+|---|---|---|
+| Business value | What does it cost them if this is not solved? | |
+| Implementation complexity | How hard is this to build safely? | |
+| Data readiness | Is the data available, clean, and in sufficient volume? | |
+
+Plot value against complexity. The sweet spot is high value, low complexity, high data readiness. That is your first prototype. High value, high complexity is phase two. Low value anything is a future phase or a no.
+
+Never let enthusiasm for a technically interesting use case override this scoring. The most impressive AI demo is worth nothing if the data is not there or the complexity is six months of work.
+
+**The capability gap map -- for transformation engagements:**
+
+Ask: "What does this organisation do today that is manual, repetitive, and rules-based?" Map each answer. These are your AI use case candidates. Then ask: "Where does the process break down?" That is where to start.
+
 ## When discovery reveals more than the brief
 
 Sometimes the scan confirms the brief. Sometimes it reveals the problem is three times larger.
@@ -69,6 +95,23 @@ No padding. One concrete paragraph on each.
 **`reality.md`**: the real problem versus the stated brief. Evidence for each claim. Updated as evidence changes.
 
 **`terrain.md`**: codebase map -- modules, hotspots, data flow, test gaps. Updated as you learn more.
+
+## If you have formed three wrong reads on the real problem
+
+Stop. Do not form a fourth hypothesis.
+
+If your first three reads on the real problem have all been disproven, the brief is actively misleading you. This is not a discovery failure. It means someone is not telling you something. The most common cause: the person who briefed you does not know the real problem either, or knows it and cannot say it directly.
+
+Change the method. Stop analysing the system. Start asking different people. "If you had to bet on what's actually wrong here, what would you say?" Ask three people separately. The thing they all hesitate before saying is the real problem.
+
+## When you know you are doing discovery wrong
+
+These thoughts mean stop immediately:
+
+- "I'll finish mapping the codebase and then work out the real problem" -- you are avoiding the uncomfortable conversation
+- "The brief is probably roughly right" -- the brief is never roughly right, it is always missing the load-bearing detail
+- "I don't want to challenge the customer's framing yet" -- this is the moment to challenge it, not later
+- "One more week of discovery and I'll know enough" -- discovery does not end because you know enough, it ends because you have committed to a hypothesis
 
 ## Principles
 - The brief is a hypothesis until evidence confirms it.

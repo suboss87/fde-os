@@ -11,6 +11,22 @@ Load `context.md` and `reality.md` only. Load `terrain.md` only if the prototype
 ## Purpose
 Build a throwaway first. Show it. Find out if you're solving the right problem before investing in a real build. Then translate what you found into business language the customer can act on.
 
+## When multiple use cases are on the table
+
+In a transformation engagement, the question is not just "what are we prototyping" but "which of the five use cases on the whiteboard do we prototype first."
+
+Score them before picking. Three dimensions:
+
+**Value** -- what does it cost the business if this is not solved? Score 1-5. A use case that saves 10 hours of manual work per week is a 2. A use case that eliminates a regulatory breach risk is a 5.
+
+**Complexity** -- how hard is this to build safely and maintain? Score 1-5 (5 = hardest). A rules-based classifier on structured data is a 1. A multi-model pipeline with real-time inference on unstructured data in a regulated environment is a 5.
+
+**Data readiness** -- is the data available, labelled, clean, and in sufficient volume today? Score 1-5 (5 = fully ready). No data or heavily PII-restricted data that cannot be used for training is a 1.
+
+**Formula**: Value divided by Complexity, weighted by Data readiness. The use case with the best score gets prototyped first. High value, low complexity, high data readiness is the pattern you are looking for.
+
+This is not perfect scoring. It is a forcing function to make the trade-offs explicit before you spend three days building the wrong prototype.
+
 ## Opening question
 
 > "What's the riskiest assumption we're making about this solution?"

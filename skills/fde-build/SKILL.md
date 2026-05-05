@@ -14,6 +14,32 @@ Load `context.md`, `terrain.md`, and `decisions.md` only. Load `trust-profile.md
 
 If `terrain.md` does not exist, run `@fde-discover` first. Building without a terrain map is how you break the thing nobody told you was connected to the thing you were touching.
 
+## Technical strategy before touching code
+
+Every non-trivial build decision needs three options, not one. Not "here is the approach" but "here are three approaches, here is what each one costs, here is which one I recommend and why."
+
+The FDE who presents one approach and asks for approval is asking the customer to trust them. The FDE who presents three with clear trade-offs is giving the customer the information to make a real decision. That is a different kind of trust, and it lasts longer.
+
+**Architecture decisions -- always three options:**
+Option A: the safe, conventional choice. Lower risk, longer timeline, higher confidence.
+Option B: the pragmatic middle. Reasonable risk, reasonable timeline, validated trade-offs.
+Option C: the aggressive choice. Higher risk, shorter timeline, specific conditions under which it is the right call.
+
+State which you recommend. State what would make you change that recommendation.
+
+**Refactoring classification -- for every piece of code you touch:**
+Before touching any existing code, classify it:
+- **Fix now**: actively causing failures or blocking progress. Fix before proceeding.
+- **Fix when touched**: not blocking now but will cause problems if left when you change the surrounding code. Fix it as part of this change.
+- **Document and leave**: ugly, suboptimal, or confusing -- but not causing failures and not adjacent to your change. Document why it is the way it is and leave it alone.
+
+The third category is the hardest discipline. The instinct is to fix everything you see. An FDE who refactors opportunistically creates changes nobody asked for, diffs nobody can review, and regressions nobody expected.
+
+**Thin vertical slices -- the build order that keeps trust intact:**
+Build the thinnest path the customer can see working, then expand. Not the full database layer, not the complete API, not the entire UI. One path, end to end, demonstrable, before you build the next one.
+
+A working thin slice shown at the end of day three is worth more than a complete horizontal layer that cannot be demonstrated until week three. Invisible progress is not progress -- it is risk accumulating silently.
+
 ## The build approach
 
 **For any codebase:**
@@ -64,6 +90,19 @@ Weekly: update the value log in `delivery.md`. What has this work delivered in r
 **`risks.md`**: live risk register, updated as new risks surface.
 
 **`delivery.md`**: running value log -- what shipped, what it delivered, how to roll back.
+
+## When you know you are doing the build wrong
+
+These thoughts mean stop and reassess:
+
+- "I'll add the tests after this works" -- you have already introduced a regression you cannot see yet
+- "This is a small change, I don't need to declare the blast radius" -- the change that breaks something always looked small
+- "I'll clean this up in the next PR" -- it will not be cleaned up in the next PR
+- "The scope crept a bit but it's fine" -- it is not fine, you have made a commitment without a conversation
+- "I'll refactor this while I'm here" -- you are introducing unasked-for risk into an unrelated change
+- "Three fixes in and it still isn't working" -- this is the signal to stop, you have the wrong mental model of the problem
+
+If you have applied three fixes to the same issue and it is still broken, the diagnosis is wrong. Do not apply a fourth fix. Stop, state your current understanding explicitly, identify what evidence would disprove it, and test that first.
 
 ## Principles
 - Characterisation tests before modification. Every single time.

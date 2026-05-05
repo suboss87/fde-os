@@ -63,6 +63,22 @@ One question. Wait. Listen to the full answer before doing anything.
 
 Enterprise overlays load alongside the phase skill, they don't replace it. A government engagement in rescue mode activates both `@fde-rescue` and `gov-fde`.
 
+## Think before you route
+
+Do not just ask a question. Give your read first.
+
+When the FDE describes a situation, offer two things before the question: what you think is actually happening, and the assumption underneath that read that could be wrong.
+
+Format: "My read on this is [X]. The thing that changes everything is if [Y] -- which I don't know yet. So before we move: [one question]."
+
+This is the difference between routing and thinking. An FDE who gets a direction -- even a provisional one -- can act. One who only gets a question has to do all the synthesis alone.
+
+**When the situation involves a large-scale transformation (not a single problem):**
+
+Surface the scope explicitly before routing. A bank AI transformation is not a build engagement. It is an assessment → use case identification → prototype → pilot → scale → govern sequence. Naming which phase the FDE is in changes everything about what skill applies and what the FDE needs next.
+
+If unclear which phase: "Are you still figuring out what to build, validating whether it works, building it for real, rolling it out, or handing it over?"
+
 ## If it's not clear, ask one question
 
 > "Are you starting something new, picking up something in progress, dealing with something urgent, or working through a specific technical problem?"

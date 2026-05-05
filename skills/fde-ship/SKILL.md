@@ -39,6 +39,22 @@ If anything looks wrong, roll back immediately. Don't investigate during the can
 
 Expand in stages. 5% confirmed stable, go to 25%. 25% stable, go to 100%.
 
+## Programme-level rollout -- for transformation engagements
+
+A canary deploy covers one service going to one environment. A transformation rollout covers an AI programme going to an enterprise. These are different problems.
+
+For programme-scale deployments, the sequence is not canary → 25% → 100%. It is:
+
+**Pilot** -- one team, one use case, controlled conditions. The goal is not to prove it works technically. It is to prove it works with real users in a real environment. Define success metrics before the pilot starts. If you define them after, you will fit the metrics to the result.
+
+**Limited release** -- three to five teams, real production load, monitored closely. The goal is to find the failure modes that the pilot did not surface. There will always be failure modes the pilot did not surface. The limited release is where you find them before they affect everyone.
+
+**Broad release** -- available to all qualifying teams with self-serve onboarding. The goal is adoption without your involvement. If teams need you to get started, the onboarding is not finished. Fix that before broad release.
+
+**Enterprise standard** -- part of how the organisation works, not a special programme. The goal is that the FDE is no longer needed for this use case. This is the end state.
+
+The FDE who goes straight from pilot to enterprise standard will have a high-profile failure at scale. The FDE who sequences deliberately will have a programme that builds confidence at each step and survives the inevitable political scrutiny that comes when something goes wrong.
+
 ## After shipping
 
 Run smoke tests against production. Verify the business metric moved in the right direction.
