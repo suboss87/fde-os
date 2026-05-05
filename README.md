@@ -15,12 +15,16 @@ FDEOS gives your AI agent the judgment to operate in that environment. How to la
 
 <br>
 
+**Claude Code**
 ```
 /plugin marketplace add suboss87/fde-os
 /plugin install fdeos@fdeos
 ```
 
-Also works with Cursor, Windsurf, Cline via `npx fdeos@latest`
+**Cursor, Windsurf, Cline, or any other agent**
+```bash
+npx fdeos@latest
+```
 
 <br>
 
@@ -66,13 +70,13 @@ A typical engagement looks like this:
 
 7. **Close.** `@fde-close` captures what was learned, extracts reusable patterns, and produces a handoff document the team can actually use.
 
-At any point: `@fde-rescue` for production fires. `@fde-debug` for systematic debugging.
+At any point: `@fde-rescue` for production fires or trust crises. `@fde-debug` for systematic debugging.
 
 ---
 
 ## Install
 
-**Claude Code**
+### Claude Code
 
 ```
 /plugin marketplace add suboss87/fde-os
@@ -87,19 +91,21 @@ echo ".fde/" >> .gitignore
 
 Open Claude Code and type `@fde` to start.
 
-For project-level FDEOS configuration (optional):
-
-```bash
-find ~/.claude/plugins/cache -path "*/fdeos*/CLAUDE.md.template" | head -1 | xargs -I{} cp {} ./CLAUDE.md
-```
-
-**Cursor, Windsurf, or any other agent**
+### Cursor, Windsurf, Cline, or any other agent
 
 ```bash
 npx fdeos@latest
 ```
 
+This copies all 13 skills directly to `~/.claude/skills/` -- the standard location most AI coding agents read from. No plugin system needed. Works with any tool that loads skills or rules from that directory.
+
+After install, open your agent and type `@fde` to start.
+
 The `.fde/` directory holds your engagement brain: trust profiles, stakeholder maps, real problem, decisions. It contains sensitive customer information and must stay local.
+
+```bash
+echo ".fde/" >> .gitignore
+```
 
 For detailed setup: [docs/install.md](docs/install.md).
 
@@ -119,7 +125,7 @@ You do not pick these. `@fde` routes to the right one based on what you tell it.
 | `@fde-discover` | Finds the real problem. Maps the codebase. Surfaces shadow processes and workarounds. |
 | `@fde-sketch` | Builds a throwaway to validate direction. Pitches the outcome in business terms. |
 | `@fde-build` | Safe implementation. Characterisation tests, Strangler Fig, blast radius analysis. |
-| `@fde-rescue` | Production fire. Stabilise first, understand second, fix third. |
+| `@fde-rescue` | Production fire or trust crisis. Stabilise first, understand second, fix third. |
 | `@fde-ship` | Deploy safely. Pre-flight checklist, canary, verified rollback. |
 | `@fde-close` | Wrap up. Retrospective, pattern extraction, clean handoff. |
 
