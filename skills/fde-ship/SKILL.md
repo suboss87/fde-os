@@ -59,7 +59,19 @@ The FDE who goes straight from pilot to enterprise standard will have a high-pro
 
 Run smoke tests against production. Verify the business metric moved in the right direction.
 
-Update delivery.md with what shipped, when, what it delivers, and how to roll back.
+**Define the pulse before you close the deploy:**
+
+A deployment without a defined pulse check is a deployment you will only hear about again when something breaks. Before you close the laptop, write three things into `delivery.md`:
+
+1. **The metric**: what number tells you this is working? Not "error rate is low" -- "p99 latency on the payment endpoint is below 800ms" or "document processing success rate is above 94%."
+
+2. **The frequency**: how often do you check it? Daily for the first week. Weekly after that. Monthly once stable.
+
+3. **The threshold**: what number triggers an incident response? Write the exact value. If it drops below this number, someone acts. If nobody knows the threshold, nobody acts until it is too late.
+
+For AI components specifically: define what "normal" output looks like before you leave. If the model starts drifting -- producing outputs that are technically valid but subtly wrong -- nobody will notice until a human complains. The pulse check for an AI component is not just latency and error rate. It is output quality on a sample of real production inputs, checked weekly.
+
+Write the pulse definition in `delivery.md` alongside the deployment record. The person who inherits this system needs to know what to watch, not just what was built.
 
 ## Writes to `.fde/`
 
