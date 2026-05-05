@@ -3,10 +3,11 @@
 ## Claude Code
 
 ```
-/plugin install --marketplace github:suboss87/fde-os fdeos
+/plugin marketplace add suboss87/fde-os
+/plugin install fdeos@fdeos
 ```
 
-That's it. Claude Code installs the plugin directly from GitHub.
+That's it. Claude Code clones and installs the plugin directly from GitHub.
 
 Then in your project:
 
