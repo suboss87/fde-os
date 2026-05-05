@@ -11,4 +11,4 @@ Hide
 Type "bash media/demo.sh"
 Show
 Enter
-Sleep 28s
+Sleep 38s

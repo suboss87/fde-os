@@ -1,7 +1,7 @@
 {
   "name": "fdeos",
   "version": "1.0.0",
-  "description": "The engagement operating system for Forward Deployed Engineers. Skills plugin for Claude Code and other AI agents.",
+  "description": "AI skills plugin for engineers embedded in client environments. Teaches your AI agent how to land, discover, build, and hand off. Works with Claude Code, Cursor, Windsurf, and any AI coding agent.",
   "bin": {
     "fdeos": "./bin/install.js"
   },
@@ -16,12 +16,22 @@
   ],
   "keywords": [
     "claude-code",
+    "claude-code-plugin",
     "ai-agent",
     "skills",
     "plugin",
     "fde",
     "forward-deployed",
-    "engineering"
+    "engineering",
+    "consulting",
+    "technical-consulting",
+    "client-engagement",
+    "implementation-engineer",
+    "legacy-code",
+    "brownfield",
+    "cursor",
+    "windsurf",
+    "cline"
   ],
   "repository": {
     "type": "git",

@@ -37,7 +37,7 @@ function printSuccess() {
   console.log('  Next steps:')
   console.log('')
   console.log('  1. Copy CLAUDE.md to your project:')
-  console.log('     cp ~/.claude/skills/../CLAUDE.md.template ./CLAUDE.md')
+  console.log('     cp ~/.claude/FDEOS-CLAUDE.md.template ./CLAUDE.md')
   console.log('')
   console.log('  2. Open Claude Code in your project and type:')
   console.log('     @fde')

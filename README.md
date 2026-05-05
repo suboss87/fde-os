@@ -2,11 +2,11 @@
 
 # FDEOS
 
-**The engagement operating system for Forward Deployed Engineers.**
+**The AI plugin for engineers who get embedded in client environments.**
 
-A Forward Deployed Engineer is the person sent into a customer's environment to solve what their team could not. You inherit an undocumented codebase, stakeholders who cannot agree on what done looks like, and a deadline that does not move.
+You inherit an undocumented codebase. Stakeholders who cannot agree on what done looks like. A deadline that does not move.
 
-FDEOS gives your AI agent the judgment to operate in that environment.
+FDEOS gives your AI agent the judgment to operate in that environment. How to land without breaking trust. How to find the real problem before writing code. How to ship safely in a codebase you did not build. How to leave.
 
 [![GitHub Stars](https://img.shields.io/github/stars/suboss87/fde-os?style=for-the-badge&logo=github&color=181717)](https://github.com/suboss87/fde-os)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
@@ -19,7 +19,7 @@ FDEOS gives your AI agent the judgment to operate in that environment.
 npx fdeos@latest
 ```
 
-Works with Claude Code, Cursor, Windsurf, Cline, and any AI agent.
+Works with Claude Code, Cursor, Windsurf, Cline, and any AI coding agent.
 
 <br>
 
@@ -45,9 +45,9 @@ Works with Claude Code, Cursor, Windsurf, Cline, and any AI agent.
 
 Invoke `@fde` and describe your situation in plain language. FDEOS routes silently to the right skill. You never pick a skill yourself.
 
-It opens with one question, or none if the situation is clear, then gives you specific actionable direction. Like a 30-year veteran sitting next to you who has seen this exact situation before.
+Without FDEOS, your AI agent treats every engagement like a fresh coding task. With FDEOS, it knows the difference between day-one trust-building and day-thirty delivery. It reads the environment before touching code. It questions the brief. It surfaces shadow processes. It writes characterisation tests before modifying eight-year-old code. Context survives sessions. Judgment accumulates.
 
-Everything gets written to `.fde/` in your project: trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another FDE picks it up and is operational in minutes.
+Everything gets written to `.fde/` in your project: trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another engineer picks it up and is operational in minutes.
 
 A typical engagement looks like this:
 
@@ -171,7 +171,7 @@ Add `.fde/` to your `.gitignore`. It contains sensitive customer information.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Every merged skill contribution adds your name to the README.
 
 ## License
 
