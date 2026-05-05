@@ -10,10 +10,7 @@
   "plugins": [
     {
       "name": "fdeos",
-      "source": {
-        "source": "github",
-        "repo": "suboss87/fde-os"
-      },
+      "source": "./",
       "description": "13 skills covering the full FDE engagement lifecycle: land, discover, plan, build, review, ship, and close. Enterprise overlays for healthcare, fintech, and government."
     }
   ]

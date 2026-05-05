@@ -21,6 +21,8 @@ An FDE plan is not a sprint backlog. It accounts for the human side, when to sho
 
 One question. Then listen before structuring anything.
 
+Before planning begins, confirm scope is locked. Read `success.md`. If out-of-scope is not defined, define it now. A plan built on undefined scope will accumulate scope creep silently. Every task added later without a scope conversation is a commitment made without the customer's awareness.
+
 ## The planning approach
 
 **Step 1: Start from success, work backwards**

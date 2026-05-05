@@ -43,6 +43,30 @@ Give them 3 things immediately:
 
 No long analysis. They need to act.
 
+## When the crisis is trust, not code
+
+Not all fires are technical. Sometimes the crisis is that the customer has lost confidence in the engagement. This is more dangerous than a production outage because it does not announce itself.
+
+**Signals it is a trust fire, not a technical one:**
+- Stakeholder stops responding or routes around you
+- Meetings get shorter and decisions get deferred
+- Someone asks if the timeline is still realistic
+- A decision-maker you have not met starts asking questions
+
+**How to respond:**
+Do not push harder on delivery. That is the wrong instinct.
+
+Stop and ask directly: "I want to make sure we are still aligned. What is your biggest concern right now?" Then listen without defending.
+
+Three things that rebuild trust faster than code:
+1. Acknowledge the gap honestly. "We underestimated X, here is what we know now."
+2. Show the recovery path in concrete steps, not promises.
+3. Get one quick win visible before the next conversation.
+
+Do not hide the problem. Do not over-promise a recovery. Do not try to recover through volume of output -- more code does not fix broken confidence.
+
+Write the trust recovery in `decisions.md`: what happened, what you said, what was agreed.
+
 ## After the crisis
 
 Once stable, write the chaos log. Don't skip this. The log from one crisis saves 3 hours in the next one.

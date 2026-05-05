@@ -42,6 +42,10 @@ Don't say yes immediately. Say: "That's worth adding, let me place it."
 
 Then: is this the current phase, a future phase, or a separate engagement? What does adding it now cost in time? Log it in `decisions.md`. Every addition is a decision, not a default yes.
 
+If the request is out of scope as defined in `success.md`, say so explicitly: "That is outside what we agreed for this engagement. I can add it to a future phase, or we can discuss rescoping." Do not absorb scope quietly. An FDE who takes on more than was agreed without naming it creates a precedent that the scope boundary does not exist.
+
+If you are in a commercial engagement, unnamed scope additions can also affect billing and liability. Even if the commercial relationship is not yours to manage, flag the addition to whoever is. It is not your call to absorb, but it is your responsibility to surface it.
+
 ## What to produce
 
 After each significant change:

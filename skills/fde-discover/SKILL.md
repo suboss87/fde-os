@@ -51,6 +51,20 @@ Tell the FDE:
 
 One concrete paragraph on each. No padding.
 
+## When discovery reveals more than the brief
+
+Sometimes the scan confirms the brief. Sometimes it reveals the problem is three times larger.
+
+If discovery reveals the problem is significantly bigger than scoped, tell the customer before you tell yourself it is manageable.
+
+How to have that conversation:
+- Lead with what you found, not with what it costs. "Here is what we know now" before "here is what that means for the timeline."
+- Present the reality with evidence. Not "I think this is bigger," but "The payment service has no integration tests, the migration script was never run in production, and the data model has three conflicting schemas."
+- Give them options: descope to deliver something real, rescope to address the real problem, or pause to plan properly. Never ask them to accept a bad outcome silently.
+- Confirm the reset in writing. Update `success.md` and `brief.md` to reflect the new shared understanding.
+
+The FDE who hides a scope reset to avoid a hard conversation loses the customer's trust the moment the gap becomes visible. The FDE who names it early and proposes a path forward earns the relationship.
+
 ## Writes to `.fde/`
 
 **`reality.md`**: the real problem vs the stated brief. Evidence for each claim.

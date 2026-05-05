@@ -3,8 +3,7 @@
 ## Claude Code
 
 ```
-/plugin marketplace add github:suboss87/fde-os
-/plugin install fdeos@fdeos
+/plugin install --marketplace github:suboss87/fde-os fdeos
 ```
 
 That's it. Claude Code installs the plugin directly from GitHub.
@@ -12,8 +11,13 @@ That's it. Claude Code installs the plugin directly from GitHub.
 Then in your project:
 
 ```bash
-cp ~/.claude/FDEOS-CLAUDE.md.template ./CLAUDE.md
 echo ".fde/" >> .gitignore
+```
+
+For project-level FDEOS configuration (optional):
+
+```bash
+find ~/.claude/plugins/cache -path "*/fdeos*/CLAUDE.md.template" | head -1 | xargs -I{} cp {} ./CLAUDE.md
 ```
 
 Open Claude Code in your project and type `@fde` to start.
@@ -34,7 +38,7 @@ The installer copies all skills to the correct directory for your agent automati
 
 **Claude Code:**
 ```
-/plugin update fdeos@fdeos
+/plugin update fdeos
 ```
 
 **Other agents:**
