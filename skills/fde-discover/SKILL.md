@@ -32,46 +32,14 @@ The workaround is the real spec. Shadow spreadsheets, nightly scripts, the Slack
 
 ## Mapping the terrain
 
-For a single bug or feature: scan the hotspots. For a legacy system takeover or transformation engagement: run the four-stream analysis.
+Scan methodically. Do not load the full codebase into context.
 
-**Quick scan (single problem scope):**
-
-Run these before reading a single file:
-```bash
-# Highest churn -- the files everyone is afraid to touch
-git log --oneline --since="6 months ago" -- '*.py' '*.js' '*.ts' '*.java' | \
-  grep -oP '(?<=\s)\S+\.(?:py|js|ts|java)' | sort | uniq -c | sort -rn | head -20
-
-# Largest files -- complexity lives here
-find . -name "*.py" -o -name "*.js" -o -name "*.ts" | xargs wc -l 2>/dev/null | sort -rn | head -20
-
-# Technical debt density
-grep -rn "TODO\|FIXME\|HACK\|XXX" --include="*.py" --include="*.js" --include="*.ts" | wc -l
-
-# Test coverage signal
-find . -path "*/test*" -name "*.py" -o -path "*/spec*" -name "*.js" | wc -l
-```
-
-The numbers tell you where to go. The highest-churn file with the lowest test coverage is where you start.
-
-**Four-stream analysis (legacy system or transformation scope):**
-
-Run these four in parallel. Each stream produces a section of `terrain.md`.
-
-**Stream 1 -- Domain:** What does this system think about? Extract the core entities, their relationships, and the language the codebase uses. Look for bounded contexts -- where does one domain end and another begin? Where does the naming get inconsistent? That boundary is usually where the design broke down.
-
-**Stream 2 -- Interactions:** What does a user actually do? Map the key user workflows end-to-end: what triggers them, what they touch, where they can fail. Draw it in Mermaid if the flow is complex enough to get lost in:
-```
-graph LR
-  A[User action] --> B[API call] --> C[Service] --> D[Database]
-  C --> E[External system]
-```
-
-**Stream 3 -- Application:** Where does the real business logic live? Not the framework, not the boilerplate -- the rules that are specific to this business. These are usually in the places nobody has documented. Find them by looking for the code that has the most comments apologising for it.
-
-**Stream 4 -- Data:** What does the schema look like? Where are the stored procedures, triggers, or constraints that encode business rules nobody knows about? Database-level business logic is the most dangerous kind -- it is invisible to the application layer and survives rewrites that should have replaced it.
-
-Synthesise the four streams into a single terrain map. The intersections between streams are where the highest risk lives.
+1. Language, framework, build system. Age of the last major upgrade.
+2. Module map -- what does what. Look for modules with no clear owner.
+3. Hotspots -- highest churn files, most complex, least tested. Mark these "handle with care." The highest churn file in any legacy codebase is the one everyone is afraid to refactor but cannot avoid touching.
+4. AI components: model calls, prompt files, vector stores, inference pipelines. Flag every one. AI components do not fail like regular code. They degrade silently over time as the world changes around them.
+5. Data flow -- where data comes in, how it moves, where it goes, where it stops.
+6. Test landscape -- what is covered, what is not, what is a lie (tests that pass but do not actually verify the behaviour they claim to test).
 
 ## When scope is a transformation, not a single problem
 
