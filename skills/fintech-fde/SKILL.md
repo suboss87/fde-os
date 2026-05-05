@@ -5,6 +5,9 @@ description: FDEOS overlay for fintech. PCI-DSS, transaction integrity, idempote
 
 # fintech-fde
 
+## Token efficiency
+Load `trust-profile.md` always -- sacred data classification and AI policy must be confirmed before any action. Load `terrain.md` only when reviewing code that handles transactions or cardholder data. Do not load other `.fde/` files unless the active phase skill requires them.
+
 ## Purpose
 Financial systems carry a specific class of failure that other systems don't: silent money loss. A bug that corrupts data in a CMS is bad. A bug that processes a payment twice, misroutes a transfer, or silently drops a transaction can cause regulatory breaches, customer financial harm, and criminal liability. This overlay adds the layer of judgment that financial environments require.
 

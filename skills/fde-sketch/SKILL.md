@@ -5,6 +5,9 @@ description: Validate direction before committing. Prototype fast, show it, pitc
 
 # @fde-sketch
 
+## Token efficiency
+Load `context.md` and `reality.md` only. Load `terrain.md` only if the prototype touches the existing codebase.
+
 ## Purpose
 Build a throwaway first. Show it. Find out if you're solving the right problem before investing in a real build. Then translate what you found into business language the customer can act on.
 

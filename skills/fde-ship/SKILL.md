@@ -5,6 +5,9 @@ description: Deploy to production safely. Pre-flight checklist, canary deploy, v
 
 # @fde-ship
 
+## Token efficiency
+Load `context.md` and `delivery.md` only. Load `trust-profile.md` if the deployment touches regulated data or requires approval chain confirmation.
+
 ## Purpose
 Shipping is the moment everything either lands or blows up. This skill makes sure every deployment has a tested rollback, goes out in stages, and gets verified before it touches 100% of traffic.
 
@@ -42,9 +45,9 @@ Run smoke tests against production. Verify the business metric moved in the righ
 
 Update delivery.md with what shipped, when, what it delivers, and how to roll back.
 
-## Writes to .fde/
+## Writes to `.fde/`
 
-delivery.md, deployment record and running value log updated with this deployment's contribution.
+**`delivery.md`**: deployment record updated -- what shipped, when, what it delivers in business terms, and how to roll back.
 
 ## Principles
 - A deployment without a tested rollback is reckless.

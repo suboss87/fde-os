@@ -5,6 +5,9 @@ description: Taking over mid-engagement. Reads what exists, separates what works
 
 # @fde-audit
 
+## Token efficiency
+Load `context.md` if it exists -- otherwise start cold. Do not load other `.fde/` files until the audit produces them. The point of this skill is to establish ground truth, not assume it.
+
 ## Purpose
 You're not starting fresh. Someone else was here before you, or the team has been building something for weeks. Before touching anything, you need to know what's real, what's assumed, and what's load-bearing.
 

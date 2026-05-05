@@ -5,6 +5,9 @@ description: End of engagement. Retrospective, pattern extraction, clean handoff
 
 # @fde-close
 
+## Token efficiency
+Load `context.md`, `reality.md`, `success.md`, `delivery.md`, and `decisions.md`. This skill needs the full picture -- it is the only one that does. Do not load `terrain.md` unless the handoff document requires codebase-specific guidance.
+
 ## Purpose
 The engagement doesn't end at ship. It ends when the customer team can maintain what was built without calling you. This skill captures everything learned, encodes reusable patterns, and leaves the customer genuinely self-sufficient.
 

@@ -8,10 +8,8 @@ description: Systematic debugging. Reproduce first, isolate second, fix third. N
 ## Purpose
 Debugging on an engagement is different from debugging your own code. You don't have full context, you don't know the history, and the pressure to just fix it is high. That pressure is the enemy. The engineers who guess-and-check under pressure cause the second incident. This skill enforces the right sequence.
 
-## Reads from .fde/
-- `context.md`: always
-- `terrain.md`: codebase map, known fragile zones
-- `chaos-log.md`: if this is a recurring issue, the pattern will be here
+## Token efficiency
+Load `context.md`, `terrain.md`, and `chaos-log.md` only. Do not load decisions.md or delivery.md -- they add noise when you need focus. Pull specific module context only when you have isolated the failure to a specific area.
 
 ## Opening question
 

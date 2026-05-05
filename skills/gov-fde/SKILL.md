@@ -5,6 +5,9 @@ description: FDEOS overlay for government. FedRAMP, ATO, data sovereignty, secur
 
 # gov-fde
 
+## Token efficiency
+Load `trust-profile.md` always -- classification level and clearance requirements must be known before any action. Load `terrain.md` only when reviewing code that handles controlled or classified data. Do not load other `.fde/` files unless the active phase skill requires them.
+
 ## Purpose
 Government engagements operate under constraints that exist nowhere else: statutory authority, multi-year procurement cycles, security clearance requirements, and data classification regimes that can make a single mishandled file a federal offence. The pace is slower by design. The stakes for getting the security posture wrong are higher than any commercial engagement.
 

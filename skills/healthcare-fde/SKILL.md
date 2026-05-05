@@ -5,6 +5,9 @@ description: FDEOS overlay for healthcare. HIPAA, PHI handling, audit trails, br
 
 # healthcare-fde
 
+## Token efficiency
+Load `trust-profile.md` always -- PHI classification and AI policy must be confirmed before any action. Load `terrain.md` only when reviewing code that handles patient data. Do not load other `.fde/` files unless the active phase skill requires them.
+
 ## Purpose
 Healthcare engagements carry risks that don't exist elsewhere. A data breach involving PHI (Protected Health Information) can end an organisation's operating licence. An audit trail gap can invalidate a clinical trial. An AI model trained on patient data without proper consent can trigger federal investigation. This overlay adds the layer of judgment that healthcare environments require.
 

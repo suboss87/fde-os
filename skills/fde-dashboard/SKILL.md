@@ -5,6 +5,9 @@ description: Generate a status dashboard across all active engagements from .fde
 
 # @fde-dashboard
 
+## Token efficiency
+Load only the specific files listed per engagement: `reality.md`, `brief.md`, `success.md`, `risks.md`, `decisions.md`, `delivery.md`. Do not load `terrain.md` or `trust-profile.md` -- they contain sensitive data and are not needed for the dashboard view.
+
 ## Purpose
 An FDE works across multiple engagements simultaneously. This skill reads all `.fde/` directories it can find and generates a single clean HTML file, a reflection board showing the full picture across every project.
 

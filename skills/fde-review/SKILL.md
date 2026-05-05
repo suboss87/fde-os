@@ -5,6 +5,9 @@ description: Two-stage code review: did we build what was agreed, then is it saf
 
 # @fde-review
 
+## Token efficiency
+Load `context.md`, `decisions.md`, `trust-profile.md`, and `terrain.md` only. Do not load `reality.md` or `stakeholders.md` -- they are not relevant to reviewing code against an agreed scope.
+
 ## Purpose
 Code review on an engagement is not the same as code review at a product company. You're often in a codebase you don't own, deploying to systems you can't fully see, with a customer who can't afford a bad release. This skill reviews through that lens.
 
@@ -51,6 +54,10 @@ A clear verdict for each stage:
 No padding. If it's fine, say it's fine. If something needs fixing, say exactly what and why, not just that it could be improved.
 
 Log the review outcome in `decisions.md`: what was reviewed, what was flagged, what was resolved.
+
+## Writes to `.fde/`
+
+**`decisions.md`**: review outcome logged -- what was reviewed, what was flagged, what was resolved. If Stage 1 fails, record the specific mismatch.
 
 ## Principles
 - Stage 1 before Stage 2. Always. Wrong scope reviewed well is still wrong scope.
