@@ -2,6 +2,8 @@
   "name": "fdeos",
   "description": "The AI plugin for engineers who get embedded in client environments. 13 skills covering the full engagement lifecycle: land, discover, build, ship, and hand off.",
   "version": "1.0.0",
+  "category": "productivity",
+  "tags": ["community-managed"],
   "author": {
     "name": "Subash Natarajan",
     "url": "https://github.com/suboss87"
@@ -12,7 +14,6 @@
   "keywords": [
     "fde",
     "forward-deployed",
-    "consulting",
     "legacy-code",
     "client-engagement",
     "brownfield",
