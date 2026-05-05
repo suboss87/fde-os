@@ -1,0 +1,23 @@
+{
+  "name": "fdeos",
+  "version": "1.0.0",
+  "description": "The AI plugin for engineers who get embedded in client environments. Teaches your AI agent how to land, discover, build, and hand off. 13 skills covering the full engagement lifecycle.",
+  "author": {
+    "name": "Subash Natarajan",
+    "url": "https://github.com/suboss87"
+  },
+  "homepage": "https://github.com/suboss87/fde-os",
+  "repository": "https://github.com/suboss87/fde-os",
+  "license": "MIT",
+  "keywords": [
+    "fde",
+    "forward-deployed",
+    "consulting",
+    "legacy-code",
+    "client-engagement",
+    "brownfield",
+    "enterprise"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
+}

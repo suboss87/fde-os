@@ -15,11 +15,11 @@ FDEOS gives your AI agent the judgment to operate in that environment. How to la
 
 <br>
 
-```bash
-npx fdeos@latest
+```
+/plugin install fdeos@claude-plugins-official
 ```
 
-Works with Claude Code, Cursor, Windsurf, Cline, and any AI coding agent.
+Also works with Cursor, Windsurf, Cline via `npx fdeos@latest`
 
 <br>
 
@@ -71,11 +71,11 @@ At any point: `@fde-rescue` for production fires. `@fde-debug` for systematic de
 
 ## Install
 
-```bash
-npx fdeos@latest
-```
+**Claude Code**
 
-The installer copies all skills and hooks to `~/.claude/skills/` automatically.
+```
+/plugin install fdeos@claude-plugins-official
+```
 
 Then in your project:
 
@@ -84,11 +84,17 @@ cp ~/.claude/FDEOS-CLAUDE.md.template ./CLAUDE.md
 echo ".fde/" >> .gitignore
 ```
 
+Open Claude Code and type `@fde` to start.
+
+**Cursor, Windsurf, or any other agent**
+
+```bash
+npx fdeos@latest
+```
+
 The `.fde/` directory holds your engagement brain: trust profiles, stakeholder maps, real problem, decisions. It contains sensitive customer information and must stay local.
 
-Open Claude Code in your project and type `@fde` to start.
-
-For Cursor, Windsurf, or other agents: see [docs/install.md](docs/install.md).
+For detailed setup: [docs/install.md](docs/install.md).
 
 ---
 
