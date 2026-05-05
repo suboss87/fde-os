@@ -1,6 +1,6 @@
 ---
 name: fde-discover
-description: Find the real problem and map the terrain. The brief is a hypothesis. This skill finds out what's actually true.
+description: Find the real problem. Map the codebase. The brief is a hypothesis until evidence confirms it.
 ---
 
 # @fde-discover

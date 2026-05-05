@@ -1,6 +1,6 @@
 ---
 name: healthcare-fde
-description: FDEOS overlay for healthcare engagements. HIPAA compliance, PHI handling, audit trails, break-glass access, and AI code policy in clinical environments.
+description: FDEOS overlay for healthcare. HIPAA, PHI handling, audit trails, break-glass, AI policy.
 ---
 
 # healthcare-fde

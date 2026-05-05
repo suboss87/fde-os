@@ -1,6 +1,6 @@
 ---
 name: fde-debug
-description: Systematic debugging for engagements. Reproduce first, isolate second, fix third. Never guess what changed, find it.
+description: Systematic debugging. Reproduce first, isolate second, fix third. Never guess.
 ---
 
 # @fde-debug

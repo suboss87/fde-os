@@ -1,6 +1,6 @@
 ---
 name: fde-sketch
-description: Validate direction before committing to a build. Prototype fast, show it, pitch the outcome to the business.
+description: Validate direction before committing. Prototype fast, show it, pitch the outcome.
 ---
 
 # @fde-sketch

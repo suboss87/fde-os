@@ -1,6 +1,6 @@
 ---
 name: fde-review
-description: Code review through the FDE lens. Two stages, does it do what we agreed, then is it safe to live with. Not just code quality. Deployment risk, rollback path, AI policy compliance.
+description: Two-stage code review: did we build what was agreed, then is it safe to ship.
 ---
 
 # @fde-review

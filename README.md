@@ -82,11 +82,16 @@ At any point: `@fde-rescue` for production fires. `@fde-debug` for systematic de
 Then in your project:
 
 ```bash
-cp ~/.claude/FDEOS-CLAUDE.md.template ./CLAUDE.md
 echo ".fde/" >> .gitignore
 ```
 
 Open Claude Code and type `@fde` to start.
+
+For project-level FDEOS configuration (optional):
+
+```bash
+find ~/.claude/plugins/cache -path "*/fdeos*/CLAUDE.md.template" | head -1 | xargs -I{} cp {} ./CLAUDE.md
+```
 
 **Cursor, Windsurf, or any other agent**
 

@@ -1,6 +1,6 @@
 ---
 name: fde-audit
-description: Taking over a mid-engagement project. Reads what exists, separates what works from what was assumed, and gives the FDE a safe starting point.
+description: Taking over mid-engagement. Reads what exists, separates what works from what was assumed.
 ---
 
 # @fde-audit

@@ -1,6 +1,6 @@
 ---
 name: fde-land
-description: First 48 hours of a new engagement. Builds trust, reads the environment, maps stakeholders, and defines what success looks like before any work starts.
+description: First 48 hours. Build trust, map stakeholders, define success before any work starts.
 ---
 
 # @fde-land

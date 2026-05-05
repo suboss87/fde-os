@@ -1,6 +1,6 @@
 ---
 name: fde-close
-description: End of engagement. Wrap up, encode what was learned, hand off to the customer team so they can maintain what was built.
+description: End of engagement. Retrospective, pattern extraction, clean handoff so the team can sustain it.
 ---
 
 # @fde-close

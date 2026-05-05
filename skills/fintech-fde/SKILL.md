@@ -1,6 +1,6 @@
 ---
 name: fintech-fde
-description: FDEOS overlay for fintech engagements. PCI-DSS, transaction integrity, idempotency, fraud detection patterns, and regulatory reporting in financial systems.
+description: FDEOS overlay for fintech. PCI-DSS, transaction integrity, idempotency, fraud signals.
 ---
 
 # fintech-fde

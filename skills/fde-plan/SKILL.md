@@ -1,6 +1,6 @@
 ---
 name: fde-plan
-description: Break work into atomic, shippable tasks before a single line is written. FDE planning accounts for stakeholder touchpoints and demos, not just technical steps.
+description: Break work into atomic tasks. Sequence by risk. Add stakeholder touchpoints every 2-3 tasks.
 ---
 
 # @fde-plan

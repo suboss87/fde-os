@@ -1,6 +1,6 @@
 ---
 name: fde-build
-description: Safe implementation in any codebase. Greenfield or legacy, characterisation tests first, Strangler Fig for anything fragile.
+description: Safe implementation in any codebase. Characterisation tests first, Strangler Fig for fragile code.
 ---
 
 # @fde-build

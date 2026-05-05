@@ -1,6 +1,6 @@
 ---
 name: gov-fde
-description: FDEOS overlay for government and public sector engagements. FedRAMP, ATO process, data sovereignty, security controls, and working within classified or restricted environments.
+description: FDEOS overlay for government. FedRAMP, ATO, data sovereignty, security controls, clearance.
 ---
 
 # gov-fde

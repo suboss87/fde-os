@@ -1,6 +1,6 @@
 ---
 name: fde-rescue
-description: Production fire, unknown APIs, or any situation where normal process has broken down. Stabilise first, understand second, fix third.
+description: Production fire or crisis. Stabilise first, understand second, fix third.
 ---
 
 # @fde-rescue

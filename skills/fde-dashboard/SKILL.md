@@ -1,6 +1,6 @@
 ---
 name: fde-dashboard
-description: Generate a clean HTML dashboard from all .fde/ data. Shows every active engagement, its status, progress, and what comes next.
+description: Generate a status dashboard across all active engagements from .fde/ data.
 ---
 
 # @fde-dashboard
