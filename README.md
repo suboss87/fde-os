@@ -40,9 +40,9 @@ npx fdeos@latest
 
 Invoke `@fde` and describe your situation in plain language. FDEOS routes silently to the right skill. You never pick a skill yourself.
 
-Without FDEOS, your AI agent treats every engagement like a fresh coding task. With FDEOS, it knows the difference between day-one trust-building and day-thirty delivery. It reads the environment before touching code. It questions the brief. It surfaces shadow processes. It writes characterisation tests before modifying eight-year-old code. Context survives sessions. Judgment accumulates.
+It reads the environment before touching code. It questions the brief. It surfaces shadow processes. It writes characterisation tests before modifying eight-year-old code. Context survives sessions. Judgment accumulates.
 
-Everything gets written to `.fde/` in your project: trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another engineer picks it up and is operational in minutes.
+Everything written to `.fde/` in your project -- trust profile, real problem, codebase map, decisions, risks, delivery record. Sessions end, context survives. Another engineer picks it up and is operational in minutes.
 
 A typical engagement looks like this:
 
@@ -73,12 +73,6 @@ At any point: `@fde-rescue` for production fires or trust crises. `@fde-debug` f
 /plugin install fdeos@fdeos
 ```
 
-Then in your project:
-
-```bash
-echo ".fde/" >> .gitignore
-```
-
 Open Claude Code and type `@fde` to start.
 
 ### Cursor, Windsurf, Cline, or any other agent
@@ -87,7 +81,7 @@ Open Claude Code and type `@fde` to start.
 npx fdeos@latest
 ```
 
-This copies all 13 skills directly to `~/.claude/skills/` -- the standard location most AI coding agents read from. No plugin system needed. Works with any tool that loads skills or rules from that directory.
+Copies all 13 skills to `~/.claude/skills/` -- the directory most AI coding agents read from. No plugin system needed. Works with Cursor, Windsurf, Cline, and anything else that loads skills from that path.
 
 After install, open your agent and type `@fde` to start.
 
