@@ -2,11 +2,13 @@
 
 # FDEOS
 
-**The AI plugin for engineers who get embedded in client environments.**
+**The AI plugin for engineers embedded at client sites.**
 
-You inherit an undocumented codebase. Stakeholders who cannot agree on what done looks like. A deadline that does not move.
+You land on day one. The codebase is undocumented. The deadline is fixed. The brief describes a problem -- the real problem is somewhere underneath it.
 
-FDEOS gives your AI agent the judgment to operate in that environment. How to land without breaking trust. How to find the real problem before writing code. How to ship safely in a codebase you did not build. How to leave.
+Your AI agent knows how to write code. It does not know when to challenge the brief, how to read a stakeholder who has gone quiet, or what to do when you find out three weeks in that you have been solving the wrong problem.
+
+FDEOS gives it those skills. 13 skills covering the full engagement lifecycle: from the first meeting to the final handoff.
 
 [![GitHub Stars](https://img.shields.io/github/stars/suboss87/fde-os?style=for-the-badge&logo=github&color=181717)](https://github.com/suboss87/fde-os)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
