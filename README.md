@@ -28,15 +28,76 @@ npx fdeos@latest
 
 <br>
 
-![FDEOS in action](media/demo.gif)
+---
 
-<br>
+### Without FDEOS
 
-*"Don't write a line of code until you know what a bad outcome looks like for the person paying."*
+```
+You: "Starting at a new client tomorrow. Payments are broken. First meeting in an hour."
 
-*"Stabilise first. Understand second. Fix third. In that order, every time."*
+AI:  "I can help you with that. To fix the payments issue, I'd recommend
+     starting by reviewing the error logs, then checking the payment gateway
+     configuration. Would you like me to help you write some debugging code?"
+```
 
-*"The handoff is part of the job. If the team cannot sustain it, you did not finish."*
+### With FDEOS
+
+```
+You:  "@fde Starting at a new client tomorrow. Payments are broken. First meeting in an hour."
+
+FDEOS: "My read on this: the payments issue may not be the real problem.
+        'Payments are broken' after you've just landed usually means
+        something broke recently and someone is under pressure to explain it.
+
+        Before you touch any code -- one question: what changed in the last
+        72 hours? A deploy, a config update, a third-party provider incident?
+
+        That answer tells you whether you are debugging a regression or
+        inheriting a systemic problem that's been papered over.
+
+        And separately: who told you payments are broken? Is that the
+        stakeholder who hired you, or someone on the engineering team?
+        Those are different problems with different first moves."
+```
+
+---
+
+### Without FDEOS
+
+```
+You: "We're three weeks into the build and I just found out the real
+     problem is completely different from what we agreed."
+
+AI:  "That's a difficult situation. You should communicate the change
+     to stakeholders and update your project plan accordingly."
+```
+
+### With FDEOS
+
+```
+You:  "@fde Three weeks in. The brief is wrong. Real problem is different."
+
+FDEOS: "Stop the current build now. Every line you write from this point
+        is building on a foundation you know is wrong.
+
+        Before anything else: write down what you found and the evidence.
+        Not your interpretation -- the specific thing you traced. A data
+        flow, a schema that tells a different story, a workaround that
+        only exists because the stated problem was never the real one.
+
+        Have the conversation before today ends. Not an email. Find the
+        decision-maker and say: 'We need twenty minutes. We found something.'
+
+        Lead with evidence, not recommendations. Give them three paths:
+        descope to deliver something real within the original brief, rescope
+        to address the real problem with a revised timeline, or pause and
+        plan properly before committing to either.
+
+        Confirm the reset in writing before the build resumes. A verbal
+        agreement that the brief has changed is not a reset."
+```
+
+---
 
 <br>
 
