@@ -43,6 +43,27 @@ The failure mode that surfaces is rarely the root cause. A 500 error is a sympto
 ### 6. Verify the fix holds
 After fixing: does the reproduction case pass? Does anything adjacent break? Run the smallest viable test suite, not the full suite if it takes 45 minutes, but the tests covering the changed code plus the downstream callers.
 
+## What to say while you are still debugging
+
+FDE debugging happens in front of stakeholders. You will be asked for a status before you have one. How you answer that question determines whether the customer stays calm or escalates.
+
+**Before you know the cause:**
+"We have isolated it to [area]. We are testing one hypothesis right now. I will have an update in [specific time, not 'soon']."
+
+Never say "I'm not sure what's wrong yet." That is honest but it triggers panic. Say what you do know -- the blast radius, what is not affected, what you are testing. Partial information delivered confidently is more useful than full uncertainty delivered honestly.
+
+**If it is taking longer than the time you quoted:**
+Update before they ask. "Still investigating. The hypothesis we tested ruled out X. We are now looking at Y. Updated estimate: [time]." A customer who is updated proactively stays engaged. One who has to chase you for status starts escalating.
+
+**What not to say under any circumstances:**
+- "It might be..." -- you are guessing out loud, which transfers anxiety without information
+- "This is a weird one" -- every incident sounds manageable until you say this
+- "I've never seen this before" -- may be true, must not be said to the customer
+- "It shouldn't be doing that" -- they know. That is why you are here.
+
+**When you have the fix but not the root cause:**
+Do not ship a fix you cannot explain. A fix you cannot explain is a patch. Patches return. If the fix works but you do not understand why, treat it as a symptom fix and schedule a root cause investigation before the next release. Tell the customer: "We have stabilised it. We need one more hour to confirm the root cause before we close this."
+
 ## Write what you found
 
 After every debugging session, log in `chaos-log.md`:

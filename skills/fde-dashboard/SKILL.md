@@ -6,7 +6,7 @@ description: Generate a status dashboard across all active engagements from .fde
 # @fde-dashboard
 
 ## Token efficiency
-Load only the specific files listed per engagement: `reality.md`, `brief.md`, `success.md`, `risks.md`, `decisions.md`, `delivery.md`. Do not load `terrain.md` or `trust-profile.md` -- they contain sensitive data and are not needed for the dashboard view.
+Load per engagement: `reality.md`, `brief.md`, `success.md`, `risks.md`, `decisions.md`, `delivery.md`, and `stakeholders.md`. Do not load `terrain.md` (too large) or `trust-profile.md` (contains regulated data -- sensitive). `stakeholders.md` is needed specifically for trust signal detection: it is the file where signals like "stakeholder going quiet" or "routing around the FDE" are recorded, and these are the early warning signs that matter most across a portfolio.
 
 ## Purpose
 An FDE works across multiple engagements simultaneously. This skill reads all `.fde/` directories it can find and generates a single clean HTML file, a reflection board showing the full picture across every project.
@@ -26,6 +26,7 @@ Open in a browser. That's it.
 - Top active risk (from `risks.md`)
 - Last significant action and next step (from `decisions.md` and `delivery.md`)
 - Value delivered so far (from `delivery.md` value log)
+- **Trust signal** (from `stakeholders.md`): green if no adverse signals recorded, amber if a stakeholder has gone quiet or routed around the FDE, red if an escalation or explicit concern has been raised. This is the single most important row on the card. Technical progress on an engagement where trust is red is wasted until the trust issue is addressed first.
 
 ## The full reflection view
 

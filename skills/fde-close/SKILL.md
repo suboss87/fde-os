@@ -49,7 +49,7 @@ A direct assessment:
 
 ## Writes to `.fde/`
 
-**`retrospectives/[date]-[engagement].md`**: decisions, mistakes, surprises, lessons.
+**`retrospectives/YYYY-MM-DD-[engagement].md`**: decisions, mistakes, surprises, lessons. Written inside a `retrospectives/` subdirectory that this skill creates if it does not exist. File naming convention: `2026-05-06-acme-payments.md`. One file per engagement close. Do not append to a single file -- separate files make patterns easier to scan across engagements.
 
 **`patterns.md`**: reusable patterns extracted from this engagement.
 

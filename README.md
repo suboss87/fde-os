@@ -163,19 +163,23 @@ Every skill reads from and writes to `.fde/` in your project root. This is the e
 
 ```
 .fde/
-  context.md        current state, loaded at every session start
-  brief.md          what they said the problem is
-  success.md        agreed definition of done
-  trust-profile.md  sacred data, AI policy, approval chain
-  stakeholders.md   who matters, who is resistant, who is your champion
-  reality.md        what the real problem actually is
-  terrain.md        codebase map, hotspots, data flow, test gaps
-  decisions.md      every significant choice and why
-  risks.md          live risk register
-  delivery.md       what shipped and running value log
-  chaos-log.md      incident records with root cause
-  handoff.md        operational knowledge for the team taking over
-  patterns.md       reusable patterns extracted
+  context.md              current state, loaded at every session start
+  brief.md                what they said the problem is
+  success.md              agreed definition of done
+  trust-profile.md        sacred data, AI policy, approval chain
+  stakeholders.md         who matters, who is resistant, who is your champion
+  reality.md              what the real problem actually is
+  terrain.md              codebase map, hotspots, data flow, test gaps
+  decisions.md            every significant choice and why -- plan lives here too
+  risks.md                live risk register
+  delivery.md             what shipped and running value log
+  chaos-log.md            incident records with root cause
+  handoff.md              operational knowledge for the team taking over
+  patterns.md             reusable patterns extracted
+  audit.md                mid-engagement takeover: what is real vs assumed
+  business-case.md        scored use case and 3-sentence stakeholder pitch
+  prototype-log.md        what was built, shown, and learned from each prototype
+  retrospectives/         one file per engagement close: YYYY-MM-DD-name.md
 ```
 
 Add `.fde/` to your `.gitignore`. It contains sensitive customer information.

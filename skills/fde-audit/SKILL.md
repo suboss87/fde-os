@@ -47,14 +47,41 @@ A clear audit that tells any FDE, including one who just arrived, exactly where 
 
 Keep it honest. Don't soften the picture.
 
+## What to produce after the audit
+
+Before routing to any other skill, write three files. This is not optional. Every subsequent skill in the lifecycle reads from these. An audit that does not populate them leaves the next skill operating blind.
+
+**`audit.md`**: the full picture -- what's real, what's assumed, what's load-bearing, top risk, first 3 actions. Written for the FDE who picks this up at 2am and needs to be operational in ten minutes.
+
+**`terrain.md`**: the codebase map as you understand it now. Modules, hotspots, AI components, data flow, test gaps. This does not need to be complete -- it needs to be honest. Mark unknowns explicitly. `fde-build` will load this file. If it is empty, the build starts blind.
+
+**`reality.md`**: the real problem as the audit has surfaced it, versus what the stated brief says. Even if the brief is mostly accurate, state the delta. `fde-discover` and `fde-plan` both load this. If it is missing, those skills start from zero.
+
+**`context.md`**: update with the current engagement state -- who owns what, where things stand, what the FDE walking in needs to know in the first five minutes.
+
+## Routing after audit
+
+Once the three files are written, route explicitly:
+
+- If the real problem is still unclear: `@fde-discover` before anything else.
+- If the real problem is clear and the brief is confirmed: `@fde-plan` to sequence the work.
+- If there is an active crisis in the inherited system: `@fde-rescue` immediately.
+
+Do not route to `@fde-build` directly from audit. Build without a plan in an inherited system is the fastest path to a second incident.
+
 ## Writes to `.fde/`
 
-**`audit.md`**: the full picture: what's real, what's assumed, what's load-bearing, top risk, first 3 actions.
+**`audit.md`**: reality vs assumption, load-bearing components, top risk, first 3 actions.
 
-Update `context.md` with the current engagement state so all future skills start informed.
+**`terrain.md`**: module map, hotspots, AI components, data flow, test gaps. Mark unknowns.
+
+**`reality.md`**: what the audit has established as the actual problem vs the stated brief.
+
+**`context.md`**: updated engagement state for session continuity.
 
 ## Principles
 - Read everything that exists before forming any opinion.
 - "It should work" is not the same as "it works." Verify.
 - The most dangerous systems are the ones everyone assumes someone else understands.
-- Don't start building until `audit.md` is written and the FDE has read it.
+- Don't start building until `audit.md`, `terrain.md`, and `reality.md` are all written.
+- The previous FDE's decisions are evidence, not verdicts. Understand before judging.

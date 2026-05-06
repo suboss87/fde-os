@@ -28,6 +28,7 @@ Work through this before any deployment:
 - Monitoring alerts are configured and someone is watching.
 - The team knows a deploy is happening.
 - Not a Friday unless it's a genuine emergency with someone on call.
+- **If this environment requires change approval (CAB, change advisory board, or equivalent):** the change window is open and the ticket is approved. In regulated enterprise environments -- banking, healthcare, government -- deploying outside an approved change window is a compliance finding regardless of whether the deployment succeeded. Find out the process before the deploy date, not on it. "We didn't know there was a CAB process" is not a defence.
 
 Don't proceed until every item is confirmed. Not assumed, confirmed.
 

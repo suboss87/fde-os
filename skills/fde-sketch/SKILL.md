@@ -17,15 +17,17 @@ In a transformation engagement, the question is not just "what are we prototypin
 
 Score them before picking. Three dimensions:
 
-**Value** -- what does it cost the business if this is not solved? Score 1-5. A use case that saves 10 hours of manual work per week is a 2. A use case that eliminates a regulatory breach risk is a 5.
+**Business value** -- what does it cost the business if this is not solved? Score 1-5. A use case that saves 10 hours of manual work per week is a 2. A use case that eliminates a regulatory breach risk is a 5.
 
-**Complexity** -- how hard is this to build safely and maintain? Score 1-5 (5 = hardest). A rules-based classifier on structured data is a 1. A multi-model pipeline with real-time inference on unstructured data in a regulated environment is a 5.
+**Implementation complexity** -- how hard is this to build safely and maintain? Score 1-5 (5 = hardest). A rules-based classifier on structured data is a 1. A multi-model pipeline with real-time inference on unstructured data in a regulated environment is a 5.
 
 **Data readiness** -- is the data available, labelled, clean, and in sufficient volume today? Score 1-5 (5 = fully ready). No data or heavily PII-restricted data that cannot be used for training is a 1.
 
-**Formula**: Value divided by Complexity, weighted by Data readiness. The use case with the best score gets prototyped first. High value, low complexity, high data readiness is the pattern you are looking for.
+**Formula: (Value x Data readiness) / Complexity**
 
-This is not perfect scoring. It is a forcing function to make the trade-offs explicit before you spend three days building the wrong prototype.
+The use case with the highest score gets prototyped first. A score of 5 value, 1 complexity, 5 data readiness = 25. A score of 5 value, 5 complexity, 2 data readiness = 2. Those two look equally compelling on a whiteboard. The formula makes the gap visible before you commit three days to the wrong one.
+
+This is not perfect scoring. It is a forcing function to make trade-offs explicit before spending time on the wrong prototype. Use the same model from `@fde-discover` if use case scoring was done there -- do not re-score independently.
 
 ## Opening question
 

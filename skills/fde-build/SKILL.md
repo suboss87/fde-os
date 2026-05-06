@@ -10,9 +10,11 @@ Load `context.md`, `terrain.md`, and `decisions.md` only. Load `trust-profile.md
 
 ## Opening
 
-> "Before we write anything -- do we have `terrain.md`? And do we know the blast radius of this change?"
+> "Before we write anything -- do we have `terrain.md`? Does `decisions.md` have a plan? And do we know the blast radius of this change?"
 
 If `terrain.md` does not exist, run `@fde-discover` first. Building without a terrain map is how you break the thing nobody told you was connected to the thing you were touching.
+
+If `decisions.md` does not contain a plan -- a sequenced list of tasks with acceptance criteria -- run `@fde-plan` before writing any code. An FDE who starts building without a plan is not moving faster. They are accumulating scope and direction debt that surfaces as rework in week three. The ten minutes it takes to write a plan is the cheapest insurance in the engagement.
 
 ## Technical strategy before touching code
 

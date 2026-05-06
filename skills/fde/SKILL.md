@@ -35,7 +35,7 @@ One question. Wait. Listen to the full answer before doing anything.
 
 **Route to `@fde-build`** when you hear: ready to build, implementing, working in the codebase, writing the real thing.
 
-**Route to `@fde-rescue`** when you hear: production down, fire, broken, urgent, can't wait, something's bleeding.
+**Route to `@fde-rescue`** when you hear: production down, fire, broken, urgent, can't wait, something's bleeding. Also route here when you hear: stakeholder gone quiet, losing confidence, customer seems disengaged, not sure the engagement is still on track, or mid-build and the brief feels wrong. Trust fires and mid-build resets live in `@fde-rescue`, not just technical ones.
 
 **Route to `@fde-ship`** when you hear: ready to deploy, going live, pushing to production.
 
@@ -89,8 +89,10 @@ Don't ask more than one clarifying question. If still unclear, default to `@fde-
 
 If the FDE says "how are we doing," "check in," or "are we on track":
 
+Load `reality.md`, `risks.md`, `delivery.md`, and `stakeholders.md` for this check. Do not load `trust-profile.md` -- the sensitive data there is not needed for a status read; stakeholder signals live in `stakeholders.md`.
+
 - Is the real problem still the same as `reality.md`? Or has scope crept?
-- Is trust intact based on `trust-profile.md`? Any stakeholder signals going red?
+- Any stakeholder signals in `stakeholders.md` going amber or red?
 - Any risks in `risks.md` that are overdue for action?
 - Has value been delivered and logged in `delivery.md`?
 

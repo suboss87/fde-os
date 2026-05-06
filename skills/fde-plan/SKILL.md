@@ -11,7 +11,7 @@ An FDE plan is not a sprint backlog. The technical sequence is the easy part. Th
 A technically correct plan that ignores engagement politics will fail on schedule.
 
 ## Token efficiency
-Load `reality.md`, `success.md`, `terrain.md`, `stakeholders.md` only. Not the full `.fde/` directory. Load `decisions.md` only if re-planning an existing phase.
+Load `reality.md`, `success.md`, `terrain.md`, `stakeholders.md` only. Load `business-case.md` if it exists -- it contains the scored use case from `@fde-sketch` that this plan should be built around. Load `decisions.md` only if re-planning an existing phase. Not the full `.fde/` directory.
 
 ## Opening
 
@@ -66,12 +66,20 @@ Verify: [Specific check that confirms it's done]
 
 ## What to produce
 
-A sequenced task list in `decisions.md` or as a standalone plan in `.fde/plan.md`.
+A sequenced task list written to `decisions.md`. Always `decisions.md`. `fde-build` reads from `decisions.md` to find the plan. If the plan is anywhere else, the build starts without one and will not warn about it.
 
-Not a project management document. A clear sequence any FDE could pick up, execute, and verify, even if they've never seen the engagement before.
+Not a project management document. A clear sequence any FDE could pick up, execute, and verify, even if they have never seen the engagement before.
+
+## When the plan changes mid-engagement
+
+Scope resets happen. The brief was wrong. Discovery revealed something larger. A stakeholder has changed what done means.
+
+When this happens: do not quietly update the tasks. Name the reset explicitly. Update `reality.md` and `success.md` to reflect the new shared understanding. Write a single paragraph in `decisions.md` explaining what changed, why, and what the new sequence is. Then continue.
+
+An undocumented scope reset looks like the FDE drifted. A documented one looks like the FDE caught something important and adapted. The distinction matters when the project is reviewed by someone who was not in the room.
 
 ## Writes to .fde/
-**`decisions.md`**: the plan itself, plus the rationale for the sequence chosen.
+**`decisions.md`**: the plan itself, all subsequent updates, and the rationale for every sequence change.
 
 ## Principles
 - Plan from success backwards, not from today forwards.

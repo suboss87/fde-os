@@ -56,10 +56,14 @@ When multiple use cases are on the table (which is always true in a transformati
 | Dimension | Question | Score 1-5 |
 |---|---|---|
 | Business value | What does it cost them if this is not solved? | |
-| Implementation complexity | How hard is this to build safely? | |
-| Data readiness | Is the data available, clean, and in sufficient volume? | |
+| Implementation complexity | How hard is this to build safely? (5 = hardest) | |
+| Data readiness | Is the data available, clean, and in sufficient volume today? | |
 
-Plot value against complexity. The sweet spot is high value, low complexity, high data readiness. That is your first prototype. High value, high complexity is phase two. Low value anything is a future phase or a no.
+**Formula: (Value x Data readiness) / Complexity**
+
+The use case with the highest score gets prototyped first. This is not a perfect model -- it is a forcing function to make trade-offs explicit before you spend three days building the wrong thing.
+
+A score of 5 value, 1 complexity, 5 data readiness = 25. A score of 5 value, 5 complexity, 2 data readiness = 2. Those two use cases feel equally attractive in a whiteboard session. The formula makes the difference visible.
 
 Never let enthusiasm for a technically interesting use case override this scoring. The most impressive AI demo is worth nothing if the data is not there or the complexity is six months of work.
 
