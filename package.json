@@ -1,0 +1,44 @@
+{
+  "name": "fdeos",
+  "version": "3.0.0",
+  "description": "Second brain for Forward Deployed Engineers — one @fde skill that routes by situation, does the phase work, and writes engagement memory itself. Claude Code plugin and any agent that loads skills.",
+  "bin": {
+    "fdeos": "bin/install.js"
+  },
+  "scripts": {
+    "check": "node bin/check.js",
+    "prepublishOnly": "node bin/check.js"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "hooks/",
+    "templates/",
+    "CLAUDE.md.template"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "ai-agent",
+    "skills",
+    "plugin",
+    "fde",
+    "forward-deployed",
+    "forward-deployed-engineer",
+    "engineering",
+    "client-site",
+    "legacy-code",
+    "brownfield",
+    "cursor",
+    "windsurf",
+    "cline"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suboss87/fde-os.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

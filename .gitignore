@@ -1,0 +1,6 @@
+# Engagement brain at project root only (not templates/.fde/)
+/.fde/
+
+# Local working notes — never in the public repo
+/docs/internal/
+/tasks/

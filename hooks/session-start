@@ -1,0 +1,71 @@
+#!/bin/bash
+# FDEOS SessionStart — load @fde + engagement context from FDE laptop path.
+
+CONTEXT_FILE=""
+BOOTSTRAP=""
+
+for candidate in \
+  "${CLAUDE_PLUGIN_ROOT:+$CLAUDE_PLUGIN_ROOT/skills/fde/SKILL.md}" \
+  "$(dirname "$0")/../skills/fde/SKILL.md" \
+  "$HOME/.claude/skills/fde/SKILL.md"; do
+  if [ -n "$candidate" ] && [ -f "$candidate" ]; then
+    BOOTSTRAP="$candidate"
+    break
+  fi
+done
+
+resolve_engagement_dir() {
+  local raw="$1"
+  [ -z "$raw" ] && return 1
+  # strip surrounding whitespace/quotes only — paths may contain spaces
+  raw=$(printf '%s' "$raw" | sed -e 's/^[[:space:]"'"'"']*//' -e 's/[[:space:]"'"'"']*$//' -e "s|^~|$HOME|")
+  [ -d "$raw" ] && printf '%s\n' "$raw" && return 0
+  return 1
+}
+
+# 1) Environment variable (any agent)
+if [ -z "$CONTEXT_FILE" ]; then
+  ENG_DIR=$(resolve_engagement_dir "${FDEOS_ENGAGEMENT:-}")
+  [ -n "$ENG_DIR" ] && CONTEXT_FILE="$ENG_DIR/context.md"
+fi
+
+# 2) Project CLAUDE.md
+if [ -z "$CONTEXT_FILE" ] && [ -f "CLAUDE.md" ]; then
+  ENG=$(grep -m1 '^FDEOS_ENGAGEMENT=' CLAUDE.md 2>/dev/null | cut -d= -f2-)
+  ENG_DIR=$(resolve_engagement_dir "$ENG")
+  [ -n "$ENG_DIR" ] && CONTEXT_FILE="$ENG_DIR/context.md"
+fi
+
+# 3) Global FDEOS pointer file
+if [ -z "$CONTEXT_FILE" ] && [ -f "$HOME/.claude/FDEOS-CLAUDE.md" ]; then
+  ENG=$(grep -m1 '^FDEOS_ENGAGEMENT=' "$HOME/.claude/FDEOS-CLAUDE.md" 2>/dev/null | cut -d= -f2-)
+  ENG_DIR=$(resolve_engagement_dir "$ENG")
+  [ -n "$ENG_DIR" ] && CONTEXT_FILE="$ENG_DIR/context.md"
+fi
+
+# 4) Optional in-repo .fde (customer-approved only)
+if [ -z "$CONTEXT_FILE" ] && [ -f ".fde/context.md" ]; then
+  CONTEXT_FILE=".fde/context.md"
+fi
+
+IS_FDE_PROJECT=0
+[ -n "$CONTEXT_FILE" ] && [ -f "$CONTEXT_FILE" ] && IS_FDE_PROJECT=1
+[ -f "CLAUDE.md" ] && grep -qi "fde\|FDEOS" "CLAUDE.md" 2>/dev/null && IS_FDE_PROJECT=1
+[ -n "${FDEOS_ENGAGEMENT:-}" ] && IS_FDE_PROJECT=1
+[ -d ".fde" ] && IS_FDE_PROJECT=1
+
+if [ "$IS_FDE_PROJECT" -eq 0 ]; then
+  exit 0
+fi
+
+CONTENT=""
+
+if [ -n "$BOOTSTRAP" ]; then
+  CONTENT="$CONTENT$(cat "$BOOTSTRAP")\n\n"
+fi
+
+if [ -n "$CONTEXT_FILE" ] && [ -f "$CONTEXT_FILE" ]; then
+  CONTENT="$CONTENT---\nEngagement context ($CONTEXT_FILE):\n$(cat "$CONTEXT_FILE")\n"
+fi
+
+printf '%b' "$CONTENT"
