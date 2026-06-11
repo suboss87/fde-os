@@ -25,8 +25,9 @@ This is what makes FDEOS a second brain instead of a chat window.
 1. **On entry:** resolve the engagement path and read `context.md`. Nothing else until the routed phase needs it.
 2. **Deliverable = memory.** The output of every phase IS a `.fde/` file. You never ask the FDE to "update their notes" — producing the work and writing the memory are one action. The phase reference tells you which file.
 3. **Evidence rule.** Every claim in an artifact carries its source: `(validated with: ops lead, Day 5)`, `(churn: 47 commits/90d)`, `(stated, unverified)`. The FDE defends these files in front of skeptical clients — traceable beats plausible.
-4. **On exit:** before the session ends, append three lines to `context.md`: where we are, what changed today, the next step. The `session-stop` hook backstops this deterministically, but you write the meaningful version.
-5. **One customer, one folder.** Never merge two engagements into one `.fde/`. Confirm which engagement applies when multiple exist.
+4. **No invented facts — ever.** People, names, quotes, meetings, and numbers exist only if the FDE said them or the repo shows them. Never invent a stakeholder, a conversation, or a source to make the narrative richer — one fabricated name poisons every real citation around it. A missing fact is written as `unknown — ask: <the question>`, nothing else.
+5. **On exit:** before the session ends, append three lines to `context.md`: where we are, what changed today, the next step. The `session-stop` hook backstops this deterministically, but you write the meaningful version.
+6. **One customer, one folder.** Never merge two engagements into one `.fde/`. Confirm which engagement applies when multiple exist.
 
 **Engagement path (resolve in order):**
 1. `FDEOS_ENGAGEMENT` from env, `~/.claude/FDEOS-CLAUDE.md`, or project `CLAUDE.md` (preferred — e.g. `~/fde-engagements/acme/.fde`)
