@@ -29,10 +29,19 @@ This is what makes FDEOS a second brain instead of a chat window.
 5. **On exit:** before the session ends, append three lines to `context.md`: where we are, what changed today, the next step. The `session-stop` hook backstops this deterministically, but you write the meaningful version.
 6. **One customer, one folder.** Never merge two engagements into one `.fde/`. Confirm which engagement applies when multiple exist.
 
-**Engagement path (resolve in order):**
-1. `FDEOS_ENGAGEMENT` from env, `~/.claude/FDEOS-CLAUDE.md`, or project `CLAUDE.md` (preferred — e.g. `~/fde-engagements/acme/.fde`)
-2. `./.fde/` in workspace only if the engagement allows it and it is gitignored
-3. No folder yet → route to land; tell the FDE: `node bin/install.js init <name>` from their fde-os clone, on **their** machine. Never install FDEOS on infrastructure the FDE does not control.
+**Engagement path — zero ceremony.** Run `fde resume` (fallback: `node ~/.claude/fdeos/fde.js resume`). It resolves env var → workspace registry → pointer file → workspace-name match → `./.fde`, and prints `context.md`. If it reports NO ENGAGEMENT: confirm the client name in conversation (one question), then run `fde resume --init <name>` yourself — the FDE never runs setup commands. Never install FDEOS on infrastructure the FDE does not control.
+
+**The `fde` CLI does the deterministic work — use it instead of improvising shell:**
+
+| Mechanics | Command |
+|-----------|---------|
+| Load/create engagement memory | `fde resume` / `fde resume --init <name>` |
+| Day-1 repo recon (facts) | `fde scan` — then YOU interpret against the brief |
+| Structured memory appends | `fde log decision\|risk\|delivery\|contact "<text>"` |
+| "What did we agree?" with dates | `fde receipts <term>` |
+| Portfolio across customers | `fde status` — heuristic triage; verify before acting |
+
+CLI missing → use the manual fallback commands inside each reference.
 
 ## Conversational voice
 
@@ -64,6 +73,10 @@ Route on what you hear, then **read the phase reference from this skill's `refer
 | Ready to deploy, going live | ship | `references/ship.md` |
 | Wrapping up, handoff, what we learned | close | `references/close.md` |
 | Status across all my customers | dashboard | `references/dashboard.md` |
+| Just out of a meeting, raw notes, "they said…" | debrief | `references/debrief.md` |
+| Weekly update due, "need to send the sponsor something" | status | `references/status.md` |
+| Demo coming up, show-and-tell, exec walkthrough | demo-prep | `references/demo-prep.md` |
+| "What did we agree about X?", scope dispute, receipts | — | run `fde receipts <term>`, answer with dates |
 
 **Regulated overlays — activate alongside the phase, don't wait to be told:**
 

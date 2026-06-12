@@ -1,5 +1,15 @@
 # Release Notes
 
+## 3.1.0 (2026-06-12)
+
+**The field-kit release.** A real CLI under the skill, the daily verbs, zero-ceremony setup.
+
+- **`bin/fde.js` — the deterministic core.** Works with or without AI: `fde scan` (day-1 recon: churn×tests hotspots, "temporary" archaeology, AI components, secrets redacted, previous attempts), `fde resume` (find/create this workspace's memory), `fde log` (structured appends), `fde receipts` ("what did we agree?" with dates), `fde capture` (session snapshot), `fde status` (trust-first portfolio triage). Verified against a planted-truth fixture: 6/8 ground truths surfaced in under 2 seconds, no AI.
+- **Zero-ceremony bootstrap.** No env vars, no init commands for the human: `@fde` runs `fde resume`; if no engagement exists it confirms the client name in conversation and binds the workspace itself (registry-based, per-customer).
+- **The daily verbs — the missing communication layer:** `debrief` (meeting notes → structured memory, the highest-frequency FDE moment), `status` (the sponsor update drafted from the week's record), `demo-prep` (arc, the one number, hard questions, fallback). Routing now maps moments, not just phases.
+- **References are CLI-first** with manual commands retained as spec/fallback; the skill spends AI on interpretation, not mechanics.
+- Installer deploys the CLI to `~/.claude/fdeos/`; `fde` exposed as an npm bin; check suite extended (18 references, CLI wiring).
+
 ## 3.0.0 (2026-06-11)
 
 **The second-brain release.** One skill, phase methods that do work, memory that writes itself.

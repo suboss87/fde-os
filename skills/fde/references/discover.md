@@ -14,7 +14,9 @@ If you can't name the decision this informs (descope? rescope? pick use case A o
 
 ## Method — part 1: the codebase (you do this work)
 
-Run these scans yourself. Do not load the full codebase into context — scan wide, read deep only on hotspots.
+**First move: `fde scan`** — it runs everything below deterministically in seconds (churn×tests, "temporary" archaeology, AI components, secrets redacted, previous attempts). Your job is then **interpretation**: read its output against the brief, follow the hotspots into the code, and connect the technical findings to the human signals in part 2.
+
+If the CLI is unavailable, run the manual commands below. Either way: do not load the full codebase into context — scan wide, read deep only on hotspots.
 
 **1. Stack and age.** Language, framework, build system, date of last major upgrade:
 ```bash

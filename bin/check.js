@@ -60,6 +60,7 @@ ok('skills structure')
 const requiredReferences = [
   'land.md', 'discover.md', 'audit.md', 'plan.md', 'build.md', 'review.md',
   'debug.md', 'rescue.md', 'ship.md', 'sketch.md', 'close.md', 'dashboard.md',
+  'debrief.md', 'status.md', 'demo-prep.md',
   'healthcare.md', 'fintech.md', 'gov.md',
 ]
 for (const f of requiredReferences) {
@@ -218,6 +219,20 @@ for (const h of ['session-start', 'session-stop', 'pre-compact']) {
   if (!(mode & 0o111)) fail(`hooks/${h} lost its executable bit`)
 }
 ok('hook exec bits')
+
+// v3.1: the fde CLI (deterministic core)
+if (!fs.existsSync(path.join(root, 'bin', 'fde.js'))) {
+  fail('bin/fde.js missing (the deterministic core)')
+} else {
+  const cli = read('bin/fde.js')
+  for (const sub of ['cmdScan', 'cmdResume', 'cmdLog', 'cmdReceipts', 'cmdCapture', 'cmdStatus']) {
+    if (!cli.includes(sub)) fail(`fde.js missing ${sub}`)
+  }
+  if (!JSON.parse(read('package.json')).bin.fde) fail('package.json must expose the fde bin')
+  if (!read('bin/install.js').includes('fde.js')) fail('install.js must deploy fde.js')
+  if (!read('skills/fde/SKILL.md').includes('fde resume')) fail('SKILL.md must use the CLI for memory ops')
+  ok('fde CLI present and wired')
+}
 const hooksJson = JSON.parse(read('hooks/hooks.json'))
 if (!hooksJson.hooks.SessionEnd) {
   fail('hooks.json must register SessionEnd → session-stop')

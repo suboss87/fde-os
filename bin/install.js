@@ -91,6 +91,13 @@ function installSkills() {
     fs.copyFileSync(CLAUDE_MD_SRC, globalPointer)
   }
   fs.copyFileSync(CLAUDE_MD_SRC, path.join(os.homedir(), '.claude', 'FDEOS-CLAUDE.md.template'))
+
+  // the fde CLI + templates, so the skill can call it from any workspace
+  const cliHome = path.join(os.homedir(), '.claude', 'fdeos')
+  fs.mkdirSync(cliHome, { recursive: true })
+  fs.copyFileSync(path.join(__dirname, 'fde.js'), path.join(cliHome, 'fde.js'))
+  try { fs.chmodSync(path.join(cliHome, 'fde.js'), '755') } catch (_) {}
+  copyDir(FDE_TEMPLATES_SRC, path.join(cliHome, 'templates', '.fde'))
 }
 
 function cmdInit(engagementName) {
@@ -134,6 +141,7 @@ function cmdInstall() {
   installSkills()
   console.log('  Skills → ~/.claude/skills/')
   console.log('  Hooks → ~/.claude/hooks/fdeos-*')
+  console.log('  CLI → ~/.claude/fdeos/fde.js  (try: node ~/.claude/fdeos/fde.js scan)')
   console.log('')
   console.log('  Create an engagement (stays off customer infrastructure):')
   console.log('    node bin/install.js init <engagement-name>')

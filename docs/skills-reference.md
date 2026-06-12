@@ -27,11 +27,23 @@ Each reference is a **method, not advice**: the work the agent does, the artifac
 | [debug](../skills/fde/references/debug.md) | Broken, not down | Reproduce → isolate → "what changed?" → one falsifiable hypothesis → root cause | `chaos-log.md` |
 | [ship](../skills/fde/references/ship.md) | Ready to deploy | Pre-flight incl. CAB; canary with rollback-on-anomaly; pulse defined before closing the laptop | `delivery.md` |
 
+## The daily verbs (every day, not once per engagement)
+
+| Verb | Enter when | Method highlights | Writes |
+|------|-----------|-------------------|--------|
+| [debrief](../skills/fde/references/debrief.md) | Just out of any meeting, raw notes in hand | Five-bucket extraction (decisions, actions, signals, risks, questions); verbatim quotes; signals move on evidence only | `decisions.md` `stakeholders.md` `risks.md` `context.md` |
+| [status](../skills/fde/references/status.md) | Weekly sponsor update due | Value in their units; bad news first; explicit ask; one page; FDE sends, never the agent | `delivery.md` |
+| [demo-prep](../skills/fde/references/demo-prep.md) | Demo or exec walkthrough coming | The one outcome + the one number; live only what ran clean twice; hard-question sheet; fallback plan | `delivery.md` `context.md` |
+
 ## Visibility
 
 | Phase | Enter when | Method highlights | Writes |
 |-------|-----------|-------------------|--------|
-| [dashboard](../skills/fde/references/dashboard.md) | "Where am I across everything?" | Reads every `~/fde-engagements/*/.fde/` separately; trust signal per customer; triage order | `fde-dashboard.html` |
+| [dashboard](../skills/fde/references/dashboard.md) | "Where am I across everything?" | `fde status` heuristic triage first; reads every `~/fde-engagements/*/.fde/` separately; trust signal per customer | `fde-dashboard.html` |
+
+## The `fde` CLI (deterministic core — works without AI)
+
+`scan` recon · `resume [--init <name>]` memory + zero-ceremony bootstrap · `log <type> <text>` structured appends · `receipts <term>` agreements with dates · `capture` session snapshot · `status` portfolio triage. The skill calls these for mechanics; the AI does interpretation and judgment.
 
 ## Regulated overlays (activate alongside any phase)
 

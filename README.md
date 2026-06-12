@@ -145,6 +145,13 @@ You only ever type **`@fde`**. It hears your situation and runs the matching pha
 
 **Also routes to:** `audit` (taking over half-done work) · `rescue` (production fire OR quiet-stakeholder trust fire OR wrong-brief-mid-build) · `sketch` (prototype to kill or confirm a direction) · `debug` (systematic, never guessing) · `dashboard` (status across every customer).
 
+**The daily verbs** — the moments that happen every day, not once per engagement:
+
+- **debrief** — walk out of any meeting, dump raw notes → decisions, action items, and stakeholder signals land in memory with dates and attribution.
+- **status** — Friday's sponsor update drafted from the week's actual record (shipped work, decisions, risks) in exec language. You review and send.
+- **demo-prep** — the demo arc from what actually works: the one number, live-vs-canned per beat, the five hard questions, the fallback.
+- **receipts** — "what did we agree about X?" answered with dates: `fde receipts <term>`.
+
 **Regulated overlays** activate on signal, alongside any phase: healthcare (PHI/HIPAA), fintech (PCI/idempotency/atomicity), government (FedRAMP/ATO/CUI). Operational guardrails, not legal advice.
 
 Sample filled files (fictional): [examples/acme-payments/](examples/acme-payments/)
@@ -154,17 +161,27 @@ Sample filled files (fictional): [examples/acme-payments/](examples/acme-payment
 ## What's inside
 
 ```
+bin/fde.js            the CLI — deterministic core, works without AI:
+                        fde scan · resume · log · receipts · capture · status
 skills/fde/
   SKILL.md            the router: voice, memory contract, routing table
   references/
     land.md  discover.md  audit.md  plan.md  build.md  review.md
     debug.md  rescue.md  ship.md  sketch.md  close.md  dashboard.md
+    debrief.md  status.md  demo-prep.md          ← the daily verbs
     healthcare.md  fintech.md  gov.md
 hooks/
   session-start       loads context.md into every session (read side)
   session-stop        appends "where we left off" at session end (write side)
   pre-compact         preserves engagement state across compactions
 templates/.fde/       the 10 core memory files an init creates
+```
+
+**Try the CLI before you believe anything** — in any repo, no setup:
+
+```bash
+node bin/fde.js scan      # day-1 recon: hotspots×tests, "temporary" code,
+                          # AI calls, secrets (redacted), previous attempts
 ```
 
 Each reference is a **method** — the work to do, the artifact it writes, the checkpoint with you — not a pep talk. Full reference: [docs/skills-reference.md](docs/skills-reference.md)
