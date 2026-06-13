@@ -101,14 +101,22 @@ Entry skill: [skills/fde/SKILL.md](skills/fde/SKILL.md) · Phase methods: [skill
 
 ## Installation
 
-### Claude Code
+### Fastest — the skills CLI (any agent)
+
+```bash
+npx skills add suboss87/fde-os
+```
+
+Works with Claude Code, Cursor, Copilot, Windsurf, Cline, and others. Then run `node bin/install.js` once from the cloned repo (below) to add the `fde` CLI and the memory hooks.
+
+### Claude Code (plugin)
 
 ```text
 /plugin marketplace add suboss87/fde-os
 /plugin install fdeos@fdeos
 ```
 
-Copy the skill and hooks to disk (once per machine):
+Copy the skill, CLI, and hooks to disk (once per machine):
 
 ```bash
 git clone https://github.com/suboss87/fde-os.git
@@ -128,6 +136,22 @@ FDEOS_ENGAGEMENT=~/fde-engagements/<engagement-name>/.fde
 ```
 
 Full matrix: [docs/install.md](docs/install.md)
+
+---
+
+## Pairs with your stack
+
+FDEOS is the **client/engagement layer** — it deliberately does *not* try to be your coding methodology. It keeps only the **client-side guardrails** in execution (blast radius on *their* systems, change-approval windows, sacred data, scope receipts) and defers build mechanics to whatever you already use.
+
+| You already use… | for | FDEOS adds |
+|---|---|---|
+| **Superpowers** | TDD, debugging, git discipline | the client around the repo: the wrong brief, the quiet sponsor, the handoff |
+| **Pocock's skills** / small verbs | tight build loops | per-client memory + the engagement politics those verbs don't touch |
+| a browsing skill | web/docs work | FDEOS calls it when a phase needs the web, instead of reinventing it |
+
+> Superpowers makes the agent a disciplined **engineer**. FDEOS makes it a disciplined **embedded operator**. Install both.
+
+Requires none of them — it stands alone, and pairs cleanly when they're present.
 
 ---
 
@@ -190,7 +214,7 @@ Each reference is a **method** — the work to do, the artifact it writes, the c
 
 ## Engagement memory (`.fde/`)
 
-Default: `~/fde-engagements/<name>/.fde/` via `FDEOS_ENGAGEMENT`. **Private to you**; the AI reads/writes; client infra does not host this by default.
+Think of `.fde/` as your **fieldbook** — the notebook a surveyor carries on site, one per client, that you keep and own. Default: `~/fde-engagements/<name>/.fde/` via `FDEOS_ENGAGEMENT`. **Private to you**; the AI reads/writes; client infra does not host this by default. Plain markdown you can grep, defend in a dispute, and carry to any agent — a record models don't own, you do.
 
 | File | Role | Written by |
 |------|------|-----------|

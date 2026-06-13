@@ -148,8 +148,15 @@ for (const phrase of badPhrases) {
     fail(`README must not contain hype phrase: ${phrase}`)
   }
 }
-for (const ref of ['superpowers', 'gstack', 'garrytan']) {
-  if (readme.toLowerCase().includes(ref)) fail(`README must not reference: ${ref}`)
+// Naming peers as complements ("pairs with Superpowers") is intended GTM.
+// What's banned is positioning FDEOS as a DERIVATIVE of them.
+const derivativeFraming = [
+  /(based on|fork of|forked from|port of|inspired by|built on top of|powered by)\s+superpowers/i,
+  /(based on|fork of|forked from|port of|inspired by)\s+gstack/i,
+  /garrytan/i,
+]
+for (const rx of derivativeFraming) {
+  if (rx.test(readme)) fail(`README must not frame FDEOS as derivative: ${rx}`)
 }
 if (/docs\/internal|PMF_360/i.test(readme)) {
   fail('README must not link docs/internal or PMF_360')
