@@ -29,6 +29,14 @@ This is what makes FDEOS a second brain instead of a chat window.
 5. **On exit:** before the session ends, append three lines to `context.md`: where we are, what changed today, the next step. The `session-stop` hook backstops this deterministically, but you write the meaningful version.
 6. **One customer, one folder.** Never merge two engagements into one `.fde/`. Confirm which engagement applies when multiple exist.
 
+## Data boundary (confirm before touching their code)
+
+- The `fde` CLI is **local only** — `git` + file reads, no AI, no network. Safe in any environment.
+- **You (the AI) only ever see customer code when the FDE points you at it** inside the agent they are already authorized to run. FDEOS adds no new data path.
+- **Before reading or generating against customer code, the AI policy must be known.** New engagement, policy unknown → ask it (land phase: "policy on AI-generated code? data that must never touch AI?") *before* loading their code into context. Default to "not permitted" until the FDE confirms.
+- Data tagged `<private>` in `trust-profile.md` (sacred data, PHI, cardholder, classified) **never enters your context or any subagent prompt** — work around it, never with it.
+- Locked-down engagement (no AI on their code)? Use the CLI + the fieldbook only. The memory layer is the FDE's own notes, not customer code.
+
 **Engagement path — zero ceremony.** Run `fde resume` (fallback: `node ~/.claude/fdeos/fde.js resume`). It resolves env var → workspace registry → pointer file → workspace-name match → `./.fde`, and prints `context.md`. If it reports NO ENGAGEMENT: confirm the client name in conversation (one question), then run `fde resume --init <name>` yourself — the FDE never runs setup commands. Never install FDEOS on infrastructure the FDE does not control.
 
 **The `fde` CLI does the deterministic work — use it instead of improvising shell:**

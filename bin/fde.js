@@ -126,6 +126,7 @@ function cmdScan() {
   const isGit = !!sh('git rev-parse --git-dir')
   const out = []
   out.push('FDE RECON — ' + path.basename(cwd))
+  out.push('local only · git + file reads · no AI, no network — nothing leaves this machine')
   out.push('='.repeat(60))
 
   // stack + age
